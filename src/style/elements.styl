@@ -1,0 +1,204 @@
+/*  <buttons>  */
+.btn
+	display inline-flex
+	height 32px
+	justify-content center
+	align-items center
+	color #444
+	font-size 1.1rem
+	text-transform uppercase
+	background-color #fff
+	border 1px solid #ddd
+	border-radius 2px
+	padding 0 15px
+	cursor pointer
+	transition all .2s
+	a&
+		text-decoration none
+	&:hover
+		color #222
+		border-color #888
+	&:active
+		box-shadow inset 0 2px 4px rgba(#222, .4)
+	&:disabled
+	&[disabled]
+		pointer-events none
+		color #888
+		background-color #eee
+		border-color @background-color
+	&--blue
+		color #fff
+		background-color #4c95ca
+		border-color @background-color
+		&:hover
+			color @color
+			background-color #005a8a
+			border-color @background-color
+		&:active
+			box-shadow inset 0 4px 8px rgba(#222, .4)
+	&--green
+		color #fff
+		background-color #81c81e
+		border-color @background-color
+		&:hover
+			color @color
+			background-color #56a000
+			border-color @background-color
+		&:active
+			box-shadow inset 0 4px 8px rgba(#222, .4)
+	&--middle
+		height 38px
+		font-size 1.3rem
+		padding 0 22px
+	&--large
+		height 46px
+		font-size 1.5rem
+		padding 0 30px
+	&--fullwidth
+		width 100%
+/*  </buttons>  */
+
+/*  <inputs>  */
+.input-text
+.textarea
+	width 100%
+	height 38px
+	background-color #fff
+	border 1px solid #ddd
+	border-radius 2px
+	padding 0 15px
+	transition all .2s
+	&:hover
+	&:focus
+		border-color #888
+		&::placeholder
+			color @border-color
+	&--large
+		height 46px
+	&--success
+		border-color #00a619
+		&:hover
+		&:focus
+			border-color @border-color
+	&--error
+		border-color #c81e2c
+		&:hover
+		&:focus
+			border-color @border-color
+	&:disabled
+		color #888
+		background-color #eee
+		border-color @background-color
+		&:hover
+		&:focus
+			background-color @background-color
+			border-color @background-color
+		&::placeholder
+			color @color
+.textarea
+	height 100px
+	min-height @height
+	resize vertical
+	transition border .2s, background-color .2s
+	&--large
+		height 160px
+		min-height @height
+.js-input-dynamic-width
+	box-sizing content-box
+/*  </inputs>  */
+
+/*  <labels>  */
+.label
+	display inline-flex
+	justify-content center
+	align-items center
+	vertical-align middle
+	font-size 1.3rem
+	height 22px
+	border-radius 2px
+	padding 0 5px
+	&--red
+		color #fff
+		background-color #c81e2c
+/*  </labels>  */
+
+/*  <pagination>  */
+.pagination
+	display flex
+	flex-wrap wrap
+	justify-content center
+	position relative
+	padding-top 56px
+	&__loadmore
+		position absolute
+		top 0
+		right 0
+		left 0
+	&__item
+		min-width 46px
+		font-weight 500
+		font-size 1.3rem
+		padding 0 10px
+		margin-right 3px
+		&:last-of-type
+			margin-right 0
+		&--prev
+			&::before
+				width 8px
+				height @width
+				border solid #444
+				border-width 2px 0 0 2px
+				content ''
+				transform rotate(-45deg)
+			&[disabled]
+				&::before
+					border-color #888
+		&--next
+			&::before
+				width 8px
+				height @width
+				border solid #444
+				border-width 2px 2px 0 0
+				content ''
+				transform rotate(45deg)
+			&[disabled]
+				&::before
+					border-color #888
+		&--current
+			pointer-events none
+			color #fff
+			background-color #81c81e
+			border-color @background-color
+		&--space
+			pointer-events none
+			padding 0 30px
+/*  </pagination>  */
+
+/*  <modal>  */
+.modal
+	display none
+	max-width 750px
+	border-top 3px solid #81c81e
+	border-radius 3px
+	box-shadow 0 6px 12px rgba(#000, .2)
+	.fancybox-close-small
+		top 13px
+		right 15px
+		width 35px
+		height @width
+		&::after
+			top 50%
+			left 50%
+			width @width
+			height @width
+			color #444
+			font 300 3rem/1 Roboto
+			background-color transparent
+			border-radius 0
+			transform translate(-50%, -50%)
+			transition all .2s
+		&:hover
+			&::after
+				color #888
+				background-color @background-color
+/*  </modal>  */

@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Mysupply</title>
+	<link rel="stylesheet" href="css/plugins.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<header class="header">
+		<div class="container">
+			<div class="header__choose">
+				<div class="header__city">
+					<a href="#modalCity" class="js-modal">Дзержинский</a>
+					655 поставщиков
+				</div>
+				<a href="#" class="header__auth">Вход и регистрация</a>
+			</div>
+			<div class="header__system js-header-attach">
+				<a href="#" class="header__logo">Моё Снабжение</a>
+				<div class="header__search">
+					<form action="">
+						<input type="text" name="" id="" class="header__search-input" placeholder="Поиск строительных и промышленных товаров">
+						<button type="submit" class="header__search-btn"></button>
+					</form>
+				</div>
+				<div class="header__cart">
+					<span class="header__cart-count">240</span>
+					<!-- для пустой корзины просто удаляем содержимое, пример <span class="header__cart-count"></span> -->
+					<div class="header__cart-summ">1 254 328,88 &#8381;</div>
+					<div class="header__cart-shipper">3 поставщика</div>
+					<a href="#" class="header__cart-link"></a>
+				</div>
+			</div>
+			<nav class="header__nav">
+				<a href="#" class="header__nav-item">Все разделы</a>
+				<a href="#" class="header__nav-item">Электрика</a>
+				<a href="#" class="header__nav-item">Сантехника и отопление</a>
+				<a href="#" class="header__nav-item">Метизы и крепёж</a>
+				<a href="#" class="header__nav-item">Вентиляция и промхолод</a>
+				<a href="#" class="header__nav-item">Строительные смеси</a>
+				<a href="#" class="header__nav-item">Спецодежда</a>
+				<a href="#" class="header__nav-item">Телекоммуникации</a>
+				<a href="#" class="header__nav-item">Металлы</a>
+			</nav>
+		</div>
+	</header>
+	<main class="main">
+		<div class="container">
+			<ol class="breadcrumbs">
+				<li><a href="#">Моё Снабжение</a></li>
+				<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+					<a itemprop="item" href="https://mysupply.ru/%URL%">
+						<span itemprop="name">Категория</span>
+					</a>
+					<meta itemprop="position" content="1">
+				</li>
+			</ol>
+			<div class="category">
+				<h1 class="category__name">Купить Дифференциальные защитные устройства</h1>
+				<div class="category__address">
+					Отсортировано по удалённости от: Мытищи, Белобородова, 2К2
+					<a href="#">Изменить адрес</a>
+				</div>
+				<div class="category__wrap">
+					<aside class="category__sidebar category-filter">
+						<div class="category-filter__result">
+							<p>Товаров: 1 253 000</p>
+							<p>Поставщиков: 32 527</p>
+							<button class="btn btn--middle btn--fullwidth">Очистить фильтры</button>
+						</div>
+						<div class="category-sidebar__block">
+							<div class="category-sidebar__block-title js-category-block-title-collapse">Цена</div>
+							<div class="category-filter__range">
+								<div class="category-filter__range-item">
+									<span>от:</span>
+									<input type="text" name="" id="" class="category-filter__range-input js-range-from js-mask-money" value="100">
+									<div class="category-filter__range-unit">&#8381;</div>
+								</div>
+								<div class="category-filter__range-item">
+									<span>до:</span>
+									<input type="text" name="" id="" class="category-filter__range-input js-range-to js-mask-money" value="100">
+									<div class="category-filter__range-unit">&#8381;</div>
+								</div>
+								<div class="category-filter__range-place">
+									<input type="hidden" class="js-range-slider" data-min="100" data-max="1100" data-step="1" data-set-start="150" data-set-end="550" data-range="true">
+								</div>
+								<div class="category-filter__row">
+									<input type="checkbox" name="" id="filterCheckPrice" class="checkbox" checked><label for="filterCheckPrice">Без “По запросу”</label>
+								</div>
+							</div>
+						</div>
+						<div class="category-sidebar__block">
+							<div class="category-sidebar__block-title js-category-block-title-collapse">Категория</div>
+							<div class="category-filter__categories">
+								<a href="#" class="category-filter__categories-item">Кабели силовые</a>
+								<a href="#" class="category-filter__categories-item">Компоненты электроприводов и электродвигателей</a>
+								<a href="#" class="category-filter__categories-item">Приспособления для монтажа</a>
+								<a href="#" class="category-filter__categories-item">Устройства защитного отключения</a>
+								<a href="#" class="category-filter__categories-item">Защитные устройства для трансформаторных модульных агрегатов</a>
+							</div>
+						</div>
+						<div class="category-sidebar__block">
+							<div class="category-sidebar__block-title js-category-block-title-collapse">Кол-во</div>
+							<div class="category-filter__range">
+								<div class="category-filter__range-item">
+									<span>от:</span>
+									<input type="text" name="" id="" class="category-filter__range-input js-range-from" value="100">
+									<div class="category-filter__range-unit">ед.</div>
+								</div>
+								<div class="category-filter__range-item">
+									<span>до:</span>
+									<input type="text" name="" id="" class="category-filter__range-input js-range-to" value="100">
+									<div class="category-filter__range-unit">ед.</div>
+								</div>
+								<div class="category-filter__range-place">
+									<input type="hidden" class="js-range-slider" data-min="100" data-max="1100" data-step="1" data-set-start="150" data-set-end="550" data-range="true">
+								</div>
+								<div class="category-filter__row">
+									<input type="checkbox" name="" id="filterCheckCount" class="checkbox"><label for="filterCheckCount">Без “По запросу”</label>
+								</div>
+							</div>
+						</div>
+						<div class="category-sidebar__block">
+							<div class="category-sidebar__block-title js-category-block-title-collapse">Срок поставки</div>
+							<div class="category-filter__check js-category-sidebar-hiderows" data-default-rows="3">
+								<div class="category-filter__check-item">
+									<input type="checkbox" name="" id="a1" class="checkbox">
+									<label for="a1">В наличии</label>
+								</div>
+								<div class="category-filter__check-item">
+									<input type="checkbox" name="" id="a2" class="checkbox">
+									<label for="a2">Под заказ</label>
+								</div>
+								<div class="category-filter__check-item">
+									<input type="checkbox" name="" id="a3" class="checkbox">
+									<label for="a3">Под заказ, срок 3 дн.</label>
+								</div>
+								<div class="category-filter__check-item">
+									<input type="checkbox" name="" id="a4" class="checkbox">
+									<label for="a4">Под заказ, срок 4 дн.</label>
+								</div>
+								<div class="category-filter__check-item">
+									<input type="checkbox" name="" id="a5" class="checkbox">
+									<label for="a5">Под заказ, срок 5 дн.</label>
+								</div>
+								<div class="category-filter__check-item">
+									<input type="checkbox" name="" id="a6" class="checkbox">
+									<label for="a6">Под заказ, срок 6 дн.</label>
+								</div>
+								<div class="category-filter__check-item">
+									<input type="checkbox" name="" id="a7" class="checkbox">
+									<label for="a7">Под заказ, срок 7 дн.</label>
+								</div>
+								<div class="category-filter__check-item">
+									<input type="checkbox" name="" id="a8" class="checkbox">
+									<label for="a8">Под заказ, срок 8 дн.</label>
+								</div>
+								<div class="category-filter__check-item">
+									<input type="checkbox" name="" id="a9" class="checkbox">
+									<label for="a9">Под заказ, срок 9 дн.</label>
+								</div>
+								<a href="#" class="category-sidebar__showrows category-sidebar__showrows--hidden js-category-sidebar-togglerows"><span class="js-category-sidebar-showrows-text" data-new-text="Скрыть ещё" data-default-text="Показать ещё">Показать ещё</span> <span class="js-category-sidebar-showrows-count"></span></a>
+							</div>
+						</div>
+						<div class="category-sidebar__block">
+							<div class="category-sidebar__block-title js-category-block-title-collapse">Регион поиска</div>
+							<div class="category-filter__region">
+								<span class="category-filter__region-item js-category-filter-region-tag"></span>
+								<span class="category-filter__region-item js-category-filter-region-tag"></span>
+							</div>
+						</div>
+						<div class="category-sidebar__block">
+							<div class="category-sidebar__block-title js-category-block-title-collapse">Сумма заказа от</div>
+							<div class="category-filter__range">
+								<div class="category-filter__range-single">
+									<span>Заказ от:</span>
+									<input type="text" name="" id="" class="category-filter__range-input js-input-dynamic-width" value="100000">
+									&#8381;
+								</div>
+							</div>
+						</div>
+						<div class="category-sidebar__block">
+							<div class="category-sidebar__block-title js-category-block-title-collapse">Кол-во оборотов двигателя в минуту</div>
+						</div>
+						<div class="category-filter__clear">
+							<button class="btn btn--middle btn--fullwidth js-category-filter-clear">Очистить фильтры</button>
+						</div>
+					</aside>
+					<div class="category__main">
+						<div class="category__system">
+							<div class="category__sort">
+								<select name="" id="" class="select">
+									<option value="">По наименованию</option>
+									<option value="">По кол-ву товара в наличии</option>
+									<option value="">По цене</option>
+								</select>
+								<button class="btn btn--middle category__sort-current category__sort-current--desc js-category-sort"></button>
+								<!--<button class="btn category__sort-current category__sort-current--asc js-category-sort"></button>-->
+							</div>
+							<div class="category__view">
+								<a href="#" class="category__view-item"><svg><use xlink:href="#icon-view-grid"></use></svg></a>
+								<a href="#" class="category__view-item category__view-item--active"><svg><use xlink:href="#icon-view-table"></use></svg></a>
+								<a href="#" class="category__view-item"><svg><use xlink:href="#icon-view-row"></use></svg></a>
+								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0" height="0">
+									<symbol id="icon-view-grid" viewBox="0 0 512 512"><path d="M296 32h192c13.255 0 24 10.745 24 24v160c0 13.255-10.745 24-24 24H296c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24zm-80 0H24C10.745 32 0 42.745 0 56v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24zM0 296v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm296 184h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H296c-13.255 0-24 10.745-24 24v160c0 13.255 10.745 24 24 24z"/></symbol>
+									<symbol id="icon-view-table" viewBox="0 0 512 512"><path d="M149.333 216v80c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24v-80c0-13.255 10.745-24 24-24h101.333c13.255 0 24 10.745 24 24zM0 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zM125.333 32H24C10.745 32 0 42.745 0 56v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24zm80 448H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zm-24-424v80c0 13.255 10.745 24 24 24H488c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24zm24 264H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24z"/></symbol>
+									<symbol id="icon-view-row" viewBox="0 0 448 512"><path d="M0 84V44c0-8.837 7.163-16 16-16h416c8.837 0 16 7.163 16 16v40c0 8.837-7.163 16-16 16H16c-8.837 0-16-7.163-16-16zm16 144h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 256h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0-128h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></symbol>
+								</svg>
+							</div>
+						</div>
+						<div class="category__items category__items--table">
+							<div class="category-product">
+								<div class="category-product__pic">
+									<a href="#"><img src="i/product/product-small.jpg" alt="Дифференциальный автомат АД-32 1P+N 50А/30мА (хар. C, AC,электронный, защита 270В) 4,5кА EKF PROxima | DA32-50-30-pro |EKF (шт.)" class="js-lazy-load"></a>
+								</div>
+								<div class="category-product__main">
+									<div class="category-product__name">
+										<a href="#">Дифференциальный автомат АД-32 1P+N 50А/30мА (хар. C, AC,электронный, защита 270В) 4,5кА EKF PROxima | DA32-50-30-pro |EKF (шт.)</a>
+									</div>
+									<div class="category-product__price">
+										<span class="category-product__price-value">12 580,12 &#8381;</span>
+										<span class="label label--red">-15%</span>
+										<a href="#" class="category-product__price-tip">Скидки, %</a>
+									</div>
+									<div class="category-product__stock">
+										В наличии: 125 643
+									</div>
+									<form action="">
+										<div class="category-product__toCart">
+											<div class="category-product__toCart-spinner">
+												<input type="text" name="" id="" class="input-text js-category-spinner" min="1" max="100" value="1" data-mask="000">
+											</div>
+											<button class="btn btn--green btn--middle">В Корзину</button>
+										</div>
+									</form>
+								</div>
+								<div class="category-product__info">
+									<div class="category-product__details">
+										<div class="category-product__details-item category-product__details-item--available">Есть самовывоз</div>
+										<div class="category-product__details-item category-product__details-item--available">Заказ от 15 000 &#8381;</div>
+										<div class="category-product__details-item">Производитель</div>
+										<div class="category-product__details-item">Оплата по счёту</div>
+										<div class="category-product__details-item">Предложение от 12.12.12</div>
+									</div>
+									<div class="category-product__seller">
+										<p class="category-product__seller-name">Элком-Электро, склад Мытыщи бокс 3, ангар 4, аэродром №5</p>
+										<address class="category-product__seller-address">Мытищи, Ярославское шоссе, д.5, кв.1, зеленый звонок</address>
+										<a href="#" class="category-product__seller-link"></a>
+									</div>
+								</div>
+							</div>
+							<div class="category-product">
+								<div class="category-product__pic"></div>
+								<div class="category-product__main">
+									<div class="category-product__name">
+										<a href="#">Дифференциальный автомат АД-32 1P+N 50А/30мА (шт.)</a>
+									</div>
+									<div class="category-product__price">
+										<span class="category-product__price-value">По запросу</span>
+									</div>
+									<div class="category-product__stock category-product__stock--unavailable">
+										Под заказ
+									</div>
+									<form action="">
+										<div class="category-product__toCart">
+											<div class="category-product__toCart-spinner">
+												<input type="text" name="" id="" class="input-text js-category-spinner" min="1" max="100" value="1" data-mask="000">
+											</div>
+											<button class="btn btn--middle">В Корзину</button>
+										</div>
+									</form>
+								</div>
+								<div class="category-product__info">
+									<div class="category-product__details">
+										<div class="category-product__details-item category-product__details-item--available">Есть самовывоз</div>
+										<div class="category-product__details-item">Заказ от 15 000 &#8381;</div>
+										<div class="category-product__details-item">Производитель</div>
+										<div class="category-product__details-item">Оплата по счёту</div>
+										<div class="category-product__details-item">Предложение от 12.12.12</div>
+									</div>
+									<div class="category-product__seller">
+										<p class="category-product__seller-name">Элком-Электро, склад Мытыщи бокс 3, ангар 4, аэродром №5</p>
+										<address class="category-product__seller-address">Мытищи, Ярославское шоссе, д.5, кв.1, зеленый звонок</address>
+										<a href="#" class="category-product__seller-link"></a>
+									</div>
+								</div>
+							</div>
+							<div class="category-product">
+								<div class="category-product__pic"></div>
+								<div class="category-product__main">
+									<div class="category-product__name">
+										<a href="#">Дифференциальный автомат АД-32 1P+N 50А/30мА (шт.)</a>
+									</div>
+									<div class="category-product__price">
+										<span class="category-product__price-value">325,88 &#8381;</span>
+										<span class="label label--red">-15%</span>
+									</div>
+									<div class="category-product__draft">
+										<span class="category-product__draft-main">Если добавить в черновик 102-022018</span>
+									</div>
+									<div class="category-product__stock category-product__stock--unavailable">
+										Под заказ
+									</div>
+									<form action="">
+										<div class="category-product__toCart">
+											<div class="category-product__toCart-spinner">
+												<input type="text" name="" id="" class="input-text js-category-spinner" min="1" max="100" value="1" data-mask="000">
+											</div>
+											<button class="btn btn--green btn--middle">В черновик</button>
+										</div>
+									</form>
+								</div>
+								<div class="category-product__info">
+									<div class="category-product__details">
+										<div class="category-product__details-item category-product__details-item--available">Есть самовывоз</div>
+										<div class="category-product__details-item">Заказ от 15 000 &#8381;</div>
+										<div class="category-product__details-item">Производитель</div>
+										<div class="category-product__details-item">Оплата по счёту</div>
+										<div class="category-product__details-item">Предложение от 12.12.12</div>
+									</div>
+									<div class="category-product__seller">
+										<p class="category-product__seller-name">Элком-Электро, склад Мытыщи бокс 3, ангар 4, аэродром №5</p>
+										<address class="category-product__seller-address">Мытищи, Ярославское шоссе, д.5, кв.1, зеленый звонок</address>
+										<a href="#" class="category-product__seller-link"></a>
+									</div>
+								</div>
+							</div>
+							<div class="category-product">
+								<div class="category-product__pic">
+									<a href="#"><img src="i/product/product-small.jpg" alt="Дифференциальный автомат АД-32 1P+N 50А/30мА (хар. C, AC,электронный, защита 270В) 4,5кА EKF PROxima | DA32-50-30-pro |EKF (шт.)" class="js-lazy-load"></a>
+								</div>
+								<div class="category-product__main">
+									<div class="category-product__name">
+										<a href="#">Дифференциальный автомат АД-32 1P+N 50А/30мА (хар. C, AC,электронный, защита 270В) 4,5кА EKF PROxima | DA32-50-30-pro |EKF (шт.)</a>
+									</div>
+									<div class="category-product__price">
+										<span class="category-product__price-value">12 580,12 &#8381;</span>
+									</div>
+									<div class="category-product__stock">
+										В наличии: 125 643
+									</div>
+									<form action="">
+										<div class="category-product__toCart">
+											<div class="category-product__toCart-spinner">
+												<input type="text" name="" id="" class="input-text js-category-spinner" min="1" max="100" value="1" data-mask="000">
+											</div>
+											<button class="btn btn--blue btn--middle">В Корзине</button>
+										</div>
+									</form>
+								</div>
+								<div class="category-product__info">
+									<div class="category-product__details">
+										<div class="category-product__details-item category-product__details-item--available">Есть самовывоз</div>
+										<div class="category-product__details-item category-product__details-item--available">Заказ от 15 000 &#8381;</div>
+										<div class="category-product__details-item">Производитель</div>
+										<div class="category-product__details-item">Оплата по счёту</div>
+										<div class="category-product__details-item">Предложение от 12.12.12</div>
+									</div>
+									<div class="category-product__seller">
+										<p class="category-product__seller-name">Элком-Электро, склад Мытыщи бокс 3, ангар 4, аэродром №5</p>
+										<address class="category-product__seller-address">Мытищи, Ярославское шоссе, д.5, кв.1, зеленый звонок</address>
+										<a href="#" class="category-product__seller-link"></a>
+									</div>
+								</div>
+							</div>
+							<div class="category-product">
+								<div class="category-product__pic">
+									<a href="#"><img src="i/product/product-small.jpg" alt="Дифференциальный автомат АД-32 1P+N 50А/30мА (хар. C, AC,электронный, защита 270В) 4,5кА EKF PROxima | DA32-50-30-pro |EKF (шт.)" class="js-lazy-load"></a>
+								</div>
+								<div class="category-product__main">
+									<div class="category-product__name">
+										<a href="#">Дифференциальный автомат АД-32 1P+N 50А/30мА (хар. C, AC,электронный, защита 270В) 4,5кА EKF PROxima | DA32-50-30-pro |EKF (шт.)</a>
+									</div>
+									<div class="category-product__price">
+										<span class="category-product__price-value">12 580,12 &#8381;</span>
+									</div>
+									<div class="category-product__stock">
+										В наличии: 125 643
+									</div>
+									<form action="">
+										<div class="category-product__toCart">
+											<div class="category-product__toCart-spinner">
+												<input type="text" name="" id="" class="input-text js-category-spinner" min="1" max="100" value="1" data-mask="000">
+											</div>
+											<button class="btn btn--blue btn--middle">В черновике</button>
+										</div>
+									</form>
+								</div>
+								<div class="category-product__info">
+									<div class="category-product__details">
+										<div class="category-product__details-item category-product__details-item--available">Есть самовывоз</div>
+										<div class="category-product__details-item category-product__details-item--available">Заказ от 15 000 &#8381;</div>
+										<div class="category-product__details-item">Производитель</div>
+										<div class="category-product__details-item">Оплата по счёту</div>
+										<div class="category-product__details-item">Предложение от 12.12.12</div>
+									</div>
+									<div class="category-product__seller">
+										<p class="category-product__seller-name">Элком-Электро, склад Мытыщи бокс 3, ангар 4, аэродром №5</p>
+										<address class="category-product__seller-address">Мытищи, Ярославское шоссе, д.5, кв.1, зеленый звонок</address>
+										<a href="#" class="category-product__seller-link"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="category__pagination">
+							<div class="pagination">
+								<button class="btn btn--green btn--large btn--fullwidth pagination__loadmore">Показать ещё 25</button>
+								<a href="#" class="btn btn--large pagination__item pagination__item--prev" role="button" disabled></a>
+								<a href="#" class="btn btn--large pagination__item pagination__item--current" role="button">1</a>
+								<a href="#" class="btn btn--large pagination__item" role="button">2</a>
+								<a href="#" class="btn btn--large pagination__item" role="button">3</a>
+								<a href="#" class="btn btn--large pagination__item" role="button">4</a>
+								<span class="btn btn--large pagination__item pagination__item--space">...</span>
+								<a href="#" class="btn btn--large pagination__item" role="button">20</a>
+								<a href="#" class="btn btn--large pagination__item pagination__item--next" role="button"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer class="footer">
+		<div class="container">
+			<div class="footer__nav">
+				<nav class="footer__nav-block">
+					<div class="footer__nav-title">Заказчикам</div>
+					<a href="#" class="footer__nav-item">Поиск товаров</a>
+					<a href="#" class="footer__nav-item">Отправка заказа</a>
+					<a href="#" class="footer__nav-item">Цены</a>
+					<a href="#" class="footer__nav-item">Актуальность информации</a>
+				</nav>
+				<nav class="footer__nav-block">
+					<div class="footer__nav-title">Поставщикам</div>
+					<a href="#" class="footer__nav-item">Как принимать заказы</a>
+					<a href="#" class="footer__nav-item">Приглашение к сотрудничеству</a>
+				</nav>
+				<nav class="footer__nav-block">
+					<div class="footer__nav-title">Производителям</div>
+					<a href="#" class="footer__nav-item">Продвижение товаров в поиске</a>
+					<a href="#" class="footer__nav-item">Приглашение к сотрудничеству</a>
+				</nav>
+				<nav class="footer__nav-block">
+					<div class="footer__nav-title">Правовая информация</div>
+					<a href="#" class="footer__nav-item">Пользовательское соглашение</a>
+					<a href="#" class="footer__nav-item">Политика конфиденциальности</a>
+				</nav>
+			</div>
+			<div class="footer__general">
+				<div class="footer__logo">
+					<a href="#">Моё Снабжение</a>
+				</div>
+				<div class="footer__slogan">Поиск  строительных и промышленных товаров</div>
+				<div class="footer__phone">
+					<a href="tel:+74956459530">+7 495 645 95 30</a>
+				</div>
+				<div class="footer__email">
+					<a href="mailto:info@mysupply.ru">info@mysupply.ru</a>
+				</div>
+				<div class="footer__social">
+					<a href="#" class="footer__social-item"><svg><use xlink:href="#icon-vk"></use></svg></a>
+					<a href="#" class="footer__social-item"><svg><use xlink:href="#icon-instagram"></use></svg></a>
+					<a href="#" class="footer__social-item"><svg><use xlink:href="#icon-fb"></use></svg></a>
+					<a href="#" class="footer__social-item"><svg><use xlink:href="#icon-gplus"></use></svg></a>
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0" height="0">
+						<symbol id="icon-vk" viewBox="0 0 576 512"><path d="M545 117.7c3.7-12.5 0-21.7-17.8-21.7h-58.9c-15 0-21.9 7.9-25.6 16.7 0 0-30 73.1-72.4 120.5-13.7 13.7-20 18.1-27.5 18.1-3.7 0-9.4-4.4-9.4-16.9V117.7c0-15-4.2-21.7-16.6-21.7h-92.6c-9.4 0-15 7-15 13.5 0 14.2 21.2 17.5 23.4 57.5v86.8c0 19-3.4 22.5-10.9 22.5-20 0-68.6-73.4-97.4-157.4-5.8-16.3-11.5-22.9-26.6-22.9H38.8c-16.8 0-20.2 7.9-20.2 16.7 0 15.6 20 93.1 93.1 195.5C160.4 378.1 229 416 291.4 416c37.5 0 42.1-8.4 42.1-22.9 0-66.8-3.4-73.1 15.4-73.1 8.7 0 23.7 4.4 58.7 38.1 40 40 46.6 57.9 69 57.9h58.9c16.8 0 25.3-8.4 20.4-25-11.2-34.9-86.9-106.7-90.3-111.5-8.7-11.2-6.2-16.2 0-26.2.1-.1 72-101.3 79.4-135.6z"/></symbol>
+						<symbol id="icon-instagram" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></symbol>
+						<symbol id="icon-fb" viewBox="0 0 264 512"><path d="M76.7 512V283H0v-91h76.7v-71.7C76.7 42.4 124.3 0 193.8 0c33.3 0 61.9 2.5 70.2 3.6V85h-48.2c-37.8 0-45.1 18-45.1 44.3V192H256l-11.7 91h-73.6v229"/></symbol>
+						<symbol id="icon-gplus" viewBox="0 0 640 512"><path d="M386.061 228.496c1.834 9.692 3.143 19.384 3.143 31.956C389.204 370.205 315.599 448 204.8 448c-106.084 0-192-85.915-192-192s85.916-192 192-192c51.864 0 95.083 18.859 128.611 50.292l-52.126 50.03c-14.145-13.621-39.028-29.599-76.485-29.599-65.484 0-118.92 54.221-118.92 121.277 0 67.056 53.436 121.277 118.92 121.277 75.961 0 104.513-54.745 108.965-82.773H204.8v-66.009h181.261zm185.406 6.437V179.2h-56.001v55.733h-55.733v56.001h55.733v55.733h56.001v-55.733H627.2v-56.001h-55.733z"/></symbol>
+					</svg>
+				</div>
+			</div>
+			<div class="footer__copyright">
+				&copy; 2016-2018 ООО «Моё Снабжение»
+			</div>
+		</div>
+	</footer>
+	<div class="modal modal-city" id="modalCity">
+		<div class="modal-city__title">Местоположение</div>
+		<div class="modal-city__descr">
+			Используется для сортировки результатов поиска по удалённости от Вашего местоположения при поиске ближайших поставщиков. Введите Ваш адрес или обозначьте ближайшую точку на карте.
+		</div>
+		<div class="modal-city__main">
+			<button class="btn btn--large modal-city__main-address"><svg><use xlink:href="#icon-locate-arrow"></use></svg>Определить</button>
+			<input type="text" name="" id="jsCityAddress" class="input-text input-text--large" placeholder="Введите адрес">
+			<button class="btn btn--large btn--green">ОК</button>
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0" height="0">
+				<symbol id="icon-locate-arrow" viewBox="0 0 512 512"><path d="M443.683 4.529L27.818 196.418C-18.702 217.889-3.39 288 47.933 288H224v175.993c0 51.727 70.161 66.526 91.582 20.115L507.38 68.225c18.905-40.961-23.752-82.133-63.697-63.696z"/></symbol>
+			</svg>
+		</div>
+		<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+		<div class="modal-city__map" id="modalCityMap"></div>
+		<script>
+			ymaps.ready(init);
+			function init() {
+				var geolocation = ymaps.geolocation,
+				myPlacemark,
+				myMap = new ymaps.Map('modalCityMap', {
+					center: [55, 34],
+					zoom: 14,
+				}, {
+					searchControlProvider: 'yandex#search'
+				});
+				geolocation.get({
+					provider: 'yandex',
+					mapStateAutoApply: true
+				}).then(function (result) {
+					myMap.geoObjects.add(result.geoObjects);
+					showAddress(firstGeoObject.getAddressLine());
+					getAddress(coords);
+				});
+				myMap.events.add('click', function (e) {
+					var coords = e.get('coords');
+					// Если метка уже создана – просто передвигаем ее.
+					if (myPlacemark) {
+						myPlacemark.geometry.setCoordinates(coords);
+					}
+					// Если нет – создаем.
+					else {
+						myPlacemark = createPlacemark(coords);
+						myMap.geoObjects.add(myPlacemark);
+						// Слушаем событие окончания перетаскивания на метке.
+						myPlacemark.events.add('dragend', function () {
+							getAddress(myPlacemark.geometry.getCoordinates());
+						});
+					}
+					getAddress(coords);
+				});
+				// Создание метки.
+				function createPlacemark(coords) {
+					return new ymaps.Placemark(coords, {
+						iconCaption: 'поиск...'
+					}, {
+						preset: 'islands#violetDotIconWithCaption',
+						draggable: true
+					});
+				}
+				// Определяем адрес по координатам (обратное геокодирование).
+				function getAddress(coords) {
+					myPlacemark.properties.set('iconCaption', 'поиск...');
+					ymaps.geocode(coords).then(function (res) {
+						var firstGeoObject = res.geoObjects.get(0);
+						myPlacemark.properties.set({
+							// Формируем строку с данными об объекте.
+							iconCaption: [
+								// Название населенного пункта или вышестоящее административно-территориальное образование.
+								firstGeoObject.getLocalities().length ? firstGeoObject.getLocalities() : firstGeoObject.getAdministrativeAreas(),
+								// Получаем путь до топонима, если метод вернул null, запрашиваем наименование здания.
+								firstGeoObject.getThoroughfare() || firstGeoObject.getPremise()
+							].filter(Boolean).join(', '),
+							// В качестве контента балуна задаем строку с адресом объекта.
+							balloonContent: firstGeoObject.getAddressLine(),
+						});
+						console.log(firstGeoObject.getAddressLine());
+					});
+				}
+			}
+		</script>
+	</div>
+	<script>window.jQuery || document.write('<script src="js/jquery.js"><\/script>')</script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
