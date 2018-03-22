@@ -151,6 +151,7 @@ img
 			box-shadow 0 2px 3px rgba(#222, .1)
 			transition all .2s
 			&:focus
+				outline none
 				box-shadow 0 3px 6px rgba(#222, .2)
 		&-btn
 			position absolute
@@ -376,6 +377,7 @@ img
 			background-color #888
 			content ''
 		&:last-child
+			color #444
 			margin-right 0
 			&::after
 				display none
@@ -841,6 +843,262 @@ img
 			color #444
 			line-height 2.1rem
 /*  </category>  */
+
+/*  <product>  */
+.product
+	&__general
+		background-color #fff
+		padding-bottom 85px
+		.breadcrumbs
+			padding-top 18px
+			margin 0 0 18px
+	&__main
+		display flex
+		margin-top 40px
+	&__photos
+		display flex
+	&-photos
+		&__thumbs
+			flex-shrink 0
+			position relative
+			width 50px
+			height 300px
+			padding 35px 0
+			&-wrap
+				display flex
+				flex-direction column
+				overflow hidden
+				height 100%
+			&-arrow
+				position absolute
+				right 0
+				left 0
+				height 35px
+				&:hover
+					&::before
+						border-color #444
+				&::before
+					position absolute
+					top 50%
+					left 50%
+					width 12px
+					height @width
+					border solid #888
+					content ''
+					transform-origin 25% top
+					transition all .2s
+				&--up
+					top 0
+					&::before
+						border-width 2px 2px 0 0
+						transform rotate(-45deg) translate(-50%, -50%)
+				&--down
+					bottom 0
+					&::before
+						border-width 0 2px 2px 0
+						transform rotate(45deg) translate(-50%, -50%)
+			&-item
+				width 50px
+				height @width
+				background-color #f5f5f5
+				margin-bottom 10px
+				&:Last-of-type
+					margin-bottom 0
+				img
+					object-fit cover
+					width 100%
+					height @width
+		&__main
+			width 325px
+			padding 0 50px
+	&__info
+		flex 1
+	&-info
+		&__name
+			color #222
+			font-weight 900
+			font-size 3rem
+			margin 0 0 15px
+		&__code
+			color #222
+			font-weight 500
+			margin 15px 0
+		&__price
+			color #222
+			font-weight 500
+			font-size 3rem
+			margin 15px 0 10px
+		&__relevance
+			margin 10px 0 18px
+			&-main
+				display inline-flex
+				font-size 1.1rem
+				background-color #fafafa
+				border 1px solid #ddd
+				border-radius 2px
+				padding 8px 9px
+		&__action
+			margin 18px 0 20px
+			.btn
+				padding 0 18px
+				&:first-child
+					margin-right 14px
+				&.btn--green
+					padding 0 38px
+		&__offer
+			line-height 2.1rem
+			margin 20px 0
+			p
+				margin 0
+	&__offers
+		background-color #fff
+		border-radius 2px
+		padding 0 28px
+		margin 35px 0 55px
+		box-shadow 0 5px 10px rgba(#000, .1)
+		&-all
+			text-align center
+			padding 24px 0 28px
+	&-offers
+		&__table
+			width 100%
+			th
+				color #222
+				font-weight 900
+				font-size 2.3rem
+				text-align left
+				border-bottom 1px solid #eee
+				padding 24px 0
+			td
+				vertical-align top
+				border-bottom 1px solid #eee
+				padding 20px
+				&:first-child
+					padding-left 0
+				&:last-child
+					padding-right 0
+		&__item
+			width 33%
+			&:last-child
+				width 1%
+			&-name
+				color #222
+				font-weight 900
+				font-size 1.7rem
+				text-decoration none
+				a:hover&
+					text-decoration underline
+			&-city
+				margin-top 4px
+			&-price
+				vertical-align middle
+				color #222
+				font-weight 500
+				font-size 2.3rem
+				margin 0 5px 8px
+			&-tip
+				vertical-align middle
+				text-decoration-style dotted
+				margin-left 5px
+			&-draft
+				display inline-block
+				font-size 1.1rem
+				background-color #fafafa
+				border 1px solid #ddd
+				border-radius 2px
+				padding 8px 9px
+				margin 8px 0
+			&-unit
+				margin 5px 0
+			&-stock
+				color #2cc81e
+				&--unavailable
+					color #444
+			&-spinner
+				position relative
+				&::before
+					position absolute
+					top 0
+					right 0
+					bottom 0
+					z-index 2
+					width 29px
+					border 1px solid #ddd
+					border-radius 0 2px 2px 0
+					content ''
+				.input-text
+					width calc(100% - 28px)
+					text-align center
+					&:hover
+						position relative
+						z-index 10
+				& + .btn
+					white-space nowrap
+					padding 0 16px
+					margin-top 4px
+		&__details
+			&-item
+				margin-bottom 5px
+				&:last-child
+					margin-bottom 0
+				a
+					color #888
+	&__map
+		background-color #fff
+		border-radius 2px
+		padding 24px 28px 28px
+		margin 55px 0 42px
+		box-shadow 0 5px 10px rgba(#000, .1)
+		&-title
+			color #222
+			font-weight 900
+			font-size 2.3rem
+			margin-bottom 20px
+		&-main
+			height 565px
+	&__extra
+		background-color #fff
+		border-radius 2px
+		padding 24px 28px 28px
+		margin 42px 0 28px
+		box-shadow 0 5px 10px rgba(#000, .1)
+		&-title
+			color #222
+			font-weight 900
+			font-size 2.3rem
+			border-bottom 1px solid #eee
+			padding-bottom 20px
+	&-extra
+		&__table
+			width 100%
+			td
+				border-bottom 1px dashed #eee
+				padding 20px
+				&:first-child
+					color #888
+					padding-left 0
+				&:last-child
+					padding-right 0
+	&__description
+		background-color #fff
+		border-radius 2px
+		padding 24px 28px 28px
+		margin 28px 0
+		box-shadow 0 5px 10px rgba(#000, .1)
+		&-title
+			color #222
+			font-weight 900
+			font-size 2.3rem
+			border-bottom 1px solid #eee
+			padding-bottom 20px
+			margin-bottom 15px
+		&-text
+			line-height 2.8rem
+			h3
+				color #222
+				font-weight 900
+				font-size 1.7rem
+/*  </product>  */
 
 /*  <modal-city>  */
 .modal-city
