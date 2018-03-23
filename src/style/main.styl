@@ -935,10 +935,16 @@ img
 			font-weight 500
 			margin 15px 0
 		&__price
-			color #222
-			font-weight 500
-			font-size 3rem
 			margin 15px 0 10px
+			&-main
+				vertical-align middle
+				color #222
+				font-weight 500
+				font-size 3rem
+				margin-right 5px
+			&-tip
+				text-decoration-style dotted
+				margin-left 5px
 		&__relevance
 			margin 10px 0 18px
 			&-main
@@ -961,6 +967,21 @@ img
 			margin 20px 0
 			p
 				margin 0
+		&__shipper
+			&-item
+				margin-bottom 5px
+				&:last-child
+					margin-bottom 0
+			&-details
+				color #888
+				text-decoration none
+				a:hover&
+					text-decoration underline
+		&__wrap
+			display flex
+			&-col
+				width 315px
+				margin -15px 75px 0 0
 	&__offers
 		background-color #fff
 		border-radius 2px
