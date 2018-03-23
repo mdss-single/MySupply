@@ -23,20 +23,20 @@
 					<div class="product__main">
 						<div class="product__photos">
 							<div class="product-photos__thumbs">
-								<a href="#" class="product-photos__thumbs-arrow product-photos__thumbs-arrow--up"></a>
-								<a href="#" class="product-photos__thumbs-arrow product-photos__thumbs-arrow--down"></a>
-								<div class="product-photos__thumbs-wrap">
-									<a href="#" class="product-photos__thumbs-item"><img src="i/product/product-small.jpg" alt=""></a>
-									<a href="#" class="product-photos__thumbs-item"><img src="i/product/product-small.jpg" alt=""></a>
-									<a href="#" class="product-photos__thumbs-item"><img src="i/product/product-small.jpg" alt=""></a>
-									<a href="#" class="product-photos__thumbs-item"><img src="i/product/product-small.jpg" alt=""></a>
-									<a href="#" class="product-photos__thumbs-item"><img src="i/product/product-small.jpg" alt=""></a>
-									<a href="#" class="product-photos__thumbs-item"><img src="i/product/product-small.jpg" alt=""></a>
-									<a href="#" class="product-photos__thumbs-item"><img src="i/product/product-small.jpg" alt=""></a>
+								<a href="#" class="product-photos__thumbs-arrow product-photos__thumbs-arrow--up js-product-gallery-arrow"></a>
+								<a href="#" class="product-photos__thumbs-arrow product-photos__thumbs-arrow--down js-product-gallery-arrow"></a>
+								<div class="product-photos__thumbs-wrap js-product-gallery">
+									<a href="i/product/product-big.jpg" class="product-photos__thumbs-item product-photos__thumbs-item--active" data-photo-big="i/product/product-big.jpg"><img src="i/product/product-small.jpg" alt=""></a>
+									<a href="i/product/product-big.jpg" class="product-photos__thumbs-item" data-photo-big="i/product/product-small.jpg"><img src="i/product/product-small.jpg" alt=""></a>
+									<a href="i/product/product-big.jpg" class="product-photos__thumbs-item" data-photo-big="i/product/product-big.jpg"><img src="i/product/product-small.jpg" alt=""></a>
+									<a href="i/product/product-big.jpg" class="product-photos__thumbs-item" data-photo-big="i/product/product-big.jpg"><img src="i/product/product-small.jpg" alt=""></a>
+									<a href="i/product/product-big.jpg" class="product-photos__thumbs-item" data-photo-big="i/product/product-big.jpg"><img src="i/product/product-small.jpg" alt=""></a>
+									<a href="i/product/product-big.jpg" class="product-photos__thumbs-item" data-photo-big="i/product/product-big.jpg"><img src="i/product/product-small.jpg" alt=""></a>
+									<a href="i/product/product-big.jpg" class="product-photos__thumbs-item" data-photo-big="i/product/product-big.jpg"><img src="i/product/product-small.jpg" alt=""></a>
 								</div>
 							</div>
 							<div class="product-photos__main">
-								<a href="i/product/product-big.jpg"><img src="i/product/product-big.jpg" alt="Дифференциальный автомат АД12 2Р 16А 100мА ИЭК MAD10-2-016-C-100 (шт.)"></a>
+								<a href="i/product/product-big.jpg" class="js-product-photo-big"><img src="i/product/product-big.jpg" alt="Дифференциальный автомат АД12 2Р 16А 100мА ИЭК MAD10-2-016-C-100 (шт.)"></a>
 							</div>
 						</div>
 						<div class="product__info">
@@ -172,76 +172,77 @@
 				<div class="product__map">
 					<div class="product__map-title">Предложения на карте</div>
 					<script src="https://api-maps.yandex.ru/2.1/?lang=ru-RU" type="text/javascript"></script>
+					<!-- точки для карты в данный момент берутся из файла js/data.json. Путь естественно можно поменять, пример структуры в том файле -->
 					<div class="product__map-main" id="productOffersMap"></div>
 				</div>
 				<div class="product__extra">
 					<div class="product__extra-title">Характеристики</div>
-					<table class="product-extra__table">
-						<tr>
-							<td>Количество полюсов:</td>
-							<td>2</td>
-						</tr>
-						<tr>
-							<td>Количество защищенных полюсов:</td>
-							<td>2</td>
-						</tr>
-						<tr>
-							<td>Номинальный ток:</td>
-							<td>16 А</td>
-						</tr>
-						<tr>
-							<td>Номин раб напряжение:</td>
-							<td>230 В</td>
-						</tr>
-						<tr>
-							<td>Отключающая способность по EN 60898:</td>
-							<td>4,5 кА</td>
-						</tr>
-						<tr>
-							<td>Номин откл диф ток:</td>
-							<td>100 мА</td>
-						</tr>
-						<tr>
-							<td>Тип тока утечки:</td>
-							<td>Переменный (AC)</td>
-						</tr>
-						<tr>
-							<td>Характеристика срабатывания - кривая тока:</td>
-							<td>C</td>
-						</tr>
-						<tr>
-							<td>Ширина по количеству модульных расстояний:</td>
-							<td>53,4 мм</td>
-						</tr>
-						<tr>
-							<td>Макс сечение входящего кабеля:</td>
-							<td>35 мм</td>
-						</tr>
-						<tr>
-							<td>Номин импульсное выдерживаемое напряжение: </td>
-							<td>4 кВ</td>
-						</tr>
-						<tr>
-							<td>Тип монтажа:</td>
-							<td>на DIN-рейку</td>
-						</tr>
-						<tr>
-							<td>Частота:</td>
-							<td>50 Гц</td>
-						</tr>
-						<tr>
-							<td>Степень защиты - IP:</td>
-							<td>IP20</td>
-						</tr>
-						<tr>
-							<td>Срок службы, Лет:</td>
-							<td>не менее 15</td>
-						</tr>
-						<tr>
-							<td>Гарантийный срок, Лет:</td>
-							<td>5</td>
-						</tr>
-					</table>
+					<div class="product-extra__table">
+						<div class="product-extra__item">
+							<span>Количество полюсов:</span>
+							<span>2</span>
+						</div>
+						<div class="product-extra__item">
+							<span>Количество защищенных полюсов:</span>
+							<span>2</span>
+						</div>
+						<div class="product-extra__item">
+							<span>Номинальный ток:</span>
+							<span>16 А</span>
+						</div>
+						<div class="product-extra__item">
+							<span>Номин раб напряжение:</span>
+							<span>230 В</span>
+						</div>
+						<div class="product-extra__item">
+							<span>Отключающая способность по EN 60898:</span>
+							<span>4,5 кА</span>
+						</div>
+						<div class="product-extra__item">
+							<span>Номин откл диф ток:</span>
+							<span>100 мА</span>
+						</div>
+						<div class="product-extra__item">
+							<span>Тип тока утечки:</span>
+							<span>Переменный (AC)</span>
+						</div>
+						<div class="product-extra__item">
+							<span>Характеристика срабатывания - кривая тока:</span>
+							<span>C</span>
+						</div>
+						<div class="product-extra__item">
+							<span>Ширина по количеству модульных расстояний:</span>
+							<span>53,4 мм</span>
+						</div>
+						<div class="product-extra__item">
+							<span>Макс сечение входящего кабеля:</span>
+							<span>35 мм</span>
+						</div>
+						<div class="product-extra__item">
+							<span>Номин импульсное выдерживаемое напряжение: </span>
+							<span>4 кВ</span>
+						</div>
+						<div class="product-extra__item">
+							<span>Тип монтажа:</span>
+							<span>на DIN-рейку</span>
+						</div>
+						<div class="product-extra__item">
+							<span>Частота:</span>
+							<span>50 Гц</span>
+						</div>
+						<div class="product-extra__item">
+							<span>Степень защиты - IP:</span>
+							<span>IP20</span>
+						</div>
+						<div class="product-extra__item">
+							<span>Срок службы, Лет:</span>
+							<span>не менее 15</span>
+						</div>
+						<div class="product-extra__item">
+							<span>Гарантийный срок, Лет:</span>
+							<span>5</span>
+						</div>
+					</div>
 				</div>
 				<div class="product__description">
 					<div class="product__description-title">Описание</div>

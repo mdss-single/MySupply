@@ -76,9 +76,32 @@
 		}
 	});
 
+	// product photos
+	productGallery();
+	$('.js-product-photo-big').fancybox({
+		lang : 'ru',
+		i18n : {
+			'ru' : {
+				FULL_SCREEN: 'Во весь экран',
+				CLOSE: 'Закрыть',
+				ERROR: 'Невозможно загрузить данные. Попробуйте еще раз.',
+			}
+		},
+		loop : true,
+		buttons : [
+			'fullScreen',
+			'thumbs',
+			'close'
+		],
+		image: true,
+		thumbs : {
+			autoStart : true
+		}
+	});
+
 	// product offer map
-	ymaps.ready(init);
-	function init () {
+	ymaps.ready(productOffersMap);
+	function productOffersMap () {
 		var myMap = new ymaps.Map('productOffersMap', {
 			center: [55.76, 37.64],
 			zoom: 10
@@ -102,6 +125,95 @@
 		}).done(function(data) {
 			objectManager.add(data);
 		});
+	}
+
+	// choose city map
+	ymaps.ready(chooseCity);
+	function chooseCity() {
+		var geolocation = ymaps.geolocation,
+		myMap = new ymaps.Map('modalCityMap', {
+			center: [55, 34],
+			zoom: 14,
+		}, {
+			searchControlProvider: 'yandex#search'
+		});
+		geolocation.get({
+			provider: 'yandex',
+			mapStateAutoApply: true
+		}).then(function (result) {
+			myMap.geoObjects.add(result.geoObjects);
+			showAddress(firstGeoObject.getAddressLine());
+			getAddress(coords);
+		});
+		$('.js-city-get').on('click', function(e) {
+			e.preventDefault();
+			navigator.geolocation.getCurrentPosition(function(position) {
+				// Get the coordinates of the current possition.
+				var lat = position.coords.latitude;
+				var lng = position.coords.longitude;
+				//myMap.setCenter([lat, lng]);
+				myMap.panTo([lat, lng], {
+					delay: 1500
+				});
+			});
+		});
+		$('.js-city-manual').on('keyup', function() {
+			var thisVal = $(this).val();
+			ymaps.geocode(thisVal, {
+				results: 1
+			}).then(function (res) {
+				// Выбираем первый результат геокодирования.
+				var firstGeoObject = res.geoObjects.get(0),
+				// Координаты геообъекта.
+				coords = firstGeoObject.geometry.getCoordinates(),
+				// Область видимости геообъекта.
+				bounds = firstGeoObject.properties.get('boundedBy');
+				firstGeoObject.options.set('preset', 'islands#darkBlueDotIconWithCaption');
+				// Получаем строку с адресом и выводим в иконке геообъекта.
+				firstGeoObject.properties.set('iconCaption', firstGeoObject.getAddressLine());
+				// Добавляем первый найденный геообъект на карту.
+				myMap.geoObjects.add(firstGeoObject);
+				// Масштабируем карту на область видимости геообъекта.
+				myMap.setBounds(bounds, {
+					// Проверяем наличие тайлов на данном масштабе.
+					checkZoomRange: true
+				});
+			});
+		});
+	}
+
+	function productGallery() {
+		var $carousel = $('.js-product-gallery');
+		if ($carousel.length) {
+			var $carouselCells = $carousel.find('.product-photos__thumbs-item');
+			var navTop  = $carousel.position().top;
+			var navCellHeight = $carouselCells.height();
+			var navHeight = $carousel.height();
+			$carousel.on( 'click', '.product-photos__thumbs-item', function( event ) {
+				event.preventDefault();
+				var index = $( event.currentTarget ).index();
+				var thisBig = $(this).data('photo-big');
+				$(this).addClass('product-photos__thumbs-item--active').siblings().removeClass('product-photos__thumbs-item--active');
+				$('.js-product-photo-big').attr('href', thisBig).addClass('fadeIn');
+				$('.js-product-photo-big img').attr('src', thisBig);
+				setTimeout(function(){
+					$('.js-product-photo-big').removeClass('fadeIn');
+				}, 100);
+				// scroll nav
+				var scrollY = $(this).position().top + $carousel.scrollTop() - ( navHeight + navCellHeight) / 2;
+				$carousel.animate({
+					scrollTop: scrollY
+				});
+			});
+			$('.js-product-gallery-arrow').on('click', function(e) {
+				e.preventDefault();
+				if ($(this).hasClass('product-photos__thumbs-arrow--up')) {
+					$('.js-product-gallery').find('.product-photos__thumbs-item--active').prev().click();
+				} else {
+					$('.js-product-gallery').find('.product-photos__thumbs-item--active').next().click();
+				}
+			});
+		}
 	}
 
 	function inputWidth(elem, minW, maxW) {

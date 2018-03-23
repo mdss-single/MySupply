@@ -192,8 +192,8 @@
 			Используется для сортировки результатов поиска по удалённости от Вашего местоположения при поиске ближайших поставщиков. Введите Ваш адрес или обозначьте ближайшую точку на карте.
 		</div>
 		<div class="modal-city__main">
-			<button class="btn btn--large modal-city__main-address"><svg><use xlink:href="#icon-locate-arrow"></use></svg>Определить</button>
-			<input type="text" name="" id="jsCityAddress" class="input-text input-text--large" placeholder="Введите адрес">
+			<button class="btn btn--large js-city-get modal-city__main-address"><svg><use xlink:href="#icon-locate-arrow"></use></svg>Определить</button>
+			<input type="text" name="" id="jsCityAddress" class="input-text input-text--large js-city-manual" placeholder="Введите адрес">
 			<button class="btn btn--large btn--green">ОК</button>
 			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0" height="0">
 				<symbol id="icon-locate-arrow" viewBox="0 0 512 512"><path d="M443.683 4.529L27.818 196.418C-18.702 217.889-3.39 288 47.933 288H224v175.993c0 51.727 70.161 66.526 91.582 20.115L507.38 68.225c18.905-40.961-23.752-82.133-63.697-63.696z"/></symbol>
@@ -201,72 +201,6 @@
 		</div>
 		<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 		<div class="modal-city__map" id="modalCityMap"></div>
-		<script>
-			ymaps.ready(init);
-			function init() {
-				var geolocation = ymaps.geolocation,
-				myPlacemark,
-				myMap = new ymaps.Map('modalCityMap', {
-					center: [55, 34],
-					zoom: 14,
-				}, {
-					searchControlProvider: 'yandex#search'
-				});
-				geolocation.get({
-					provider: 'yandex',
-					mapStateAutoApply: true
-				}).then(function (result) {
-					myMap.geoObjects.add(result.geoObjects);
-					showAddress(firstGeoObject.getAddressLine());
-					getAddress(coords);
-				});
-				myMap.events.add('click', function (e) {
-					var coords = e.get('coords');
-					// Если метка уже создана – просто передвигаем ее.
-					if (myPlacemark) {
-						myPlacemark.geometry.setCoordinates(coords);
-					}
-					// Если нет – создаем.
-					else {
-						myPlacemark = createPlacemark(coords);
-						myMap.geoObjects.add(myPlacemark);
-						// Слушаем событие окончания перетаскивания на метке.
-						myPlacemark.events.add('dragend', function () {
-							getAddress(myPlacemark.geometry.getCoordinates());
-						});
-					}
-					getAddress(coords);
-				});
-				// Создание метки.
-				function createPlacemark(coords) {
-					return new ymaps.Placemark(coords, {
-						iconCaption: 'поиск...'
-					}, {
-						preset: 'islands#violetDotIconWithCaption',
-						draggable: true
-					});
-				}
-				// Определяем адрес по координатам (обратное геокодирование).
-				function getAddress(coords) {
-					myPlacemark.properties.set('iconCaption', 'поиск...');
-					ymaps.geocode(coords).then(function (res) {
-						var firstGeoObject = res.geoObjects.get(0);
-						myPlacemark.properties.set({
-							// Формируем строку с данными об объекте.
-							iconCaption: [
-								// Название населенного пункта или вышестоящее административно-территориальное образование.
-								firstGeoObject.getLocalities().length ? firstGeoObject.getLocalities() : firstGeoObject.getAdministrativeAreas(),
-								// Получаем путь до топонима, если метод вернул null, запрашиваем наименование здания.
-								firstGeoObject.getThoroughfare() || firstGeoObject.getPremise()
-							].filter(Boolean).join(', '),
-							// В качестве контента балуна задаем строку с адресом объекта.
-							balloonContent: firstGeoObject.getAddressLine(),
-						});
-						console.log(firstGeoObject.getAddressLine());
-					});
-				}
-			}
-		</script>
 	</div>
 	<script>window.jQuery || document.write('<script src="js/jquery.js"><\/script>')</script>
 	<script src="js/plugins.js"></script>
