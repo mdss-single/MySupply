@@ -99,87 +99,112 @@
 		}
 	});
 
+	// dialog
+	$('.js-dialog').on('click', function(e) {
+		e.preventDefault();
+		e.stopPropagation();
+		var $this = $(this),
+		thisTarget = $this.data('target'),
+		thisPos = $this.position(),
+		thisWidth = $this.width(),
+		thisHeight = $this.height();
+		$(thisTarget).css({
+			'top': +thisPos.top + thisHeight,
+			'left': thisPos.left
+		}).toggleClass('dialog--active');
+		// close dialog
+		$(document).click(function(e) {
+			if (!$(e.target).closest('.dialog').length) {
+				$('.dialog').removeClass('dialog--active');
+			}
+		});
+	});
+
 	// product offer map
-	ymaps.ready(productOffersMap);
-	function productOffersMap () {
-		var myMap = new ymaps.Map('productOffersMap', {
-			center: [55.76, 37.64],
-			zoom: 10
-		}, {
-			searchControlProvider: 'yandex#search'
-		}),
-		objectManager = new ymaps.ObjectManager({
-			// Чтобы метки начали кластеризоваться, выставляем опцию.
-			clusterize: true,
-			// ObjectManager принимает те же опции, что и кластеризатор.
-			gridSize: 32,
-			clusterDisableClickZoom: true
-		});
-		// Чтобы задать опции одиночным объектам и кластерам,
-		// обратимся к дочерним коллекциям ObjectManager.
-		objectManager.objects.options.set('preset', 'islands#greenDotIcon');
-		objectManager.clusters.options.set('preset', 'islands#greenClusterIcons');
-		myMap.geoObjects.add(objectManager);
-		$.ajax({
-			url: "js/data.json"
-		}).done(function(data) {
-			objectManager.add(data);
-		});
+	if ($('#productOffersMap').length) {
+		ymaps.ready(productOffersMap);
+		function productOffersMap () {
+			var myMap = new ymaps.Map('productOffersMap', {
+				center: [55.76, 37.64],
+				zoom: 10
+			}, {
+				searchControlProvider: 'yandex#search'
+			}),
+			objectManager = new ymaps.ObjectManager({
+				// Чтобы метки начали кластеризоваться, выставляем опцию.
+				clusterize: true,
+				// ObjectManager принимает те же опции, что и кластеризатор.
+				gridSize: 32,
+				clusterDisableClickZoom: true
+			});
+			// Чтобы задать опции одиночным объектам и кластерам,
+			// обратимся к дочерним коллекциям ObjectManager.
+			objectManager.objects.options.set('preset', 'islands#greenDotIcon');
+			objectManager.clusters.options.set('preset', 'islands#greenClusterIcons');
+			myMap.geoObjects.add(objectManager);
+			$.ajax({
+				url: "js/data.json"
+			}).done(function(data) {
+				objectManager.add(data);
+			});
+		}
 	}
 
 	// choose city map
-	ymaps.ready(chooseCity);
-	function chooseCity() {
-		var geolocation = ymaps.geolocation,
-		myMap = new ymaps.Map('modalCityMap', {
-			center: [55, 34],
-			zoom: 14,
-		}, {
-			searchControlProvider: 'yandex#search'
-		});
-		geolocation.get({
-			provider: 'yandex',
-			mapStateAutoApply: true
-		}).then(function (result) {
-			myMap.geoObjects.add(result.geoObjects);
-			showAddress(firstGeoObject.getAddressLine());
-			getAddress(coords);
-		});
-		$('.js-city-get').on('click', function(e) {
-			e.preventDefault();
-			navigator.geolocation.getCurrentPosition(function(position) {
-				// Get the coordinates of the current possition.
-				var lat = position.coords.latitude;
-				var lng = position.coords.longitude;
-				//myMap.setCenter([lat, lng]);
-				myMap.panTo([lat, lng], {
-					delay: 1500
+	if ($('#modalCityMap').length) {
+		ymaps.ready(chooseCity);
+		function chooseCity() {
+			var geolocation = ymaps.geolocation,
+			myMap = new ymaps.Map('modalCityMap', {
+				center: [55, 34],
+				zoom: 14,
+			}, {
+				searchControlProvider: 'yandex#search'
+			});
+			geolocation.get({
+				provider: 'yandex',
+				mapStateAutoApply: true
+			}).then(function (result) {
+				myMap.geoObjects.add(result.geoObjects);
+				showAddress(firstGeoObject.getAddressLine());
+				getAddress(coords);
+			});
+			$('.js-city-get').on('click', function(e) {
+				e.preventDefault();
+				navigator.geolocation.getCurrentPosition(function(position) {
+					// Get the coordinates of the current possition.
+					var lat = position.coords.latitude;
+					var lng = position.coords.longitude;
+					//myMap.setCenter([lat, lng]);
+					myMap.panTo([lat, lng], {
+						delay: 1500
+					});
 				});
 			});
-		});
-		$('.js-city-manual').on('keyup', function() {
-			var thisVal = $(this).val();
-			ymaps.geocode(thisVal, {
-				results: 1
-			}).then(function (res) {
-				// Выбираем первый результат геокодирования.
-				var firstGeoObject = res.geoObjects.get(0),
-				// Координаты геообъекта.
-				coords = firstGeoObject.geometry.getCoordinates(),
-				// Область видимости геообъекта.
-				bounds = firstGeoObject.properties.get('boundedBy');
-				firstGeoObject.options.set('preset', 'islands#darkBlueDotIconWithCaption');
-				// Получаем строку с адресом и выводим в иконке геообъекта.
-				firstGeoObject.properties.set('iconCaption', firstGeoObject.getAddressLine());
-				// Добавляем первый найденный геообъект на карту.
-				myMap.geoObjects.add(firstGeoObject);
-				// Масштабируем карту на область видимости геообъекта.
-				myMap.setBounds(bounds, {
-					// Проверяем наличие тайлов на данном масштабе.
-					checkZoomRange: true
+			$('.js-city-manual').on('keyup', function() {
+				var thisVal = $(this).val();
+				ymaps.geocode(thisVal, {
+					results: 1
+				}).then(function (res) {
+					// Выбираем первый результат геокодирования.
+					var firstGeoObject = res.geoObjects.get(0),
+					// Координаты геообъекта.
+					coords = firstGeoObject.geometry.getCoordinates(),
+					// Область видимости геообъекта.
+					bounds = firstGeoObject.properties.get('boundedBy');
+					firstGeoObject.options.set('preset', 'islands#darkBlueDotIconWithCaption');
+					// Получаем строку с адресом и выводим в иконке геообъекта.
+					firstGeoObject.properties.set('iconCaption', firstGeoObject.getAddressLine());
+					// Добавляем первый найденный геообъект на карту.
+					myMap.geoObjects.add(firstGeoObject);
+					// Масштабируем карту на область видимости геообъекта.
+					myMap.setBounds(bounds, {
+						// Проверяем наличие тайлов на данном масштабе.
+						checkZoomRange: true
+					});
 				});
 			});
-		});
+		}
 	}
 
 	function productGallery() {
