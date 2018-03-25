@@ -1,8 +1,27 @@
-//= template/header-short.html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Mysupply</title>
+	<link rel="stylesheet" href="css/plugins.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<header class="header">
+		<div class="container">
+			<div class="header__short">
+				<a href="#" class="header__logo">Моё Снабжение</a>
+				<a href="tel:+74956459530" class="header__phone">+7 495 645 95 30</a>
+			</div>
+		</div>
+	</header>
+	<main class="main">
 		<div class="container">
 			<div class="cart">
 				<div class="cart__main">
-					<div class="cart__main-title">Заказ для отдела главного энергетика</div>
+					<div class="cart__main-title">Заказ для цеха</div>
 					<div class="cart__system">
 						<button class="btn btn--dialog js-dialog" data-target="#dialogCart">Ещё</button>
 						<button class="btn">Поделиться</button>
@@ -14,7 +33,7 @@
 								<a href="#" class="cart-shipper__info-name">СтройСнаб, ООО</a>
 								<span class="label label--red">-15%</span>
 							</div>
-							<span class="cart-shipper__info-number">№2563363</span>
+							<span class="cart-shipper__info-number">187-0112018</span>
 						</div>
 						<table class="cart-shipper__items">
 							<tr>
@@ -23,21 +42,15 @@
 								</td>
 								<td>
 									<div class="cart-shipper__item-price">239,30 &#8381;</div>
-									<div class="cart-shipper__item-stock">В наличии: 1200</div>
 								</td>
 								<td>
-									<div class="cart-shipper__item-spinner">
-										<input type="text" name="" id="" class="input-text js-category-spinner" min="1" max="100" value="1" data-mask="000">
-									</div>
+									<span class="cart-shipper__item-count">10 шт.</span>
 								</td>
 								<td>
 									<div class="cart-shipper__item-summ">
 										2 393,00 &#8381;
 										<div class="cart-shipper__item-discount">- 525,88 &#8381;</div>
 									</div>
-								</td>
-								<td class="cart-shipper__item-delete">
-									<a href="#" class="cart-shipper__item-remove"></a>
 								</td>
 							</tr>
 							<tr>
@@ -46,21 +59,15 @@
 								</td>
 								<td>
 									<div class="cart-shipper__item-price">300 265,90 &#8381;</div>
-									<div class="cart-shipper__item-stock">В наличии: 10 000</div>
 								</td>
 								<td>
-									<div class="cart-shipper__item-spinner">
-										<input type="text" name="" id="" class="input-text js-category-spinner" min="1" max="10000" value="10000" data-mask="00000">
-									</div>
+									<span class="cart-shipper__item-count">10 000 уп.</span>
 								</td>
 								<td>
 									<div class="cart-shipper__item-summ">
 										1 022 393,10 &#8381;
 										<div class="cart-shipper__item-discount">- 230 525,88 &#8381;</div>
 									</div>
-								</td>
-								<td class="cart-shipper__item-delete">
-									<a href="#" class="cart-shipper__item-remove"></a>
 								</td>
 							</tr>
 							<tr>
@@ -69,21 +76,15 @@
 								</td>
 								<td>
 									<div class="cart-shipper__item-price">65,90 &#8381;</div>
-									<div class="cart-shipper__item-stock cart-shipper__item-stock--unavailable">Под заказ</div>
 								</td>
 								<td>
-									<div class="cart-shipper__item-spinner">
-										<input type="text" name="" id="" class="input-text js-category-spinner" min="1" max="100" value="1" data-mask="000">
-									</div>
+									<span class="cart-shipper__item-count">1 метр</span>
 								</td>
 								<td>
 									<div class="cart-shipper__item-summ">
 										2 393,00 &#8381;
 										<div class="cart-shipper__item-discount">- 65,90 &#8381;</div>
 									</div>
-								</td>
-								<td class="cart-shipper__item-delete">
-									<a href="#" class="cart-shipper__item-remove"></a>
 								</td>
 							</tr>
 						</table>
@@ -94,7 +95,7 @@
 								<a href="#" class="cart-shipper__info-name">Стройбаза, ООО</a>
 								<span class="label label--red">-10%</span>
 							</div>
-							<span class="cart-shipper__info-number">№2563364</span>
+							<span class="cart-shipper__info-number">188-0112018</span>
 						</div>
 						<table class="cart-shipper__items">
 							<tr>
@@ -103,21 +104,15 @@
 								</td>
 								<td>
 									<div class="cart-shipper__item-price">250,30 &#8381;</div>
-									<div class="cart-shipper__item-stock">В наличии: 1200</div>
 								</td>
 								<td>
-									<div class="cart-shipper__item-spinner">
-										<input type="text" name="" id="" class="input-text js-category-spinner" min="1" max="100" value="10" data-mask="000">
-									</div>
+									<span class="cart-shipper__item-count">10 шт.</span>
 								</td>
 								<td>
 									<div class="cart-shipper__item-summ">
 										 2 503,00 &#8381;
 										<div class="cart-shipper__item-discount">- 525,88 &#8381;</div>
 									</div>
-								</td>
-								<td class="cart-shipper__item-delete">
-									<a href="#" class="cart-shipper__item-remove"></a>
 								</td>
 							</tr>
 							<tr>
@@ -126,21 +121,15 @@
 								</td>
 								<td>
 									<div class="cart-shipper__item-price">2 265,90 &#8381;</div>
-									<div class="cart-shipper__item-stock cart-shipper__item-stock--unavailable">Срок 30 дн.</div>
 								</td>
 								<td>
-									<div class="cart-shipper__item-spinner">
-										<input type="text" name="" id="" class="input-text js-category-spinner" min="1" max="10000" value="10000" data-mask="00000">
-									</div>
+									<span class="cart-shipper__item-count">100 шт.</span>
 								</td>
 								<td>
 									<div class="cart-shipper__item-summ">
 										22 393,10 &#8381;
 										<div class="cart-shipper__item-discount">- 1 525,88 &#8381;</div>
 									</div>
-								</td>
-								<td class="cart-shipper__item-delete">
-									<a href="#" class="cart-shipper__item-remove"></a>
 								</td>
 							</tr>
 							<tr>
@@ -149,20 +138,14 @@
 								</td>
 								<td>
 									<div class="cart-shipper__item-price">65,90 &#8381;</div>
-									<div class="cart-shipper__item-stock cart-shipper__item-stock--unavailable">Под заказ</div>
 								</td>
 								<td>
-									<div class="cart-shipper__item-spinner">
-										<input type="text" name="" id="" class="input-text js-category-spinner" min="1" max="100" value="1" data-mask="000">
-									</div>
+									<span class="cart-shipper__item-count">1 шт.</span>
 								</td>
 								<td>
 									<div class="cart-shipper__item-summ">
 										65,90 &#8381;
 									</div>
-								</td>
-								<td class="cart-shipper__item-delete">
-									<a href="#" class="cart-shipper__item-remove"></a>
 								</td>
 							</tr>
 						</table>
@@ -184,13 +167,38 @@
 						<span>Итого:</span>
 						<span>17 563 356,00 &#8381;</span>
 					</div>
-					<button class="btn btn--middle btn--fullwidth btn--green">Отправить заказ</button>
+					<button class="btn btn--middle btn--fullwidth btn--green">Повторить заказ</button>
 				</aside>
 			</div>
 		</div>
 		<div class="dialog" id="dialogCart">
-			<a href="#" class="dialog__item">Отправить</a>
+			<a href="#modalOrderRename" class="dialog__item js-modal">Переименовать заказ</a>
 			<a href="#" class="dialog__item">Удалить</a>
 			<a href="#" class="dialog__item">В черновик</a>
 		</div>
-//= template/footer-short.html
+		<div class="modal modal-order-rename" id="modalOrderRename">
+			<div class="modal-order-rename__title">Переименовать заказ</div>
+			<div class="modal-order-rename__descr">
+				Назовите заказ так, как вы будете искать его в истории заказов, например, “Заказ для отдела главного энергетика” или “Закупка лампочек в офис”
+			</div>
+			<div class="modal-order-rename__main">
+				<input type="text" name="" id="" class="input-text" placeholder="Введите название">
+			</div>
+			<div class="modal__btns">
+				<button class="btn btn--middle" data-fancybox-close>Отмена</button>
+				<button class="btn btn--middle btn--green">Сохранить</button>
+			</div>
+		</div>
+	</main>
+	<footer class="footer footer--short">
+		<div class="container">
+			<div class="footer__copyright">
+				&copy; 2016-2018 ООО «Моё Снабжение»
+			</div>
+		</div>
+	</footer>
+	<script>window.jQuery || document.write('<script src="js/jquery.js"><\/script>')</script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

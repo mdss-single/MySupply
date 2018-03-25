@@ -1,3 +1,5 @@
+@require 'vars.styl';
+
 /*  <fonts>  */
 @font-face
 	font-family logo
@@ -33,7 +35,6 @@
 
 /*  <general>  */
 html
-	overflow-y scroll
 	min-height 100vh
 	font-size 62.5%
 	cursor default
@@ -48,7 +49,7 @@ body
 	display flex
 	flex-direction column
 	min-height 100vh
-	color #444
+	color $colorGray
 	font normal 1.3rem/1.3 Roboto
 	background-color #fff
 :-moz-placeholder
@@ -58,7 +59,7 @@ body
 	opacity: 1
 	color currentColor
 a
-	color #444
+	color $colorGray
 	font inherit
 	text-decoration underline
 	transition all .2s
@@ -88,7 +89,7 @@ img
 		justify-content space-between
 		margin 15px 0 20px
 	&__city
-		color #888
+		color $colorLight
 		a
 			position relative
 			text-decoration none
@@ -132,7 +133,7 @@ img
 				bottom 0
 				width 20000%
 				background-color @background-color
-				box-shadow 0 3px 6px rgba(#222, .2)
+				box-shadow 0 3px 6px rgba($colorDark, .2)
 				content ''
 			&::before
 				left -10000%
@@ -157,11 +158,11 @@ img
 			border 1px solid #ddd
 			border-radius 2px
 			padding 0 50px 0 22px
-			box-shadow 0 2px 3px rgba(#222, .1)
+			box-shadow 0 2px 3px rgba($colorDark, .1)
 			transition all .2s
 			&:focus
 				outline none
-				box-shadow 0 3px 6px rgba(#222, .2)
+				box-shadow 0 3px 6px rgba($colorDark, .2)
 		&-btn
 			position absolute
 			top 50%
@@ -196,7 +197,7 @@ img
 			transform translateY(-50%)
 			&:empty
 				min-width 28px
-				color #444
+				color $colorGray
 				background-color #ddd
 				&::before
 					content '0'
@@ -210,11 +211,11 @@ img
 				content ''
 				transform translateY(-50%)
 		&-summ
-			color #444
+			color $colorGray
 			font-weight 500
 			margin 0 0 6px
 		&-shipper
-			color #888
+			color $colorLight
 			font-size 1.1rem
 		&-link
 			position absolute
@@ -261,7 +262,7 @@ img
 .footer
 	overflow hidden
 	color #ddd
-	background-color #444
+	background-color $colorGray
 	padding 45px 0 0
 	&--short
 		padding 0
@@ -346,13 +347,13 @@ img
 			a:hover&
 				background-color #ddd
 				svg
-					fill #444
+					fill $colorGray
 	&__copyright
 		position relative
 		width 100%
 		height 50px
 		line-height 5rem
-		background-color #222
+		background-color $colorDark
 		margin-top 45px
 		^[0]--short &
 			margin-top 0
@@ -374,7 +375,7 @@ img
 .breadcrumbs
 	display flex
 	list-style none
-	color #888
+	color $colorLight
 	font-size 1.1rem
 	padding 0
 	margin 18px 0
@@ -387,15 +388,15 @@ img
 			right -14px
 			width 8px
 			height 1px
-			background-color #888
+			background-color $colorLight
 			content ''
 		&:last-child
-			color #444
+			color $colorGray
 			margin-right 0
 			&::after
 				display none
 	a
-		color #888
+		color $colorLight
 		text-decoration none
 	a:hover
 		text-decoration underline
@@ -404,12 +405,12 @@ img
 /*  <category>  */
 .category
 	&__name
-		color #222
+		color $colorDark
 		font-weight 900
 		font-size 3rem
 		margin 0 0 5px
 	&__address
-		color #444
+		color $colorGray
 		a
 			text-decoration-style dotted
 			margin-left 5px
@@ -427,7 +428,7 @@ img
 			margin-right 15px
 			a:hover&
 				color #fff
-				background-color #888
+				background-color $colorLight
 	&__wrap
 		display flex
 		align-items flex-start
@@ -436,10 +437,10 @@ img
 		width 278px
 		background-color #fff
 		border-radius 2px
-		box-shadow 0 5px 10px rgba(#222, .1)
+		box-shadow 0 5px 10px rgba($colorDark, .1)
 	&-filter
 		&__result
-			color #222
+			color $colorDark
 			font-weight 500
 			text-align center
 			border-bottom 1px solid #eee
@@ -466,14 +467,14 @@ img
 				padding 0 8px
 				span
 					flex-shrink 0
-					color #888
+					color $colorLight
 				input
 					width calc(100% - 45px)
 					margin 0 5px
 			&-single
 				width 100%
 			&-input
-				color #444
+				color $colorGray
 				background-color transparent
 				border 0
 			&-place
@@ -518,7 +519,7 @@ img
 			margin 0 20px
 			a
 				display block
-				color #888
+				color $colorLight
 				text-decoration none
 				&:hover
 					text-decoration underline
@@ -532,7 +533,7 @@ img
 				&--hidden
 					display none
 				a
-					color #444
+					color $colorGray
 					text-decoration none
 					&:hover
 						text-decoration underline
@@ -547,7 +548,7 @@ img
 				padding 15px 0 0
 			&-title
 				position relative
-				color #222
+				color $colorDark
 				font-weight 500
 				font-size 1.7rem
 				padding-right 30px
@@ -560,7 +561,7 @@ img
 						bottom @top
 						left -20px
 						width 3px
-						background-color #888
+						background-color $colorLight
 						content ''
 					&::after
 						position absolute
@@ -568,7 +569,7 @@ img
 						right 0
 						width 8px
 						height @width
-						border solid #888
+						border solid $colorLight
 						border-width 2px 2px 0 0
 						content ''
 						transform rotate(-45deg) translateY(-50%)
@@ -581,7 +582,7 @@ img
 		&__showrows
 			position relative
 			width 100%
-			color #888
+			color $colorLight
 			text-decoration none
 			margin-top 8px
 			&::after
@@ -590,7 +591,7 @@ img
 				right 0
 				width 8px
 				height @width
-				border solid #888
+				border solid $colorLight
 				border-width 0 0 2px 2px
 				content ''
 				transform-origin top left
@@ -615,7 +616,7 @@ img
 		border-radius 2px
 		padding 18px 28px
 		margin-bottom 14px
-		box-shadow 0 5px 10px rgba(#222, .1)
+		box-shadow 0 5px 10px rgba($colorDark, .1)
 	&__sort
 		.select
 			width 245px
@@ -636,12 +637,12 @@ img
 			svg
 				width 20px
 				height @width
-				fill #888
+				fill $colorLight
 				transition all .2s
 			&--active
 			a:hover&
 				svg
-					fill #444
+					fill $colorGray
 	&__items
 		&--table
 			^[0]-product
@@ -649,7 +650,7 @@ img
 				background-color #fff
 				padding 20px
 				margin 14px 0
-				box-shadow 0 5px 10px rgba(#222, .1)
+				box-shadow 0 5px 10px rgba($colorDark, .1)
 				&__pic
 					flex-shrink 0
 					width 160px
@@ -659,7 +660,7 @@ img
 					flex 1
 					margin 0 30px 0 15px
 				&__name
-					color #222
+					color $colorDark
 					margin-bottom 20px
 					a
 						color @color
@@ -671,7 +672,7 @@ img
 					align-items center
 					margin-bottom 15px
 					&-value
-						color #222
+						color $colorDark
 						font-weight 500
 						font-size 2.3rem
 						margin-right 10px
@@ -683,7 +684,7 @@ img
 					margin-bottom 25px
 				&__draft
 					display inline-flex
-					color #444
+					color $colorGray
 					font-size 1.1rem
 					background-color #fafafa
 					border 1px solid #ddd
@@ -731,19 +732,19 @@ img
 						&::before
 							bottom 3px
 							border-width 0 4px 5px
-							border-bottom-color #888
+							border-bottom-color $colorLight
 						a:hover&
 							&::before
-								border-bottom-color #444
+								border-bottom-color $colorGray
 					&-minus
 						bottom 0
 						&::before
 							top 3px
 							border-width 5px 4px 0
-							border-top-color #888
+							border-top-color $colorLight
 						a:hover&
 							&::before
-								border-top-color #444
+								border-top-color $colorGray
 				&__info
 					position relative
 					width 240px
@@ -769,7 +770,7 @@ img
 						background-image repeating-linear-gradient(to right, #eee, #eee 5px, #fff 5px, #fff 6px)
 						content ''
 					&-item
-						color #888
+						color $colorLight
 						margin 16px 0
 						&:first-child
 							margin-top 0
@@ -777,7 +778,7 @@ img
 							margin-bottom 0
 						&--available
 							position relative
-							color #444
+							color $colorGray
 							&::before
 								position absolute
 								top 50%
@@ -793,13 +794,13 @@ img
 					white-space nowrap
 					&-name
 						overflow hidden
-						color #444
+						color $colorGray
 						font-weight 500
 						text-overflow ellipsis
 						margin 10px 0
 					&-address
 						overflow hidden
-						color #888
+						color $colorLight
 						font-style normal
 						text-overflow ellipsis
 					&-link
@@ -825,10 +826,10 @@ img
 			border-radius 2px
 			padding 20px 30px 40px
 			margin-bottom 20px
-			box-shadow 0 5px 10px rgba(#222, .1)
+			box-shadow 0 5px 10px rgba($colorDark, .1)
 			transition all .2s
 			&:hover
-				box-shadow 0 6px 12px rgba(#222, .2)
+				box-shadow 0 6px 12px rgba($colorDark, .2)
 			&-pic
 				display flex
 				justify-content center
@@ -838,7 +839,7 @@ img
 				img
 					max-height @height
 			&-title
-				color #222
+				color $colorDark
 				font-weight 900
 				font-size 1.7rem
 				margin-top 10px
@@ -846,7 +847,7 @@ img
 				position absolute
 				bottom 15px
 				left 50%
-				color #888
+				color $colorLight
 				transform translateX(-50%)
 			&-link
 				position absolute
@@ -859,16 +860,16 @@ img
 		border-radius 2px
 		padding 20px 28px
 		margin 20px 0
-		box-shadow 0 5px 10px rgba(#222, .1)
+		box-shadow 0 5px 10px rgba($colorDark, .1)
 		&-title
-			color #222
+			color $colorDark
 			font-weight 900
 			font-size 1.7rem
 			border-bottom 1px solid #eee
 			padding-bottom 15px
 			margin 0 0 15px
 		&-text
-			color #444
+			color $colorGray
 			line-height 2.1rem
 	&__offers
 		margin-bottom 20px
@@ -879,7 +880,7 @@ img
 			border-radius 2px
 			padding 28px
 			margin-bottom 14px
-			box-shadow 0 5px 10px rgba(#222, .1)
+			box-shadow 0 5px 10px rgba($colorDark, .1)
 			&-pic
 				flex-shrink 0
 				align-self center
@@ -894,7 +895,7 @@ img
 				flex 1
 				margin 0 30px
 			&-name
-				color #222
+				color $colorDark
 				font-weight 500
 				line-height 2.1rem
 				margin-bottom 15px
@@ -904,14 +905,14 @@ img
 					&:hover
 						text-decoration underline
 			&-code
-				color #888
+				color $colorLight
 			&-price
-				color #222
+				color $colorDark
 				font-weight 500
 				font-size 1.7rem
 				text-align right
 			&-shippers
-				color #888
+				color $colorLight
 				font-weight 400
 				font-size 1.3rem
 				margin-top 15px
@@ -949,14 +950,14 @@ img
 				height 35px
 				&:hover
 					&::before
-						border-color #444
+						border-color $colorGray
 				&::before
 					position absolute
 					top 50%
 					left 50%
 					width 12px
 					height @width
-					border solid #888
+					border solid $colorLight
 					content ''
 					transform-origin 25% top
 					transition all .2s
@@ -999,19 +1000,19 @@ img
 		flex 1
 	&-info
 		&__name
-			color #222
+			color $colorDark
 			font-weight 900
 			font-size 3rem
 			margin 0 0 15px
 		&__code
-			color #222
+			color $colorDark
 			font-weight 500
 			margin 15px 0
 		&__price
 			margin 15px 0 10px
 			&-main
 				vertical-align middle
-				color #222
+				color $colorDark
 				font-weight 500
 				font-size 3rem
 				margin-right 5px
@@ -1046,7 +1047,7 @@ img
 				&:last-child
 					margin-bottom 0
 			&-details
-				color #888
+				color $colorLight
 				text-decoration none
 				a:hover&
 					text-decoration underline
@@ -1068,7 +1069,7 @@ img
 		&__table
 			width 100%
 			th
-				color #222
+				color $colorDark
 				font-weight 900
 				font-size 2.3rem
 				text-align left
@@ -1087,7 +1088,7 @@ img
 			&:last-child
 				width 1%
 			&-name
-				color #222
+				color $colorDark
 				font-weight 900
 				font-size 1.7rem
 				text-decoration none
@@ -1097,7 +1098,7 @@ img
 				margin-top 4px
 			&-price
 				vertical-align middle
-				color #222
+				color $colorDark
 				font-weight 500
 				font-size 2.3rem
 				margin 0 5px 8px
@@ -1118,7 +1119,7 @@ img
 			&-stock
 				color #2cc81e
 				&--unavailable
-					color #444
+					color $colorGray
 			&-spinner
 				position relative
 				&::before
@@ -1147,7 +1148,7 @@ img
 				&:last-child
 					margin-bottom 0
 				a
-					color #888
+					color $colorLight
 	&__map
 		background-color #fff
 		border-radius 2px
@@ -1155,7 +1156,7 @@ img
 		margin 55px 0 42px
 		box-shadow 0 5px 10px rgba(#000, .1)
 		&-title
-			color #222
+			color $colorDark
 			font-weight 900
 			font-size 2.3rem
 			margin-bottom 20px
@@ -1168,7 +1169,7 @@ img
 		margin 42px 0 28px
 		box-shadow 0 5px 10px rgba(#000, .1)
 		&-title
-			color #222
+			color $colorDark
 			font-weight 900
 			font-size 2.3rem
 			border-bottom 1px solid #eee
@@ -1185,7 +1186,7 @@ img
 				padding 14px 0
 				&:first-child
 					flex 1
-					color #888
+					color $colorLight
 					margin-right 30px
 				&:last-child
 					flex-shrink 0
@@ -1197,7 +1198,7 @@ img
 		margin 28px 0
 		box-shadow 0 5px 10px rgba(#000, .1)
 		&-title
-			color #222
+			color $colorDark
 			font-weight 900
 			font-size 2.3rem
 			border-bottom 1px solid #eee
@@ -1206,7 +1207,7 @@ img
 		&-text
 			line-height 2.8rem
 			h3
-				color #222
+				color $colorDark
 				font-weight 900
 				font-size 1.7rem
 /*  </product>  */
@@ -1222,9 +1223,9 @@ img
 		border-radius 2px
 		padding 24px 28px 28px
 		margin-right 15px
-		box-shadow 0 5px 10px rgba(#222, .1)
+		box-shadow 0 5px 10px rgba($colorDark, .1)
 		&-title
-			color #222
+			color $colorDark
 			font-weight 900
 			font-size 2.3rem
 			margin-bottom 15px
@@ -1249,7 +1250,7 @@ img
 			margin 0 -28px
 			&-name
 				vertical-align middle
-				color #222
+				color $colorDark
 				font-weight 900
 				font-size 1.7rem
 				text-decoration none
@@ -1257,44 +1258,41 @@ img
 				a:hover&
 					text-decoration underline
 			&-number
-				color #888
+				color $colorLight
 		&__items
 			width 100%
 			td
 				vertical-align top
+				width 120px
 				white-space nowrap
 				text-align right
 				border-bottom 1px dashed #eee
 				padding 15px 20px
 				&:first-child
+					width auto
 					line-height 2.1rem
 					white-space normal
 					text-align left
 					padding-left 0
 				&:last-child
-					width 30px
 					text-align right
 					padding-right 0
 					padding-left 0
-				&:nth-last-child(2)
-					width 120px
-				&:nth-last-child(3)
-					width 105px
-				&:nth-last-child(4)
-					width 140px
+				&.cart-shipper__item-delete
+					width 30px
 			a
 				text-decoration none
 				&:hover
 					text-decoration underline
 		&__item
 			&-price
-				color #222
+				color $colorDark
 				font-weight 500
 			&-stock
 				color #2cc81e
 				margin-top 5px
 				&--unavailable
-					color #888
+					color $colorLight
 			&-spinner
 				position relative
 				width 85px
@@ -1313,15 +1311,18 @@ img
 					height 32px
 					text-align center
 					padding 0
+			&-count
+				color $colorDark
+				font-weight 500
 			&-summ
-				color #222
+				color $colorDark
 				font-weight 500
 			&-discount
-				color #888
+				color $colorLight
 				font-weight normal
 				margin-top 5px
 			&-remove
-				color #888
+				color $colorLight
 				font-size 2rem
 				line-height .7
 				padding 10px
@@ -1329,19 +1330,19 @@ img
 				&:before
 					content '×'
 				a:hover&
-					color #444
+					color $colorGray
 					text-decoration none
 	&__notice
-		color #888
+		color $colorLight
 	&__total
 		flex-shrink 0
 		width 262px
 		background-color #fff
 		border-radius 2px
 		padding 20px
-		box-shadow 0 5px 10px rgba(#222, .1)
+		box-shadow 0 5px 10px rgba($colorDark, .1)
 		&-title
-			color #222
+			color $colorDark
 			font-weight 900
 			font-size 1.7rem
 			border-bottom 1px solid #eee
@@ -1357,7 +1358,7 @@ img
 		&-summ
 			display flex
 			justify-content space-between
-			color #222
+			color $colorDark
 			font-weight 900
 			font-size 1.7rem
 			margin 20px 0
@@ -1372,7 +1373,7 @@ img
 	.fancybox-slide &
 		padding 20px 28px 28px
 	&__title
-		color #222
+		color $colorDark
 		font-weight 900
 		font-size 2.3rem
 		border-bottom 1px solid #efefef
@@ -1397,7 +1398,7 @@ img
 				flex-shrink 0
 				width 12px
 				height 13px
-				fill #444
+				fill $colorGray
 				margin 3px 6px 0 0
 		.input-text
 			flex 1
@@ -1413,7 +1414,7 @@ img
 	.fancybox-slide &
 		padding 18px 28px 28px
 	&__title
-		color #222
+		color $colorDark
 		font-weight 900
 		font-size 2.3rem
 		border-bottom 1px solid #efefef
@@ -1424,7 +1425,7 @@ img
 		margin 20px 0 5px
 	&__table
 		width 100%
-		color #222
+		color $colorDark
 		font-weight 500
 		td
 			border-bottom 1px dashed #eee
@@ -1434,3 +1435,22 @@ img
 			&:last-child
 				padding-right 0
 /*  </modal-discount>  */
+
+/*  <modal-order-rename>  */
+.modal-order-rename
+	max-width 555px
+	.fancybox-slide &
+		padding 18px 28px 20px
+	&__title
+		color $colorDark
+		font-weight 900
+		font-size 2.3rem
+		border-bottom 1px solid #eee
+		padding-bottom 15px
+		margin-bottom 20px
+	&__descr
+		line-height 2.1rem
+		margin 20px 0
+	&__main
+		margin 20px 0
+/*  </modal-order-rename>  */
