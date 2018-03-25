@@ -1,0 +1,312 @@
+//= template/header.html
+		<div class="container">
+			<style>
+				.markup table {
+					width:100%;
+					margin-bottom:20px;
+				}
+					.markup table th {
+						font-weight:bold;
+						text-align:left;
+					}
+					.markup table th, .markup table td {
+						vertical-align:top;
+						border:1px solid #dfe2e5;
+						padding:8px 12px;
+					}
+					.elements td:first-child {
+						width:20%;
+					}
+					.elements td:last-child {
+						width:40%;
+					}
+					.elements td:nth-of-type(2) {
+						width:40%;
+					}
+				.markup h2 {
+					font-weight:300;
+					font-size:2.6rem;
+					margin:20px 0 10px;
+				}
+				.markup code {
+					font-family:"Courier New", Courier, monospace, sans-serif;
+					text-align:left;
+					color:#555;
+					background:#eaeaea;
+					border-radius:3px;
+				}
+					.markup pre {
+						background:#eaeaea;
+					}
+				.markup .overflow {
+					max-width:600px;
+				}
+					.markup .overflow pre {
+						overflow:auto;
+						padding:15px 5px;
+						margin:0 0 10px;
+					}
+						.markup .overflow pre:last-child {
+							margin:0;
+						}
+			</style>
+			<div class="markup">
+				<h2>Основные классы</h2>
+				<table>
+					<tr>
+						<td><code>.tl</code></td>
+						<td>text-align:left</td>
+					</tr>
+					<tr>
+						<td><code>.tc</code></td>
+						<td>text-align:center</td>
+					</tr>
+					<tr>
+						<td><code>.tr</code></td>
+						<td>text-align:right</td>
+					</tr>
+					<tr>
+						<td><code>.rel</code></td>
+						<td>position:relative</td>
+					</tr>
+					<tr>
+						<td><code>.abs</code></td>
+						<td>position:absolute</td>
+					</tr>
+					<tr>
+						<td><code>.hide</code></td>
+						<td>display:none !important</td>
+					</tr>
+					<tr>
+						<td><code>.form__row</code></td>
+						<td>Задает отступ снизу</td>
+					</tr>
+					<tr>
+						<td><code>.fadeIn</code></td>
+						<td>Добавляет анимацию плавного появления элемента</td>
+					</tr>
+					<tr>
+						<td><code>.fadeOut</code></td>
+						<td>Добавляет анимацию плавного скрытия элемента</td>
+					</tr>
+				</table>
+				<h2>Подключенные плагины</h2>
+				<ol>
+					<li><a href="https://igorescobar.github.io/jQuery-Mask-Plugin/docs.html">jQuery Input Mask</a></li>
+					<li><a href="http://fancyapps.com/fancybox/3/docs/">jQuery Fancybox</a></li>
+					<li><a href="https://flickity.metafizzy.co/">Flickity carousel</a></li>
+					<li><a href="https://github.com/Dimox/jQueryFormStyler">jQuery Form Styler</a></li>
+					<li><a href="https://github.com/nitinhayaran/jRange">jQuery Range Slider</a></li>
+					<li><a href="https://github.com/leafo/sticky-kit">Sticky kit</a></li>
+				</ol>
+				<h2>Модальные окна</h2>
+				<p>Для вызова модальных окон подключен плагин <a href="http://fancyapps.com/fancybox/3/docs/">fancybox</a>. Для вызывающего элемента необходимо добавить класс <code>.js-modal</code>. Если это ссылка, то вызываемый адрес пишет в атрибуте href, если какой-то другой элемент, то прописывается атрибут <code>data-src="%target%"</code></p>
+				<ul>
+					<li><a href="#modalCity" class="js-modal">Выбор города</a></li>
+					<li><a href="#modalDiscount" class="js-modal">Модалка скидок</a></li>
+				</ul>
+				<h2>Диалоговые окна</h2>
+				<p>Для вызывающего элемента необходимо добавить класс <code>.js-dialog</code> и атрибут <code>data-target</code> с указанием id вызываемого диалогового окна.</p>
+				<ul>
+					<li>
+						<a href="#" class="js-dialog" data-target="#testDialog">Вызвать диалоговое окно</a>
+						<div class="dialog" id="testDialog">
+							<a href="#" class="dialog__item">Item 1</a>
+							<a href="#" class="dialog__item">Item 2</a>
+							<a href="#" class="dialog__item">Item 3</a>
+						</div>
+					</li>
+				</ul>
+				<h2>Основные элементы</h2>
+				<table class="elements">
+					<tr>
+						<td><code>.input-text</code></td>
+						<td>
+							<div class="overflow">
+								<pre><code>&lt;input type="text" name="" id="" class="input-text" placeholder="Input text"></code></pre>
+								<pre><code>&lt;input type="email" name="" id="" class="input-text" placeholder="Input email"></code></pre>
+								<p>При указании типа поля email на мобильном устройстве будет вызвана клавиатура для ввода email. Обычно она отличается только наличием символа @</p>
+								<pre><code>&lt;input type="tel" name="" id="" class="input-text" placeholder="Input tel"></code></pre>
+								<pre><code>&lt;input type="number" name="" id="" class="input-text" placeholder="Input number"></code></pre>
+							</div>
+						</td>
+						<td><input type="text" name="" id="" class="input-text" placeholder="Input"></td>
+					</tr>
+					<tr>
+						<td><code>.input-text .input-text--error</code></td>
+						<td>
+							<div class="overflow">
+								<pre><code>&lt;input type="text" name="" id="" class="input-text input-text--error" placeholder="Error input"></code></pre>
+							</div>
+						</td>
+						<td><input type="text" name="" id="" class="input-text input-text--error" placeholder="Error input"></td>
+					</tr>
+					<tr>
+						<td><code>.input-text .input-text--success</code></td>
+						<td>
+							<div class="overflow">
+								<pre><code>&lt;input type="text" name="" id="" class="input-text input-text--success" placeholder="Success input"></code></pre>
+							</div>
+						</td>
+						<td><input type="text" name="" id="" class="input-text input-text--success" placeholder="Success input"></td>
+					</tr>
+					<tr>
+						<td><code>.input-text .input-text--large</code></td>
+						<td>
+							<div class="overflow">
+								<pre><code>&lt;input type="text" name="" id="" class="input-text input-text--large" placeholder="Large input text"></code></pre>
+							</div>
+						</td>
+						<td><input type="text" name="" id="" class="input-text input-text--large" placeholder="Large input input"></td>
+					</tr>
+					<tr>
+						<td><code>.textarea</code></td>
+						<td>
+							<div class="overflow">
+								<pre><code>&lt;textarea name="" id="" cols="30" rows="10" class="textarea" placeholder="Some text">&lt;/textarea></code></pre>
+							</div>
+						</td>
+						<td><textarea name="" id="" cols="30" rows="10" class="textarea" placeholder="Some text"></textarea></td>
+					</tr>
+					<tr>
+						<td><code>.textarea .textarea--error</code></td>
+						<td>
+							<div class="overflow">
+								<pre><code>&lt;textarea name="" id="" cols="30" rows="10" class="textarea textarea--error" placeholder="Some text">&lt;/textarea></code></pre>
+							</div>
+						</td>
+						<td><textarea name="" id="" cols="30" rows="10" class="textarea textarea--error" placeholder="Some text"></textarea></td>
+					</tr>
+					<tr>
+						<td><code>.textarea .textarea--success</code></td>
+						<td>
+							<div class="overflow">
+								<pre><code>&lt;textarea name="" id="" cols="30" rows="10" class="textarea textarea--success" placeholder="Some text">&lt;/textarea></code></pre>
+							</div>
+						</td>
+						<td><textarea name="" id="" cols="30" rows="10" class="textarea textarea--success" placeholder="Some text"></textarea></td>
+					</tr>
+					<tr>
+						<td><code>.textarea .textarea--large</code></td>
+						<td>
+							<div class="overflow">
+								<pre><code>&lt;textarea name="" id="" cols="30" rows="10" class="textarea textarea--large" placeholder="Some text">&lt;/textarea></code></pre>
+							</div>
+						</td>
+						<td><textarea name="" id="" cols="30" rows="10" class="textarea textarea--large" placeholder="Some text"></textarea></td>
+					</tr>
+					<tr>
+						<td><code>.select</code></td>
+						<td>
+							<div class="overflow">
+								<pre><code>&lt;select name="" id="" class="select">
+			&lt;option value="">Option 1&lt;/option>
+			&lt;option value="">Option 2&lt;/option>
+		&lt;/select></code></pre>
+							</div>
+						</td>
+						<td><select name="" id="" class="select">
+							<option value="">Option 1</option>
+							<option value="">Option 2</option>
+						</select></td>
+					</tr>
+					<tr>
+						<td><code>.select</code></td>
+						<td>
+							<div class="overflow">
+								<pre><code>&lt;select name="" id="" class="select" data-placeholder="Placeholder">
+			&lt;option>&lt;/option>
+			&lt;option value="">Option 1&lt;/option>
+			&lt;option value="">Option 2&lt;/option>
+		&lt;/select></code></pre>
+							</div>
+						</td>
+						<td><select name="" id="" class="select" data-placeholder="Placeholder">
+							<option></option>
+							<option value="">Option 1</option>
+							<option value="">Option 2</option>
+						</select></td>
+					</tr>
+					<tr>
+						<td><code>.btn</code></td>
+						<td>
+							<div class="overflow">
+								<pre><code>&lt;button class="btn">Button&lt;/button></code></pre>
+							</div>
+						</td>
+						<td><button class="btn">Button</button></td>
+					</tr>
+					<tr>
+						<td><code>.btn .btn--dialog</code></td>
+						<td>
+							<div class="overflow">
+								<pre><code>&lt;button class="btn btn--dialog">Button&lt;/button></code></pre>
+							</div>
+						</td>
+						<td><button class="btn btn--dialog">Button</button></td>
+					</tr>
+					<tr>
+						<td><code>.btn .btn--blue</code></td>
+						<td>
+							<div class="overflow">
+								<pre><code>&lt;button class="btn btn--blue">Blue button&lt;/button></code></pre>
+							</div>
+						</td>
+						<td><button class="btn btn--blue">Blue button</button></td>
+					</tr>
+					<tr>
+						<td><code>.btn .btn--green</code></td>
+						<td>
+							<div class="overflow">
+								<pre><code>&lt;button class="btn btn--green">Green button&lt;/button></code></pre>
+							</div>
+						</td>
+						<td><button class="btn btn--green">Green button</button></td>
+					</tr>
+					<tr>
+						<td><code>.btn .btn--fullwidth</code></td>
+						<td>
+							<div class="overflow">
+								<pre><code>&lt;button class="btn btn--fullwidth">Fullwidth button&lt;/button></code></pre>
+							</div>
+						</td>
+						<td><button class="btn btn--fullwidth">Fullwidth button</button></td>
+					</tr>
+					<tr>
+						<td><code>.btn .btn--middle</code></td>
+						<td>
+							<div class="overflow">
+								<pre><code>&lt;button class="btn btn--middle">Button&lt;/button></code></pre>
+							</div>
+						</td>
+						<td><button class="btn btn--middle">Button</button></td>
+					</tr>
+					<tr>
+						<td><code>.btn .btn--large</code></td>
+						<td>
+							<div class="overflow">
+								<pre><code>&lt;button class="btn btn--large">Button&lt;/button></code></pre>
+							</div>
+						</td>
+						<td><button class="btn btn--large">Button</button></td>
+					</tr>
+					<tr>
+						<td><code>.btn .btn--blue .btn--large .btn--fullwidth</code></td>
+						<td>
+							<div class="overflow">
+								<pre><code>&lt;button class="btn btn--blue btn--large btn--fullwidth">Combined button&lt;/button></code></pre>
+							</div>
+						</td>
+						<td><button class="btn btn--blue btn--large btn--fullwidth">Combined button</button></td>
+					</tr>
+					<tr>
+						<td><code>.label .label--red</code></td>
+						<td>
+							<pre><code>&lt;span class="label label--red">Red label&lt;/span></code></pre>
+						</td>
+						<td><span class="label label--red">Red label</span></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+//= template/footer.html
