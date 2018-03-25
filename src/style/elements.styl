@@ -109,13 +109,26 @@
 .textarea
 	height 100px
 	min-height @height
+	padding 10px 15px
 	resize vertical
 	transition border .2s, background-color .2s
 	&--large
 		height 160px
 		min-height @height
+	&--success
+		border-color #00a619
+		&:hover
+		&:focus
+			border-color @border-color
+	&--error
+		border-color #c81e2c
+		&:hover
+		&:focus
+			border-color @border-color
 .js-input-dynamic-width
 	box-sizing content-box
+.select
+	width 100%
 /*  </inputs>  */
 
 /*  <labels>  */

@@ -1368,6 +1368,167 @@ img
 				bottom 0
 /*  </cart>  */
 
+/*  <order-history>  */
+.orders
+	display flex
+	align-items flex-start
+	&__sidebar
+		width 278px
+		background-color #fff
+		border-radius 2px
+		padding 20px 28px
+		box-shadow 0 5px 10px rgba($colorDark, .1)
+	&__nav
+		border-bottom 1px solid #eee
+		padding-bottom 15px
+		margin-bottom 20px
+		&-item
+			display flex
+			justify-content space-between
+			text-decoration none
+			padding 5px 28px
+			margin 5px -28px
+			&--active
+				position relative
+				color $colorDark
+				font-weight 500
+				&::before
+					position absolute
+					top 0
+					bottom @top
+					left 0
+					width 3px
+					background-color #81c81e
+					content ''
+			a:hover&
+				background-color #eee
+	&__company
+		margin-top 20px
+		&-name
+			overflow hidden
+			color $colorDark
+			font-weight 900
+			font-size 1.7rem
+			white-space nowrap
+			text-overflow ellipsis
+			margin-bottom 5px
+		&-item
+			display block
+			overflow hidden
+			color $colorLight
+			white-space nowrap
+			text-overflow ellipsis
+			text-decoration none
+			padding 5px 28px
+			margin 5px -28px
+			span
+				color $colorGray
+			a:hover&
+				background-color #eee
+	&__main
+		flex 1
+		background-color #fff
+		border-radius 2px
+		padding 16px 28px 30px
+		margin-left 15px
+		box-shadow 0 5px 10px rgba($colorDark, .1)
+	&__system
+		display flex
+		justify-content space-between
+		align-items center
+		border-bottom 1px solid #eee
+		padding-bottom 16px
+	&__title
+		color $colorDark
+		font-weight 900
+		font-size 2.3rem
+	&__search
+		position relative
+		width 396px
+		padding-right 50px
+		.input-text
+			position relative
+			z-index 3
+		&-count
+			position absolute
+			top 50%
+			right 66px
+			color $colorLight
+			transform translateY(-50%)
+		&-btn
+			position absolute
+			top 0
+			right 0
+			z-index 2
+			display flex
+			justify-content center
+			align-items center
+			width 52px
+			height 100%
+			background-color #fafafa
+			border 1px solid #ddd
+			border-radius 0 2px 2px 0
+			cursor pointer
+			transition all .2s
+			svg
+				width 15px
+				height @width
+				path
+					fill $colorGray
+					transition all .2s
+			&:active
+				box-shadow inset 0 2px 2px rgba($colorDark, .2)
+				svg
+					path
+						fill $colorDark
+	&__list
+		&-section
+			border-top 1px dashed #eee
+			padding-top 13px
+			&:first-of-type
+				border-top 0
+		&-table
+			width 100%
+			border-collapse collapse
+			th
+				color $colorDark
+				font-weight 500
+				font-style normal
+				text-align left
+				background-color #fafafa
+				padding 15px
+				&:first-child
+					width 160px
+				&:last-child
+					width 160px
+					text-align right
+			td
+				padding 15px
+				&:first-child
+					color $colorLight
+					width 160px
+				&:last-child
+					width 160px
+					text-align right
+		&-nav
+			display flex
+			justify-content space-between
+			align-items center
+			border-top 1px solid #eee
+			padding-top 25px
+		&-tracker
+			color $colorLight
+		&-pagination
+			.pagination
+				padding-top 0
+				&__item
+					min-width 32px
+					&--space
+						padding 0 20px
+			.btn--large
+				height 32px
+/*  </order-history>  */
+
 /*  <modal-city>  */
 .modal-city
 	.fancybox-slide &
