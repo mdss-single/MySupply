@@ -6,6 +6,29 @@
 		parent: 'body',
 	});
 
+	// header search autocomplete
+	$('.js-header-autocomplete').easyAutocomplete({
+		/*
+		url: function(phrase) {
+			return 'api/result.php?phrase=' + phrase + '&format=json';
+		},*/
+		url: 'js/autocomplete.json',
+		getValue: 'name',
+		highlightPhrase: false,
+		list: {
+			maxNumberOfElements: 10,
+			match: {
+				enabled: true
+			}
+		},
+		template: {
+			type: 'links',
+			fields: {
+				link: 'url'
+			}
+		}
+	});
+
 	// styling inputs
 	$('.checkbox, .radio, .select').styler();
 
@@ -50,16 +73,6 @@
 
 	// money format value to input
 	$('.js-mask-money').mask("# ##0", {reverse: true});
-
-	// input-text dynamic width
-	$('.js-input-dynamic-width').on('input', function() {
-		var inputWidth = $(this).textWidth();
-		$(this).css({
-			width: inputWidth
-		})
-	}).trigger('input');
-	var targetElem = $('.js-input-dynamic-width');
-	inputWidth(targetElem);
 
 	// modal windows
 	$('.js-modal').fancybox({
@@ -118,6 +131,12 @@
 				$('.dialog').removeClass('dialog--active');
 			}
 		});
+	});
+
+	// sticky cart sidebar
+	$('.js-cart-sticky').stick_in_parent({
+		parent: '.cart',
+		offset_top: 15,
 	});
 
 	// product offer map
@@ -239,10 +258,6 @@
 				}
 			});
 		}
-	}
-
-	function inputWidth(elem, minW, maxW) {
-		elem = $(this);
 	}
 
 	function toggleSidebarRows() {

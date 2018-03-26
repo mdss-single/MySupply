@@ -256,6 +256,32 @@ img
 			a:hover&
 				&::before
 					width 100%
+.easy-autocomplete-container
+	position absolute
+	z-index 9999
+	width 100%
+	background-color #fff
+	border 1px solid #ddd
+	border-radius 0 0 2px 2px
+	margin-top -1px
+	box-shadow 0 2px 8px rgba($colorDark, .2)
+	ul
+		padding 0
+		margin 0
+		list-style none
+	a
+		display block
+		color $colorDark
+		font-weight 500
+		font-size 1.3rem
+		text-decoration none
+		background-color #fff
+		padding 10px 22px
+		&:hover
+			background-color #eee
+	.selected
+		a
+			background-color #eee
 /*  </header>  */
 
 /*  <footer>  */
@@ -1337,10 +1363,11 @@ img
 	&__total
 		flex-shrink 0
 		width 262px
-		background-color #fff
-		border-radius 2px
-		padding 20px
-		box-shadow 0 5px 10px rgba($colorDark, .1)
+		&-wrap
+			background-color #fff
+			border-radius 2px
+			padding 20px
+			box-shadow 0 5px 10px rgba($colorDark, .1)
 		&-title
 			color $colorDark
 			font-weight 900
