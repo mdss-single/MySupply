@@ -79,6 +79,7 @@
 	padding 0 15px
 	transition all .2s
 	&::placeholder
+		opacity 1
 		color $colorLight
 	&:hover
 	&:focus
@@ -107,7 +108,7 @@
 		&::placeholder
 			color @color
 .textarea
-	height 100px
+	height 122px
 	min-height @height
 	padding 10px 15px
 	resize vertical
@@ -156,6 +157,11 @@
 		&::before
 			left calc(100% - 1px)
 			transform translateX(-100%)
+.input-file
+	position absolute
+	left -9999px
+	& + label
+		display inline-flex
 /*  </inputs>  */
 
 /*  <labels>  */
@@ -180,6 +186,10 @@
 	justify-content center
 	position relative
 	padding-top 56px
+	&--small
+		padding-top 0
+		.btn--large
+			height 32px
 	&__loadmore
 		position absolute
 		top 0
@@ -191,8 +201,11 @@
 		font-size 1.3rem
 		padding 0 10px
 		margin-right 3px
-		&:last-of-type
+		&:Last-child
 			margin-right 0
+		^[0]--small &
+			min-width 32px
+			padding 0 4px
 		&--prev
 			&::before
 				width 8px
@@ -223,6 +236,8 @@
 		&--space
 			pointer-events none
 			padding 0 30px
+			^[0]--small &
+				padding 0 18px
 /*  </pagination>  */
 
 /*  <modal>  */
@@ -313,3 +328,53 @@
 			color $colorDark
 			background-color #eee
 /*  </dialog>  */
+
+/*  <tagsinput>  */
+.tagsinput
+	width 100%
+	height 122px
+	color $colorGray
+	background-color #fff
+	border 1px solid #ddd
+	border-radius 2px
+	padding 8px 6px
+	transition all .2s
+	&:hover
+	&:focus
+		border-color $colorLight
+		outline none
+		cursor text
+	.tag
+		display inline-flex
+		align-items center
+		height 22px
+		color #fff
+		font-size 1.3rem
+		text-transform uppercase
+		white-space nowrap
+		background-color $colorLight
+		border-radius 2px
+		padding-left 8px
+		margin 0 6px 6px 0
+		a
+			position relative
+			height 100%
+			color #fff
+			font-size 1.3rem
+			text-decoration none
+			text-indent -9999px
+			padding 0 8px
+			&::before
+				position absolute
+				top 0
+				left 0
+				font-size 1.5rem
+				text-indent 0
+				content '×'
+	& > div
+		display inline-flex
+		input
+			color $colorGray
+			background-color transparent
+			border 0
+/*  </tagsinput>  */

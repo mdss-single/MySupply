@@ -1586,15 +1586,6 @@ img
 			padding-top 25px
 		&-tracker
 			color $colorLight
-		&-pagination
-			.pagination
-				padding-top 0
-				&__item
-					min-width 32px
-					&--space
-						padding 0 20px
-			.btn--large
-				height 32px
 /*  </order-history>  */
 
 /*  <cabinet>  */
@@ -1670,6 +1661,25 @@ img
 		&-sub
 			color $colorLight
 			margin-right 15px
+			&--active
+			&--unactive
+				position relative
+				padding-left 13px
+				&::before
+					position absolute
+					top 50%
+					left 0
+					width 7px
+					height @width
+					border-radius 50%
+					content ''
+					transform translateY(-50%)
+			&--active
+				&::before
+					background-color #2cc81e
+			&--unactive
+				&::before
+					background-color $colorLight
 	&-api
 		&__title
 			color $colorDark
@@ -1714,13 +1724,16 @@ img
 		&__row
 			display flex
 			flex-wrap wrap
+			align-items center
 			margin 14px 0
 			&--discount
 				width 50%
 			&-title
 				width 138px
 				text-align right
-				margin-top 11px
+				&--top
+					align-self flex-start
+					margin-top 11px
 			&-value
 				flex 1
 				position relative
@@ -1860,6 +1873,184 @@ img
 				left 14px
 			&-currency
 				right 14px
+	&-shippers
+		&__system
+			display flex
+			align-items center
+			margin-bottom 14px
+			&-btn
+				flex 1
+				text-align right
+		&__title
+			color $colorDark
+			font-weight 900
+			font-size 2.3rem
+			margin-right 30px
+		&__search
+			position relative
+			width 396px
+			padding-right 51px
+			.input-text
+				position relative
+				z-index 3
+			&-count
+				position absolute
+				top 50%
+				right 66px
+				color $colorLight
+				transform translateY(-50%)
+			&-btn
+				position absolute
+				top 0
+				right 0
+				width 52px
+				height 100%
+				background-color #fafafa
+				border 1px solid #ddd
+				border-radius 2px
+				cursor pointer
+				transition all .2s
+				svg
+					width 15px
+					height @width
+					path
+						fill $colorGray
+						transition all .2s
+				&:active
+					box-shadow inset 0 2px 2px rgba($colorDark, .2)
+					svg
+						path
+							fill $colorDark
+		&__table
+			width 100%
+			border-collapse collapse
+			th
+			td
+				&:first-child
+					width 53px
+				&:nth-child(2)
+					width 1px
+					padding 15px 5px
+				&:last-child
+				&:nth-last-child(2)
+					text-align right
+			th
+				color $colorGray
+				font-weight normal
+				text-align left
+				background-color #fafafa
+				padding 15px
+			td
+				border-bottom 1px dashed #eee
+				padding 15px
+		&__company
+			&-folder
+				display block
+				width 16px
+				height 14px
+				background url('../i/icons/icon-folder.svg') no-repeat 0 0 / cover
+			&-name
+				text-decoration none
+			&-status
+				position relative
+				padding-left 20px
+				&::before
+					position absolute
+					top 50%
+					left 0
+					width 7px
+					height @width
+					border-radius 50%
+					content ''
+					transform translateY(-50%)
+				&--failed
+					&::before
+						background-color #c81e2c
+				&--ok
+					&::before
+						background-color #2cc81e
+		&__pagination
+			display flex
+			justify-content space-between
+			align-items center
+			margin-top 20px
+			&-counter
+				color $colorLight
+	&-catalog
+		&__search
+			position relative
+			padding-right 51px
+			margin-bottom 11px
+			.input-text
+				position relative
+				z-index 3
+			&-btn
+				position absolute
+				top 0
+				right 0
+				width 52px
+				height 100%
+				background-color #fafafa
+				border 1px solid #ddd
+				border-radius 2px
+				cursor pointer
+				transition all .2s
+				svg
+					width 15px
+					height @width
+					path
+						fill $colorGray
+						transition all .2s
+				&:active
+					box-shadow inset 0 2px 2px rgba($colorDark, .2)
+					svg
+						path
+							fill $colorDark
+		&__nav
+			overflow-y auto
+			max-height 450px
+			border-top 1px solid #eee
+			padding-top 11px
+			margin-top 13px
+			&-parent
+				position relative
+				background-color #fafafa
+				padding 5px 10px 5px 22px
+				cursor pointer
+				&::before
+					position absolute
+					top 10px
+					left 7px
+					border solid transparent
+					border-width 4px 0 4px 4px
+					border-left-color $colorGray
+					content ''
+				&--active
+					&::before
+						transform rotate(45deg)
+			&-item
+				display none
+				padding-left 22px
+				margin 0
+				&--active
+					display block
+					animation fadeIn .5s
+			&-link
+				display block
+				text-decoration none
+				margin 5px 0
+				&--active
+					font-weight 500
+			dl
+				margin 0 0 3px
+		&__section
+			border-bottom 1px dashed #eee
+			padding-bottom 15px
+			&-title
+				color $colorDark
+				font-weight 900
+				font-size 1.7rem
+				margin 28px 0 20px
 /*  </cabinet>  */
 
 /*  <modal-city>  */

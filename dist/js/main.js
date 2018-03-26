@@ -139,6 +139,12 @@
 		offset_top: 15,
 	});
 
+	// sticky cabinet sidebar
+	$('.js-cabinet-sticky').stick_in_parent({
+		parent: '.cabinet',
+		offset_top: 15,
+	});
+
 	// product offer map
 	if ($('#productOffersMap').length) {
 		ymaps.ready(productOffersMap);
@@ -295,6 +301,28 @@
 	$('.js-cabinet-cloning').on('click', '.js-cabinet-settings-clone-remove', function(e) {
 		e.preventDefault();
 		$(this).closest('.cabinet-settings__cloning-row').remove();
+	});
+
+	// cabinet catalog nav
+	$('.js-cabinet-catalog-nav').on('click', 'dt', function(e) {
+		e.preventDefault();
+		$(this).toggleClass('cabinet-catalog__nav-parent--active').next('dd').toggleClass('cabinet-catalog__nav-item--active');
+	});
+
+	// input file
+	$('.js-input-file').change(function() {
+		$('label[for="' + this.id + '"]').text($(this).val().replace(/^.*\\/, ""));
+	});
+
+	// input tags
+	$('.js-input-tags').each(function() {
+		var thisDefault = $(this).data('text-default');
+		$(this).tagsInput({
+			width: '100%',
+			height: '122px',
+			defaultText: thisDefault,
+			placeholderColor: '#444',
+		});
 	});
 
 	function productGallery() {

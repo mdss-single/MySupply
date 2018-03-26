@@ -1,0 +1,119 @@
+//= template/header-cabinet.html
+		<div class="container">
+			<ol class="breadcrumbs">
+				<li><a href="#">Моё Снабжение</a></li>
+				<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+					<a itemprop="item" href="https://mysupply.ru/%URL%">
+						<span itemprop="name">Поставщики</span>
+					</a>
+					<meta itemprop="position" content="1">
+				</li>
+			</ol>
+			<div class="cabinet">
+				<div class="cabinet__main">
+					<div class="cabinet-shippers">
+						<div class="cabinet-shippers__system">
+							<div class="cabinet-shippers__title">Поставщики</div>
+							<div class="cabinet-shippers__search">
+								<input type="text" name="" id="" class="input-text" placeholder="Поиск и фильтрация">
+								<span class="cabinet-shippers__search-count">Всего: 14</span>
+								<button class="cabinet-shippers__search-btn">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+										<path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/>
+									</svg>
+								</button>
+							</div>
+							<div class="cabinet-shippers__system-btn">
+								<button class="btn btn--middle btn--green">Добавить</button>
+							</div>
+						</div>
+						<table class="cabinet-shippers__table">
+							<thead>
+								<tr>
+									<th>
+										<input type="checkbox" name="" id="" class="checkbox js-cabinet-shippers-checkall">
+									</th>
+									<th></th>
+									<th>Компания</th>
+									<th>Статус загрузки товаров</th>
+									<th>Кол-во товаров</th>
+									<th>Пересечения</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<input type="checkbox" name="" id="" class="checkbox js-cabinet-shippers-check">
+									</td>
+									<td>
+										<a href="#" class="cabinet-shippers__company-folder"></a>
+									</td>
+									<td>
+										<a href="#" class="cabinet-shippers__company-name">Элевел, ООО</a>
+									</td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>
+										<input type="checkbox" name="" id="" class="checkbox js-cabinet-shippers-check">
+									</td>
+									<td></td>
+									<td>
+										<a href="#" class="cabinet-shippers__company-name">Проводник, ООО</a>
+									</td>
+									<td>
+										<span class="cabinet-shippers__company-status cabinet-shippers__company-status--failed">12.12.18, 12:36 - Не удалось загрузить файл</span>
+									</td>
+									<td>25 065</td>
+									<td>98%</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="checkbox" name="" id="" class="checkbox js-cabinet-shippers-check">
+									</td>
+									<td></td>
+									<td>
+										<a href="#" class="cabinet-shippers__company-name">Инженерные решения, ООО</a>
+									</td>
+									<td>
+										<span class="cabinet-shippers__company-status cabinet-shippers__company-status--ok">12.12.18, 10:12 - ОК</span>
+									</td>
+									<td>31 055</td>
+									<td>56%</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="checkbox" name="" id="" class="checkbox js-cabinet-shippers-check">
+									</td>
+									<td></td>
+									<td>
+										<a href="#" class="cabinet-shippers__company-name">Элком-Электро, ООО</a>
+									</td>
+									<td>
+										<span class="cabinet-shippers__company-status cabinet-shippers__company-status--failed">12.12.18, 10:24  - Изменились ID товаров</span>
+									</td>
+									<td>4 327</td>
+									<td>32%</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="cabinet-shippers__pagination">
+							<span class="cabinet-shippers__pagination-counter">Поставщики 80 - 100 из 124</span>
+							<div class="pagination pagination--small">
+								<a href="#" class="btn btn--large pagination__item pagination__item--prev" role="button" disabled></a>
+								<a href="#" class="btn btn--large pagination__item pagination__item--current" role="button">1</a>
+								<a href="#" class="btn btn--large pagination__item" role="button">2</a>
+								<a href="#" class="btn btn--large pagination__item" role="button">3</a>
+								<a href="#" class="btn btn--large pagination__item" role="button">4</a>
+								<span class="btn btn--large pagination__item pagination__item--space">...</span>
+								<a href="#" class="btn btn--large pagination__item" role="button">20</a>
+								<a href="#" class="btn btn--large pagination__item pagination__item--next" role="button"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+//= template/footer-short.html
