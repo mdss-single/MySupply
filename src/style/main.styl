@@ -256,6 +256,47 @@ img
 			a:hover&
 				&::before
 					width 100%
+.header-cabinet
+	flex-shrink 0
+	height 60px
+	background-color $colorGray
+	.container
+		display flex
+		justify-content space-between
+		align-items center
+		height @height
+	&__logo
+		color #fff
+		font-size 2rem
+		font-family logo
+		font-size-adjust .5
+		text-decoration none
+	&__nav
+		display flex
+		&-item
+			display flex
+			align-items center
+			height @height
+			color #ddd
+			text-decoration none
+			margin-left 20px
+			&:first-child
+				margin-left 0
+			&::after
+				position absolute
+				right 0
+				bottom 0
+				left 0
+				height 0
+				background-color #81c81e
+				content ''
+				transition all .2s
+			a:hover&
+			&--active
+				position relative
+				color #fff
+				&::after
+					height 3px
 .easy-autocomplete-container
 	position absolute
 	z-index 9999
@@ -1555,6 +1596,131 @@ img
 			.btn--large
 				height 32px
 /*  </order-history>  */
+
+/*  <cabinet>  */
+.cabinet
+	display flex
+	&__sidebar
+		flex-shrink 0
+		width 293px
+		padding-right 15px
+		&-wrap
+			background-color #fff
+			border-radius 2px
+			padding 20px
+			box-shadow 0 5px 10px rgba($colorDark, .1)
+	&-sidebar
+		&__nav
+			display flex
+			flex-direction column
+			&-title
+				overflow hidden
+				width 100%
+				color $colorDark
+				font-weight 900
+				font-size 1.7rem
+				white-space nowrap
+				text-overflow ellipsis
+				border-bottom 1px solid #eee
+				padding-bottom 25px
+				margin 10px 0
+			&-item
+				align-self flex-start
+				text-decoration none
+				padding-top 5px
+				padding-bottom @padding-top
+				margin 5px 0
+				a:hover&
+					text-decoration underline
+				&--sub
+					padding-left 13px
+				&--active
+					position relative
+					color $colorDark
+					font-weight 500
+					&::before
+						position absolute
+						top 3px
+						bottom @top
+						left -20px
+						width 3px
+						background-color #81c81e
+						content ''
+	&__main
+		flex 1
+		background-color #fff
+		border-radius 2px
+		padding 25px 28px 28px
+		box-shadow 0 5px 10px rgba($colorDark, .1)
+	&__title
+		border-bottom 1px solid #eee
+		padding-bottom 16px
+		margin-bottom 25px
+		&-main
+			color $colorDark
+			font-weight 900
+			font-size 2.3rem
+			margin 0 0 6px
+		&-system
+			display flex
+			align-items center
+			margin-top 15px
+			.btn
+				margin-right 15px
+		&-sub
+			color $colorLight
+			margin-right 15px
+	&-api
+		&__title
+			color $colorDark
+			font-weight 900
+			font-size 1.7rem
+			margin-bottom 16px
+		&__item
+			display flex
+			margin 16px 0
+			&-title
+				width 140px
+				line-height 3.8rem
+				text-align right
+			&-value
+				flex 1
+				background-color #fafafa
+				border 1px solid #ddd
+				border-radius 2px
+				padding 10px 15px
+				margin-left 30px
+				pre
+				code
+					font-size 1.3rem
+					tab-size 2
+				pre
+					margin 0
+	&-discount
+		&__title
+			color $colorDark
+			font-weight 900
+			font-size 1.7rem
+			margin-bottom 16px
+		&__row
+			display flex
+			border-bottom 1px dashed #eee
+		&__btn
+			text-align center
+			margin-top 24px
+	&-settings
+		&__row
+			display flex
+			align-items center
+			margin 14px 0
+			&-title
+				width 138px
+				text-align right
+			&-value
+				flex 1
+				position relative
+				margin-left 30px
+/*  </cabinet>  */
 
 /*  <modal-city>  */
 .modal-city

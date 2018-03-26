@@ -1,0 +1,105 @@
+//= template/header-cabinet.html
+		<div class="container">
+			<ol class="breadcrumbs">
+				<li><a href="#">Моё Снабжение</a></li>
+				<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+					<a itemprop="item" href="https://mysupply.ru/%URL%">
+						<span itemprop="name">Поставщики</span>
+					</a>
+					<meta itemprop="position" content="1">
+				</li>
+				<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+					<a itemprop="item" href="https://mysupply.ru/%URL%">
+						<span itemprop="name">ООО «Элком-Электро» - Кунцево</span>
+					</a>
+					<meta itemprop="position" content="2">
+				</li>
+			</ol>
+			<div class="cabinet">
+				<aside class="cabinet__sidebar">
+					<div class="cabinet__sidebar-wrap js-cabinet-sticky">
+						<div class="cabinet-sidebar__nav">
+							<div class="cabinet-sidebar__nav-title">ООО «Элком-Электро» - Компания ООО</div>
+							<a href="#" class="cabinet-sidebar__nav-item">Настройки поставщика</a>
+							<a href="#" class="cabinet-sidebar__nav-item cabinet-sidebar__nav-item--sub">- Основные настройки</a>
+							<a href="#" class="cabinet-sidebar__nav-item cabinet-sidebar__nav-item--sub">- Тип поставщика</a>
+							<a href="#" class="cabinet-sidebar__nav-item cabinet-sidebar__nav-item--sub">- Адрес и контакты</a>
+							<a href="#" class="cabinet-sidebar__nav-item cabinet-sidebar__nav-item--sub">- График работы</a>
+							<a href="#" class="cabinet-sidebar__nav-item cabinet-sidebar__nav-item--sub">- Условия поставки</a>
+							<a href="#" class="cabinet-sidebar__nav-item cabinet-sidebar__nav-item--active">Загрузка товаров</a>
+						</div>
+					</div>
+				</aside>
+				<div class="cabinet__main">
+					<div class="cabinet__title">
+						<h1 class="cabinet__title-main">Загрузка товаров</h1>
+					</div>
+					<div class="cabinet-api">
+						<div class="cabinet-api__title">Данные для загрузки товаров по API</div>
+						<div class="cabinet-api__items">
+							<div class="cabinet-api__item">
+								<div class="cabinet-api__item-title">ID партнера</div>
+								<div class="cabinet-api__item-value">
+									<pre><code>5a674b7cc7d0104ea0737fb7</code></pre>
+								</div>
+							</div>
+							<div class="cabinet-api__item">
+								<div class="cabinet-api__item-title">Ключ API</div>
+								<div class="cabinet-api__item-value">
+									<pre><code>8525grhtyjukyudystez852djtgn56g525632285gwrsst6grhhr6</code></pre>
+								</div>
+							</div>
+							<div class="cabinet-api__item">
+								<div class="cabinet-api__item-title">URL запроса</div>
+								<div class="cabinet-api__item-value">
+									<pre><code>https://api.content.market.yandex.ru/{version}/offers/{id}</code></pre>
+								</div>
+							</div>
+							<div class="cabinet-api__item">
+								<div class="cabinet-api__item-title">Пример запроса</div>
+								<div class="cabinet-api__item-value">
+									<pre><code>{
+	"status" : "{enum}",
+		"context" : {
+			"region" : {
+				"id" : {int32},
+				"name" : "{string}",
+				"type" : "{enum}",
+				"childCount" : {int32},
+				"country" : {
+					Содержимое объекта
+				}
+			},
+			"currency" : {
+				"id" : "{string}",
+				"name" : "{string}"
+			},
+			"alternateCurrency" : {
+				"id" : "{string}",
+				"name" : "{string}"
+			},
+			"warnings" : [
+				{
+					"type" : "{string}",
+					"code" : "{string}",
+					"message" : "{string}"
+				},
+				...
+			],
+			"id" : "{string}",
+			"time" : "{date}",
+			"link" : "{string}",
+			"marketUrl" : "{string}"
+		},
+		"offer" : {
+		Содержимое объекта
+	}
+}</code></pre>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+//= template/footer-short.html

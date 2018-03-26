@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Mysupply</title>
+	<link rel="stylesheet" href="css/plugins.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<header class="header-cabinet">
+		<div class="container">
+			<a href="#" class="header-cabinet__logo">Моё снабжение</a>
+			<nav class="header-cabinet__nav">
+				<a href="#" class="header-cabinet__nav-item header-cabinet__nav-item--active">Поставщики</a>
+				<a href="#" class="header-cabinet__nav-item">Каталог</a>
+				<a href="#" class="header-cabinet__nav-item">На сайт »</a>
+				<a href="#" class="header-cabinet__nav-item">Выйти</a>
+			</nav>
+		</div>
+	</header>
+	<main class="main">
+		<div class="container">
+			<ol class="breadcrumbs">
+				<li><a href="#">Моё Снабжение</a></li>
+				<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+					<a itemprop="item" href="https://mysupply.ru/%URL%">
+						<span itemprop="name">Поставщики</span>
+					</a>
+					<meta itemprop="position" content="1">
+				</li>
+				<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+					<a itemprop="item" href="https://mysupply.ru/%URL%">
+						<span itemprop="name">ООО «Элком-Электро» - Кунцево</span>
+					</a>
+					<meta itemprop="position" content="2">
+				</li>
+			</ol>
+			<div class="cabinet">
+				<aside class="cabinet__sidebar">
+					<div class="cabinet__sidebar-wrap js-cabinet-sticky">
+						<div class="cabinet-sidebar__nav">
+							<div class="cabinet-sidebar__nav-title">ООО «Элком-Электро» - Компания ООО</div>
+							<a href="#" class="cabinet-sidebar__nav-item">Настройки поставщика</a>
+							<a href="#" class="cabinet-sidebar__nav-item cabinet-sidebar__nav-item--sub">- Основные настройки</a>
+							<a href="#" class="cabinet-sidebar__nav-item cabinet-sidebar__nav-item--sub">- Тип поставщика</a>
+							<a href="#" class="cabinet-sidebar__nav-item cabinet-sidebar__nav-item--sub">- Адрес и контакты</a>
+							<a href="#" class="cabinet-sidebar__nav-item cabinet-sidebar__nav-item--sub">- График работы</a>
+							<a href="#" class="cabinet-sidebar__nav-item cabinet-sidebar__nav-item--sub">- Условия поставки</a>
+							<a href="#" class="cabinet-sidebar__nav-item cabinet-sidebar__nav-item--active">Загрузка товаров</a>
+						</div>
+					</div>
+				</aside>
+				<div class="cabinet__main">
+					<div class="cabinet__title">
+						<h1 class="cabinet__title-main">Загрузка товаров</h1>
+						<div class="cabinet__title-system">
+							<button class="btn btn--dialog js-dialog" data-target="#cabinetDialog">Ещё</button>
+							<button class="btn btn--green">Сохранить</button>
+							<span class="cabinet__title-sub">Изменён 13.02.2018, 15:06:27</span>
+							<div class="dialog" id="cabinetDialog">
+								<a href="#" class="dialog__item">Remove</a>
+								<a href="#" class="dialog__item">Edit</a>
+								<a href="#" class="dialog__item">Item 3</a>
+							</div>
+						</div>
+					</div>
+					<div class="cabinet-discount">
+						<div class="cabinet-discount__title">Шкала скидок по сумме заказа</div>
+						<div class="cabinet-discount__descr">
+							Мотивирующее предложение
+						</div>
+						<div class="cabinet-settings__row">
+							<div class="cabinet-settings__row-title">Отображать на сайте</div>
+							<div class="cabinet-settings__row-value">
+								<input type="checkbox" name="" id="a1" class="checkbox-toggle">
+								<label for="a1"></label>
+							</div>
+						</div>
+						<div class="cabinet-discount__row">
+							<div class="cabinet-settings__row">
+								<div class="cabinet-settings__row-title">Сумма заказа</div>
+								<div class="cabinet-settings__row-value">
+									<input type="text" name="" id="" class="input-text js-category-spinner" min="1" max="10000000" value="1">
+								</div>
+							</div>
+							<div class="cabinet-settings__row">
+								<div class="cabinet-settings__row-title">Скидка в %</div>
+								<div class="cabinet-settings__row-value">
+									<input type="text" name="" id="" class="input-text js-category-spinner" min="1" max="100" value="1" data-mask="000">
+								</div>
+							</div>
+						</div>
+						<div class="cabinet-discount__row">
+							<div class="cabinet-settings__row">
+								<div class="cabinet-settings__row-title">Сумма заказа</div>
+								<div class="cabinet-settings__row-value">
+									<input type="text" name="" id="" class="input-text js-category-spinner" min="1" max="10000000" value="1">
+								</div>
+							</div>
+							<div class="cabinet-settings__row">
+								<div class="cabinet-settings__row-title">Скидка в %</div>
+								<div class="cabinet-settings__row-value">
+									<input type="text" name="" id="" class="input-text js-category-spinner" min="1" max="100" value="1" data-mask="000">
+								</div>
+							</div>
+						</div>
+						<div class="cabinet-discount__btn">
+							<button class="btn btn--middle btn--green">Добавить скидку</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer class="footer footer--short">
+		<div class="container">
+			<div class="footer__copyright">
+				&copy; 2016-2018 ООО «Моё Снабжение»
+			</div>
+		</div>
+	</footer>
+	<script>window.jQuery || document.write('<script src="js/jquery.js"><\/script>')</script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
