@@ -129,6 +129,33 @@
 	box-sizing content-box
 .select
 	width 100%
+.checkbox-toggle
+	position absolute
+	left -9999px
+	& + label
+		display inline-flex
+		position relative
+		width 42px
+		height 24px
+		background-color rgba(#2cc81e, .6)
+		border-radius (@height / 2)
+		transition all .2s
+		cursor pointer
+		&::before
+			position absolute
+			top 1px
+			bottom 1px
+			left 1px
+			width 22px
+			background-color #fff
+			border-radius 50%
+			content ''
+			transition all .2s
+	&:checked + label
+		background-color #2cc81e
+		&::before
+			left calc(100% - 1px)
+			transform translateX(-100%)
 /*  </inputs>  */
 
 /*  <labels>  */

@@ -226,6 +226,77 @@
 		}
 	}
 
+	// cabinet-settings map
+	if ($('#cabinetSettingsMap').length) {
+		ymaps.ready(cabinetMap);
+		function cabinetMap() {
+			var geolocation = ymaps.geolocation,
+			myMap = new ymaps.Map('cabinetSettingsMap', {
+				center: [55, 34],
+				zoom: 14,
+			}, {
+				searchControlProvider: 'yandex#search'
+			});
+			geolocation.get({
+				provider: 'yandex',
+				mapStateAutoApply: true
+			}).then(function (result) {
+				myMap.geoObjects.add(result.geoObjects);
+				showAddress(firstGeoObject.getAddressLine());
+				getAddress(coords);
+			});
+			$('.js-settings-address').on('keyup', function() {
+				var thisVal = $(this).val();
+				ymaps.geocode(thisVal, {
+					results: 1
+				}).then(function (res) {
+					// Выбираем первый результат геокодирования.
+					var firstGeoObject = res.geoObjects.get(0),
+					// Координаты геообъекта.
+					coords = firstGeoObject.geometry.getCoordinates(),
+					// Область видимости геообъекта.
+					bounds = firstGeoObject.properties.get('boundedBy');
+					firstGeoObject.options.set('preset', 'islands#darkBlueDotIconWithCaption');
+					// Получаем строку с адресом и выводим в иконке геообъекта.
+					firstGeoObject.properties.set('iconCaption', firstGeoObject.getAddressLine());
+					// Добавляем первый найденный геообъект на карту.
+					myMap.geoObjects.add(firstGeoObject);
+					// Масштабируем карту на область видимости геообъекта.
+					myMap.setBounds(bounds, {
+						// Проверяем наличие тайлов на данном масштабе.
+						checkZoomRange: true
+					});
+				});
+			});
+		}
+	}
+	// cabinet settings toggle map showing
+	$('.js-cabinet-settings-togglemap').on('click', function(e) {
+		e.preventDefault();
+		$(this).text(function(i, text) {
+			return text == $(this).data('default-text') ? $(this).data('new-text') : $(this).data('default-text');
+		});
+		$('.cabinet-settings__map').toggleClass('cabinet-settings__map--hidden');
+	});
+
+	// cabinet settings cloning
+	$('.js-cabinet-cloning').on('click', '.js-cabinet-settings-clone', function(e) {
+		e.preventDefault();
+		$(this).closest('.cabinet-settings__cloning').find('.select').styler('destroy');
+		var cloneContent = $(this).closest('.cabinet-settings__cloning').clone();
+		cloneContent.find('input').each(function() {
+			$(this).attr('id', this.id+ +length++).next('label').attr('for', this.id);
+		}).val('');
+		$(this).closest('.cabinet-settings__cloning').next('.cabinet-settings__cloning-place').append('<div class="cabinet-settings__cloning-row"></div>');
+		$(this).closest('.cabinet-settings__cloning').next('.cabinet-settings__cloning-place').find('.cabinet-settings__cloning-row').last().append(cloneContent);
+		$(this).closest('.cabinet-settings__cloning').find('.select').styler();
+		cloneContent.find('.select').styler();
+	});
+	$('.js-cabinet-cloning').on('click', '.js-cabinet-settings-clone-remove', function(e) {
+		e.preventDefault();
+		$(this).closest('.cabinet-settings__cloning-row').remove();
+	});
+
 	function productGallery() {
 		var $carousel = $('.js-product-gallery');
 		if ($carousel.length) {

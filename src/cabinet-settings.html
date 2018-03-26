@@ -1,0 +1,313 @@
+//= template/header-cabinet.html
+		<div class="container">
+			<ol class="breadcrumbs">
+				<li><a href="#">Моё Снабжение</a></li>
+				<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+					<a itemprop="item" href="https://mysupply.ru/%URL%">
+						<span itemprop="name">Поставщики</span>
+					</a>
+					<meta itemprop="position" content="1">
+				</li>
+				<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+					<a itemprop="item" href="https://mysupply.ru/%URL%">
+						<span itemprop="name">ООО «Элком-Электро» - Кунцево</span>
+					</a>
+					<meta itemprop="position" content="2">
+				</li>
+			</ol>
+			<div class="cabinet">
+				<aside class="cabinet__sidebar">
+					<div class="cabinet__sidebar-wrap js-cabinet-sticky">
+						<div class="cabinet-sidebar__nav">
+							<div class="cabinet-sidebar__nav-title">ООО «Элком-Электро» - Компания ООО</div>
+							<a href="#" class="cabinet-sidebar__nav-item">Настройки поставщика</a>
+							<a href="#" class="cabinet-sidebar__nav-item cabinet-sidebar__nav-item--sub">- Основные настройки</a>
+							<a href="#" class="cabinet-sidebar__nav-item cabinet-sidebar__nav-item--sub">- Тип поставщика</a>
+							<a href="#" class="cabinet-sidebar__nav-item cabinet-sidebar__nav-item--sub cabinet-sidebar__nav-item--active">- Адрес и контакты</a>
+							<a href="#" class="cabinet-sidebar__nav-item cabinet-sidebar__nav-item--sub">- График работы</a>
+							<a href="#" class="cabinet-sidebar__nav-item cabinet-sidebar__nav-item--sub">- Условия поставки</a>
+							<a href="#" class="cabinet-sidebar__nav-item">Загрузка товаров</a>
+						</div>
+					</div>
+				</aside>
+				<div class="cabinet__main">
+					<div class="cabinet__title">
+						<h1 class="cabinet__title-main">Настройки поставщика ООО «Элком-Электро» - Кунцево</h1>
+						<div class="cabinet__title-system">
+							<button class="btn btn--dialog js-dialog" data-target="#cabinetDialog">Ещё</button>
+							<button class="btn btn--green">Сохранить</button>
+							<span class="cabinet__title-sub">Изменён 13.02.2018, 15:06:27</span>
+							<span class="cabinet__title-sub cabinet__title-subcabinet__title-sub--count">Товаров: 85 362 - Скрыты на сайте</span>
+							<div class="dialog" id="cabinetDialog">
+								<a href="#" class="dialog__item">Remove</a>
+								<a href="#" class="dialog__item">Edit</a>
+								<a href="#" class="dialog__item">Item 3</a>
+							</div>
+						</div>
+					</div>
+					<div class="cabinet-settings">
+						<div class="cabinet-settings__section">
+							<div class="cabinet-settings__title">Тип поставщика</div>
+							<div class="cabinet-settings__row">
+								<div class="cabinet-settings__row-title">Тип поставщика</div>
+								<div class="cabinet-settings__row-value">
+									<div class="cabinet-settings__subrow">
+										<div>
+											<input type="checkbox" name="" id="b1" class="checkbox" checked><label for="b1">Склад</label>
+										</div>
+										<div class="cabinet-settings__shipper-descr">Склад, с которого возможен самовывоз оптовых или розничных заказов</div>
+									</div>
+									<div class="cabinet-settings__subrow">
+										<div>
+											<input type="checkbox" name="" id="b2" class="checkbox"><label for="b2">Магазин</label>
+										</div>
+										<div class="cabinet-settings__shipper-descr">Оптовый или розничный магазин, в который можно прийти и купить товар</div>
+									</div>
+									<div class="cabinet-settings__subrow">
+										<div>
+											<input type="checkbox" name="" id="b3" class="checkbox"><label for="b3">Офис продаж</label>
+										</div>
+										<div class="cabinet-settings__shipper-descr">Офис компании (филиал, представительство и т.п.) без фактического склада и наличия товаров</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="cabinet-settings__section">
+							<div class="cabinet-settings__title">Название в поиске</div>
+							<div class="cabinet-settings__row">
+								<div class="cabinet-settings__row-title">Тип поставщика</div>
+								<div class="cabinet-settings__row-value">
+									<input type="text" name="" id="" class="input-text" value="ООО «Элком-Электро» - Кунцево">
+								</div>
+							</div>
+							<div class="cabinet-settings__row">
+								<div class="cabinet-settings__row-title">Адрес поставщика</div>
+								<div class="cabinet-settings__row-value">
+									<input type="text" name="" id="" class="input-text js-settings-address" placeholder="Введите адрес">
+									<a href="#" class="cabinet-settings__togglemap js-cabinet-settings-togglemap" data-default-text="Скрыть карту" data-new-text="Показать карту">Скрыть карту</a>
+								</div>
+								<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+								<div class="cabinet-settings__map" id="cabinetSettingsMap"></div>
+							</div>
+							<div class="cabinet-settings__row js-cabinet-cloning">
+								<div class="cabinet-settings__row-title">Телефон</div>
+								<div class="cabinet-settings__row-value">
+									<div class="cabinet-settings__cloning">
+										<input type="text" name="" id="test" class="input-text" placeholder="Введите телефон" data-mask="+7 (000) 000-00-00">
+										<a href="#" class="cabinet-settings__clone js-cabinet-settings-clone">+</a>
+										<a href="#" class="cabinet-settings__clone-remove js-cabinet-settings-clone-remove">×</a>
+									</div>
+									<div class="cabinet-settings__cloning-place"></div>
+								</div>
+							</div>
+							<div class="cabinet-settings__row js-cabinet-cloning">
+								<div class="cabinet-settings__row-title">Email для заказов</div>
+								<div class="cabinet-settings__row-value">
+									<div class="cabinet-settings__cloning">
+										<input type="text" name="" id="" class="input-text" placeholder="Введите email">
+										<a href="#" class="cabinet-settings__clone js-cabinet-settings-clone">+</a>
+										<a href="#" class="cabinet-settings__clone-remove js-cabinet-settings-clone-remove">×</a>
+									</div>
+									<div class="cabinet-settings__cloning-place"></div>
+								</div>
+							</div>
+						</div>
+						<div class="cabinet-settings__section">
+							<div class="cabinet-settings__title">График работы</div>
+							<div class="cabinet-settings__row js-cabinet-cloning">
+								<div class="cabinet-settings__cloning">
+									<div class="cabinet-settings__work">
+										<div class="cabinet-settings__workday">
+											<input type="checkbox" name="" id="w1" class="cabinet-settings__workday-check">
+											<label for="w1">Пн</label>
+											<input type="checkbox" name="" id="w2" class="cabinet-settings__workday-check">
+											<label for="w2">Вт</label>
+											<input type="checkbox" name="" id="w3" class="cabinet-settings__workday-check">
+											<label for="w3">Ср</label>
+											<input type="checkbox" name="" id="w4" class="cabinet-settings__workday-check">
+											<label for="w4">Чт</label>
+											<input type="checkbox" name="" id="w5" class="cabinet-settings__workday-check">
+											<label for="w5">Пт</label>
+											<input type="checkbox" name="" id="w6" class="cabinet-settings__workday-check">
+											<label for="w6">Сб</label>
+											<input type="checkbox" name="" id="w7" class="cabinet-settings__workday-check">
+											<label for="w7">Вс</label>
+											<div class="cabinet-settings__workday-control">
+												<span>Будни</span>
+												<span>Выходные</span>
+												<span>Ежедневно</span>
+											</div>
+										</div>
+										<div class="cabinet-settings__worktime">
+											<select name="" id="" class="select">
+												<option value="">01</option>
+												<option value="">02</option>
+												<option value="">03</option>
+												<option value="">04</option>
+												<option value="">05</option>
+												<option value="">06</option>
+												<option value="">07</option>
+												<option value="" selected>08</option>
+												<option value="">09</option>
+												<option value="">10</option>
+												<option value="">11</option>
+												<option value="">12</option>
+												<option value="">13</option>
+												<option value="">14</option>
+												<option value="">15</option>
+												<option value="">16</option>
+												<option value="">17</option>
+												<option value="">18</option>
+												<option value="">19</option>
+												<option value="">20</option>
+												<option value="">21</option>
+												<option value="">22</option>
+												<option value="">23</option>
+												<option value="">24</option>
+											</select>
+											<span>:</span>
+											<select name="" id="" class="select">
+												<option value="">10</option>
+												<option value="">20</option>
+												<option value="">30</option>
+												<option value="">40</option>
+												<option value="">50</option>
+											</select>
+											<span>—</span>
+											<select name="" id="" class="select">
+												<option value="">01</option>
+												<option value="">02</option>
+												<option value="">03</option>
+												<option value="">04</option>
+												<option value="">05</option>
+												<option value="">06</option>
+												<option value="">07</option>
+												<option value="" selected>08</option>
+												<option value="">09</option>
+												<option value="">10</option>
+												<option value="">11</option>
+												<option value="">12</option>
+												<option value="">13</option>
+												<option value="">14</option>
+												<option value="">15</option>
+												<option value="">16</option>
+												<option value="">17</option>
+												<option value="">18</option>
+												<option value="">19</option>
+												<option value="">20</option>
+												<option value="">21</option>
+												<option value="">22</option>
+												<option value="">23</option>
+												<option value="">24</option>
+											</select>
+											<span>:</span>
+											<select name="" id="" class="select">
+												<option value="">10</option>
+												<option value="">20</option>
+												<option value="">30</option>
+												<option value="">40</option>
+												<option value="">50</option>
+											</select>
+										</div>
+										<a href="#" class="cabinet-settings__clone js-cabinet-settings-clone">+</a>
+										<a href="#" class="cabinet-settings__clone-remove js-cabinet-settings-clone-remove">×</a>
+									</div>
+								</div>
+								<div class="cabinet-settings__cloning-place"></div>
+							</div>
+						</div>
+						<div class="cabinet-settings__section">
+							<div class="cabinet-settings__title">Цены</div>
+							<div class="cabinet-settings__row">
+								<div class="cabinet-settings__row-title">Валюта поставщика</div>
+								<div class="cabinet-settings__row-value">
+									<select name="" id="" class="select" disabled>
+										<option value="">&#8381; - Рубль</option>
+									</select>
+								</div>
+							</div>
+							<div class="cabinet-settings__row">
+								<div class="cabinet-settings__row-title">Тип цен</div>
+								<div class="cabinet-settings__row-value">
+									<select name="" id="" class="select">
+										<option value="">&#8381;, с НДС</option>
+										<option value="">&#8381;, без НДС</option>
+										<option value="">&#8381;, УСН</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="cabinet-settings__section">
+							<div class="cabinet-settings__title">Сумма заказа</div>
+							<div class="cabinet-settings__row">
+								<div class="cabinet-settings__row-title">Сумма заказа</div>
+								<div class="cabinet-settings__row-value">
+									<div class="cabinet-settings__summ">
+										<input type="text" name="" id="" class="input-text js-mask-money" value="10000">
+										<span class="cabinet-settings__summ-from">от</span>
+										<span class="cabinet-settings__summ-currency">&#8381;, с НДС</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="cabinet-settings__section">
+							<div class="cabinet-settings__title">Доставка</div>
+							<div class="cabinet-settings__row">
+								<div class="cabinet-settings__row-title">Возможные способы получения товара</div>
+								<div class="cabinet-settings__row-value">
+									<div class="cabinet-settings__subrow">
+										<input type="checkbox" name="" id="c1" class="checkbox" checked>
+										<label for="c1">Есть бесплатная доставка</label>
+									</div>
+									<div class="cabinet-settings__subrow">
+										<input type="checkbox" name="" id="c2" class="checkbox" checked>
+										<label for="c2">Есть платная доставка</label>
+									</div>
+									<div class="cabinet-settings__subrow">
+										<input type="checkbox" name="" id="c3" class="checkbox" checked>
+										<label for="c3">Есть самовывоз</label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="cabinet-settings__section">
+							<div class="cabinet-settings__title">Способы оплаты</div>
+							<div class="cabinet-settings__row">
+								<div class="cabinet-settings__row-title">Способы оплатить заказ</div>
+								<div class="cabinet-settings__row-value">
+									<div class="cabinet-settings__subrow">
+										<input type="checkbox" name="" id="c4" class="checkbox" checked>
+										<label for="c4">Оплата по счёту</label>
+									</div>
+									<div class="cabinet-settings__subrow">
+										<input type="checkbox" name="" id="c5" class="checkbox" checked>
+										<label for="c5">Оплата наличными</label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="cabinet-settings__section">
+							<div class="cabinet-settings__title">Формы оплаты</div>
+							<div class="cabinet-settings__row">
+								<div class="cabinet-settings__row-title">Доступные формы оплаты заказа</div>
+								<div class="cabinet-settings__row-value">
+									<div class="cabinet-settings__subrow">
+										<input type="checkbox" name="" id="c6" class="checkbox" checked>
+										<label for="c6">Предоплата</label>
+									</div>
+									<div class="cabinet-settings__subrow">
+										<input type="checkbox" name="" id="c7" class="checkbox" checked>
+										<label for="c7">Оплата по факту отгрузки</label>
+									</div>
+									<div class="cabinet-settings__subrow">
+										<input type="checkbox" name="" id="c8" class="checkbox" checked>
+										<label for="c8">Возможна отсрочка платежа</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+//= template/footer-short.html
