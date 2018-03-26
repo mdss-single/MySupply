@@ -4,7 +4,7 @@
 @font-face
 	font-family logo
 	src url('../fonts/raleway-500-normal.woff2') format('woff2'), url('../fonts/raleway-500-normal.woff') format('woff')
-	font-weight normal
+	font-weight 500
 	font-style normal
 @font-face
 	font-family Roboto
@@ -139,9 +139,10 @@ img
 				left -10000%
 	&__logo
 		position relative
+		font-weight 500
 		font-size 2.4rem
 		font-family logo
-		font-size-adjust .5
+		white-space nowrap
 		text-decoration none
 	&__phone
 		font-weight 500
@@ -267,10 +268,13 @@ img
 		height @height
 	&__logo
 		color #fff
+		font-weight 500
 		font-size 2rem
 		font-family logo
-		font-size-adjust .5
+		white-space nowrap
 		text-decoration none
+		span
+			color #81c81e
 	&__nav
 		display flex
 		&-item
