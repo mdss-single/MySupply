@@ -557,16 +557,37 @@ img
 				right 6px
 				transform translateY(-50%)
 		&__region
+			&-wrap
+				overflow-y auto
+				max-height 450px
+				margin-top 25px
 			&-section
 				margin-top 25px
-			&-letter
-				color $colorLight
-				text-transform uppercase
-				margin-bottom 13px
+				&:first-child
+					margin-top 0
+				&::before
+					display block
+					color $colorLight
+					text-transform uppercase
+					margin-bottom 13px
+					content attr(data-section-letter)
+				&--hidden
+					display none
+				&:empty
+					&::before
+						display none
 			&-item
 				margin-bottom 25px
 				span
 					color $colorLight
+				&--hidden
+					display none
+			&-notFound
+				display none
+				margin 15px 0
+				&--active
+					display block
+					animation fadeIn.5s
 		&__categories
 			display flex
 			flex-direction column

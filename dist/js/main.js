@@ -39,7 +39,10 @@
 	});
 
 	// hide/show rows in category sidebar
-	toggleSidebarRows();
+	$('.js-category-sidebar-hiderows').toggleSidebarRows();
+
+	// find region in category sidebar
+	$('.js-region-search').regionSearch();
 
 	// add to cart spinner
 	$('.js-category-spinner').spinner();
@@ -90,7 +93,7 @@
 	});
 
 	// product photos
-	productGallery();
+	$('.js-product-gallery').productCarousel();
 	$('.js-product-photo-big').fancybox({
 		lang : 'ru',
 		i18n : {
@@ -324,60 +327,5 @@
 			placeholderColor: '#444',
 		});
 	});
-
-	function productGallery() {
-		var $carousel = $('.js-product-gallery');
-		if ($carousel.length) {
-			var $carouselCells = $carousel.find('.product-photos__thumbs-item');
-			var navTop  = $carousel.position().top;
-			var navCellHeight = $carouselCells.height();
-			var navHeight = $carousel.height();
-			$carousel.on( 'click', '.product-photos__thumbs-item', function( event ) {
-				event.preventDefault();
-				var index = $( event.currentTarget ).index();
-				var thisBig = $(this).data('photo-big');
-				$(this).addClass('product-photos__thumbs-item--active').siblings().removeClass('product-photos__thumbs-item--active');
-				$('.js-product-photo-big').attr('href', thisBig).addClass('fadeIn');
-				$('.js-product-photo-big img').attr('src', thisBig);
-				setTimeout(function(){
-					$('.js-product-photo-big').removeClass('fadeIn');
-				}, 100);
-				// scroll nav
-				var scrollY = $(this).position().top + $carousel.scrollTop() - ( navHeight + navCellHeight) / 2;
-				$carousel.animate({
-					scrollTop: scrollY
-				});
-			});
-			$('.js-product-gallery-arrow').on('click', function(e) {
-				e.preventDefault();
-				if ($(this).hasClass('product-photos__thumbs-arrow--up')) {
-					$('.js-product-gallery').find('.product-photos__thumbs-item--active').prev().click();
-				} else {
-					$('.js-product-gallery').find('.product-photos__thumbs-item--active').next().click();
-				}
-			});
-		}
-	}
-
-	function toggleSidebarRows() {
-		var $this = $('.js-category-sidebar-hiderows'),
-		rowCount = $this.children('div').length,
-		rowShowed = $this.data('default-rows'),
-		rowChildren = $('.js-category-sidebar-hiderows').children('div').attr('class');
-		if (rowCount > rowShowed) {
-			$this.find('.category-sidebar__showrows').removeClass('category-sidebar__showrows--hidden');
-			$this.children('div:nth-child(n+4)').addClass(rowChildren+'--hidden');
-			$this.find('.js-category-sidebar-showrows-count').text(+rowCount - rowShowed);
-		}
-		$this.find('.js-category-sidebar-togglerows').on('click', function(e) {
-			e.preventDefault();
-			$(this).toggleClass('category-sidebar__showrows--collapsed');
-			var $text = $(this).find('.js-category-sidebar-showrows-text');
-			$text.text(function(i, text) {
-				return text == $text.data('default-text') ? $text.data('new-text') : $text.data('default-text');
-			});
-			$this.children('div:nth-child(n+4)').toggleClass(rowChildren+'--hidden');
-		});
-	}
 
 })(jQuery);
