@@ -11,33 +11,48 @@
 <body>
 	<header class="header">
 		<div class="container">
-			<div class="header__choose">
-				<div class="header__city">
-					<a href="#modalCity" class="js-modal">Дзержинский</a>
-					655 поставщиков
-				</div>
-				<a href="#" class="header__auth">Вход и регистрация</a>
-			</div>
-			<div class="header__system js-header-attach">
+			<div class="header__general js-header-attach">
 				<a href="#" class="header__logo">Моё Снабжение</a>
 				<div class="header__search">
 					<form action="">
 						<input type="text" name="" id="" class="header__search-input js-header-autocomplete" placeholder="Поиск строительных и промышленных товаров">
 						<button type="submit" class="header__search-btn"></button>
 					</form>
+					<div class="header__search-result">
+						<div class="header-search-result__title">Познакомьтесь с сервисом «Моё Снабжение» </div>
+						<div class="header-search-result__nav">
+							<a href="#modalEstimate" class="btn btn--green header-search-result__nav-item js-modal">Автопоиск товаров</a>
+							<a href="#" class="btn header-search-result__nav-item">Электрика</a>
+							<a href="#" class="btn header-search-result__nav-item">Сантехника</a>
+							<a href="#" class="btn header-search-result__nav-item">Телекоммуникационное оборудование</a>
+						</div>
+						<div class="header-search-result__latest">
+							<div class="header-search-result__latest-title">Недавно Вы искали:</div>
+							<a href="#" class="header-search-result__latest-item">Кабель ВВГ, до 10 тыс. руб.</a>
+							<a href="#" class="header-search-result__latest-item">Лампа ДРЛ</a>
+							<a href="#" class="header-search-result__latest-item">Лампа OSRAM, до 220 руб., в наличии</a>
+							<a href="#" class="header-search-result__latest-item">Маска сварщика</a>
+							<a href="#" class="header-search-result__latest-item">Дюбель-гвоздь, в Москве, в Ярославле, В наличии</a>
+						</div>
+					</div>
 				</div>
+				<a href="#modalCity" class="header__place js-modal"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M443.683 4.529L27.818 196.418C-18.702 217.889-3.39 288 47.933 288H224v175.993c0 51.727 70.161 66.526 91.582 20.115L507.38 68.225c18.905-40.961-23.752-82.133-63.697-63.696z"/></svg></a>
+				<a href="#" class="header__bookmarks"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M0 512V48C0 21.49 21.49 0 48 0h288c26.51 0 48 21.49 48 48v464L192 400 0 512z"/></svg> 12</a>
+				<a href="#auth" class="header__auth js-modal"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 0c88.366 0 160 71.634 160 160s-71.634 160-160 160S96 248.366 96 160 167.634 0 256 0zm183.283 333.821l-71.313-17.828c-74.923 53.89-165.738 41.864-223.94 0l-71.313 17.828C29.981 344.505 0 382.903 0 426.955V464c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48v-37.045c0-44.052-29.981-82.45-72.717-93.134z"/></svg></a>
 				<div class="header__cart">
-					<span class="header__cart-count">240</span>
 					<!-- для пустой корзины просто удаляем содержимое, пример <span class="header__cart-count"></span> -->
-					<div class="header__cart-summ">1 254 328,88 &#8381;</div>
-					<div class="header__cart-shipper">3 поставщика</div>
+					<span class="header__cart-count">240</span>
+					<div class="header__cart-main">
+						<div class="header__cart-summ">1 254 328,88 &#8381;</div>
+						<div class="header__cart-shipper">3 поставщика</div>
+					</div>
 					<a href="#" class="header__cart-link"></a>
 				</div>
 			</div>
 			<nav class="header__nav">
 				<a href="#" class="header__nav-item">Все разделы</a>
 				<a href="#" class="header__nav-item">Электрика</a>
-				<a href="#" class="header__nav-item">Сантехника и отопление</a>
+				<a href="#" class="header__nav-item header__nav-item--active">Сантехника и отопление</a>
 				<a href="#" class="header__nav-item">Метизы и крепёж</a>
 				<a href="#" class="header__nav-item">Вентиляция и промхолод</a>
 				<a href="#" class="header__nav-item">Строительные смеси</a>
@@ -62,9 +77,11 @@
 				<h1 class="category__name">Купить Дифференциальные защитные устройства</h1>
 				<div class="category__wrap">
 					<aside class="category__sidebar category-cats">
+						<!--
 						<div class="category-cats__back">
 							<a href="#">« Назад в Дифференциальные защитные устройства</a>
 						</div>
+						-->
 						<div class="category-sidebar__block">
 							<div class="category-sidebar__block-title">УЗО</div>
 							<div class="category-cats__list">
@@ -205,6 +222,16 @@
 	<div class="modal modal-discount" id="modalDiscount">
 		<div class="modal-discount__title">Скидки Элком-Электро, ООО Москва бальшой город таааа</div>
 		<div class="modal-discount__descr">
+			<p>Если у вас есть личная скидка у этого поставщика, укажите её и скидка будет применена ко всем предложениям поставщика на сайте без учета суммы заказа.</p>
+			<p>Если скидка по сумме заказа будет больше вашей личной скидки, то будет отображена скидка по суме заказа.</p>
+		</div>
+		<div class="modal-discount__set">
+			<input type="text" name="" id="" class="input-text input-text--bordered" value="-15%">
+			<button class="btn btn--middle btn--green">Применить</button>
+			<a href="#" class="modal-discount__set-remove">Удалить скидку</a>
+		</div>
+		<div class="modal-discount__set-value">Вы указали личную скидку -15%</div>
+		<div class="modal-discount__descr">
 			Скидки по суме заказа, которые предоставляет  поставщик:
 		</div>
 		<table class="modal-discount__table">
@@ -222,6 +249,102 @@
 			</tr>
 		</table>
 	</div>
+	<div class="modal auth" id="auth">
+		<div class="auth__tabs">
+			<div class="auth__tabs-item auth__tabs-item--active">Войти</div>
+			<div class="auth__tabs-item">Зарегистрироваться</div>
+		</div>
+		<div class="auth__container auth__container--active">
+			<div class="form__row">
+				<input type="email" name="" id="" class="input-text input-text--bordered input-text--large input-text--email" placeholder="E-mail">
+			</div>
+			<div class="form__row">
+				<input type="password" name="" id="" class="input-text input-text--bordered input-text--large input-text--password" placeholder="Пароль">
+				<a href="#" class="auth__forgot-link">Забыли пароль?</a>
+			</div>
+			<div class="form__row form__row--big">
+				<button class="btn btn--green btn--large btn--fullwidth">ВОЙТИ</button>
+			</div>
+			<div class="auth__more">
+				<div class="auth__more-title">Если у вас ещё нет аккаунта</div>
+				<button class="btn btn--bordered btn--large btn--fullwidth">Зарегистрироваться</button>
+			</div>
+		</div>
+		<div class="auth__container">
+			<div class="form__row">
+				<input type="email" name="" id="" class="input-text input-text--bordered input-text--large input-text--email" placeholder="ВВедите E-mail">
+			</div>
+			<div class="form__row">
+				<input type="password" name="" id="" class="input-text input-text--bordered input-text--large input-text--password" placeholder="ВВЕДИТЕ Пароль">
+			</div>
+			<div class="form__row">
+				<input type="password" name="" id="" class="input-text input-text--bordered input-text--large input-text--password" placeholder="Пароль ещё раз">
+			</div>
+			<div class="form__row">
+				<button class="btn btn--green btn--large btn--fullwidth">ЗАрегистрироваться</button>
+			</div>
+			<div class="auth__more">
+				<div class="auth__more-title">Если у вас уже есть аккаунт</div>
+				<button class="btn btn--bordered btn--large btn--fullwidth">ВОЙти</button>
+			</div>
+		</div>
+	</div>
+	<div class="modal modal-order-send" id="orderSend">
+		<div class="modal-order-send__title">Отправить заказ</div>
+		<div class="modal-order-send__descr">
+			Укажите контактные данные для поставщика, чтобы он мог вам ответить
+		</div>
+		<div class="modal-order-send__body">
+			<div class="form__row">
+				<input type="email" name="" id="" class="input-text input-text--bordered input-text--large input-text--letter" placeholder="рабочий E-mail">
+			</div>
+			<div class="form__row">
+				<input type="tel" name="" id="" class="input-text input-text--bordered input-text--large input-text--phone" placeholder="Рабочий телефон">
+			</div>
+			<div class="form__row">
+				<input type="text" name="" id="" class="input-text input-text--bordered input-text--large input-text--card" placeholder="КОМпания">
+			</div>
+			<div class="form__row">
+				<button class="btn btn--green btn--large btn--fullwidth">ОТПРАВИТЬ ЗАКАЗ</button>
+			</div>
+		</div>
+	</div>
+	<div class="modal modal-estimate" id="modalEstimate">
+		<div class="modal-estimate__title">Уточните Ваш заказ</div>
+		<div class="modal-estimate__descr">
+			В вашем заказе есть артикулы, которые соответствуют нескольким товарам, уточните какие именно товары вам нужны.
+		</div>
+		<div class="modal-estimate__count">Артикул 1 из 27</div>
+		<div class="modal-estimate__current">
+			<div class="modal-estimate__current-code">Артикул: 57010</div>
+			<div class="modal-estimate__current-list">
+				<input type="radio" name="a" id="me1" class="modal-estimate__current-item">
+				<label for="me1">Автоматический выключатель ИЕК</label>
+
+				<input type="radio" name="a" id="me2" class="modal-estimate__current-item">
+				<label for="me2">EIL580-SY06.5RN.00360.A Baumer - Инкрементальный энкодер 58 мм, выступающий вал 6 мм, 360 импульсов на оборот, питание 8-30VDC, выход HTL, 6 фаз, IP65, рабочая температура -40 +85 С, с кабелем 1 метр</label>
+			</div>
+		</div>
+		<div class="modal-estimate__btns">
+			<button class="btn btn--green btn--large">Следующий товар</button>
+		</div>
+	</div>
+	<!--
+	<div class="notification">
+		<div class="notification__item notification__item--notice">
+			<a href="#" class="notification__item-close js-notification-close"></a>
+			Заказ переименован
+		</div>
+		<div class="notification__item notification__item--error">
+			<a href="#" class="notification__item-close js-notification-close"></a>
+			Не удалось найти товар 57050
+		</div>
+		<div class="notification__item notification__item--success">
+			<a href="#" class="notification__item-close js-notification-close"></a>
+			Заказ успешно отправлен поставщику
+		</div>
+	</div>
+	-->
 	<script>window.jQuery || document.write('<script src="js/jquery.js"><\/script>')</script>
 	<script src="js/plugins.js"></script>
 	<script src="js/main.js"></script>

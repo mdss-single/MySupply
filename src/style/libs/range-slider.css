@@ -5,6 +5,7 @@
   position: relative;
   height:10px;
   background-color:#eee;
+  border-radius:2px;
 }
   .slider-container .back-bar .selected-bar {
     position: absolute;

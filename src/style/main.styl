@@ -79,64 +79,51 @@ img
 	flex-shrink 0
 	background-color #fafafa
 	border-bottom 1px solid #eee
+	.container
+		padding-top 20px
 	&__short
 		display flex
 		justify-content space-between
 		align-items center
-		padding 30px 0
-	&__choose
-		display flex
-		justify-content space-between
-		margin 15px 0 20px
-	&__city
-		color $colorLight
-		a
-			position relative
-			text-decoration none
-			padding-left 16px
-			&::before
-				position absolute
-				top 50%
-				left 0
-				width 10px
-				height 13px
-				background url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzODQgNTEyIj4NCgk8cGF0aCBmaWxsPSIjNDQ0IiBkPSJNMTcyLjI2OCA1MDEuNjdDMjYuOTcgMjkxLjAzMSAwIDI2OS40MTMgMCAxOTIgMCA4NS45NjEgODUuOTYxIDAgMTkyIDBzMTkyIDg1Ljk2MSAxOTIgMTkyYzAgNzcuNDEzLTI2Ljk3IDk5LjAzMS0xNzIuMjY4IDMwOS42Ny05LjUzNSAxMy43NzQtMjkuOTMgMTMuNzczLTM5LjQ2NCAwek0xOTIgMjcyYzQ0LjE4MyAwIDgwLTM1LjgxNyA4MC04MHMtMzUuODE3LTgwLTgwLTgwLTgwIDM1LjgxNy04MCA4MCAzNS44MTcgODAgODAgODB6Ii8+DQo8L3N2Zz4=') no-repeat 0 0 / cover
-				content ''
-				transform translateY(-50%)
-		a:hover
-			text-decoration underline
+		padding 10px 0 30px
+	&__place
+	&__bookmarks
 	&__auth
 		position relative
+		color $colorGray
 		text-decoration none
-		padding-left 20px
+		white-space nowrap
+		margin-right 50px
+		svg
+			vertical-align -4px
+			width 16px
+			height @width
+			path
+				fill $colorGray
+				transition all .2s
 		a:hover&
-			text-decoration underline
-		&::before
-			position absolute
-			top 50%
-			left 0
-			width 12px
-			height 13px
-			background url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4NCgk8cGF0aCBmaWw9IiM0NDQiIGQ9Ik0yNTYgMGM4OC4zNjYgMCAxNjAgNzEuNjM0IDE2MCAxNjBzLTcxLjYzNCAxNjAtMTYwIDE2MFM5NiAyNDguMzY2IDk2IDE2MCAxNjcuNjM0IDAgMjU2IDB6bTE4My4yODMgMzMzLjgyMWwtNzEuMzEzLTE3LjgyOGMtNzQuOTIzIDUzLjg5LTE2NS43MzggNDEuODY0LTIyMy45NCAwbC03MS4zMTMgMTcuODI4QzI5Ljk4MSAzNDQuNTA1IDAgMzgyLjkwMyAwIDQyNi45NTVWNDY0YzAgMjYuNTEgMjEuNDkgNDggNDggNDhoNDE2YzI2LjUxIDAgNDgtMjEuNDkgNDgtNDh2LTM3LjA0NWMwLTQ0LjA1Mi0yOS45ODEtODIuNDUtNzIuNzE3LTkzLjEzNHoiLz4NCjwvc3ZnPg==') no-repeat 0 0 / cover
-			content ''
-			transform translateY(-50%)
-	&__system
+			svg
+				path
+					fill $colorLight
+	&__general
 		display flex
 		align-items center
+		background-color #fafafa
+		padding 0 0 20px
+		transition all .2s
 		&.is_stuck
 			z-index 1000
-			background-color #fafafa
 			padding 15px 0
 			&::before
 				position absolute
 				top 0
 				bottom 0
+				left -10000%
 				width 20000%
 				background-color @background-color
 				box-shadow 0 3px 6px rgba($colorDark, .2)
 				content ''
-			&::before
-				left -10000%
+				transition all .2s
 	&__logo
 		position relative
 		font-weight 500
@@ -145,25 +132,28 @@ img
 		white-space nowrap
 		text-decoration none
 	&__phone
-		font-weight 500
+		font-weight 300
 		font-size 1.7rem
 		text-decoration none
 	&__search
 		flex 1
 		position relative
-		margin 0 200px 0 40px
+		margin 0 56px 0 28px
+		box-shadow 0 2px 3px rgba($colorDark, .1)
+		transition all .2s
+		&--focus
+			box-shadow 0 2px 8px rgba($colorDark, .2)
 		&-input
+			position relative
+			z-index 10000
 			width 100%
 			height 46px
 			background-color #fff
 			border 1px solid #ddd
 			border-radius 2px
 			padding 0 50px 0 22px
-			box-shadow 0 2px 3px rgba($colorDark, .1)
-			transition all .2s
 			&:focus
 				outline none
-				box-shadow 0 3px 6px rgba($colorDark, .2)
 		&-btn
 			position absolute
 			top 50%
@@ -174,35 +164,40 @@ img
 			border 0
 			cursor pointer
 			transform translateY(-50%)
+		&-result
+			display none
+			position absolute
+			z-index 9999
+			background-color #fff
+			border 1px solid #ddd
+			border-radius 0 0 2px 2px
+			padding 20px
+			margin-top -1px
+			box-shadow 0 2px 8px rgba($colorDark, .2)
+			&--active
+				display block
+				animation fadeIn .5s
 	&__cart
+		flex-shrink 0
+		display flex
+		align-items center
 		position relative
-		&::after
-			pointer-events none
-			position absolute
-			top 5px
-			bottom 5px
-			right calc(100% + 14px)
-			width 1px
-			background-color #ddd
-			content ''
 		&-count
-			position absolute
-			top 50%
-			right calc(100% + 30px)
+			position relative
 			color #fff
 			font-weight 500
 			line-height 2.8rem
 			background-color #4c95ca
 			border-radius (@line-height/2)
 			padding 0 10px
-			transform translateY(-50%)
+			margin 0 30px 0 35px
 			&:empty
 				min-width 28px
 				color $colorGray
 				background-color #ddd
 				&::before
 					content '0'
-			&::after
+			&::before
 				position absolute
 				top 50%
 				left -35px
@@ -211,6 +206,14 @@ img
 				background url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NzYgNTEyIj4NCgk8cGF0aCBmaWxsPSIjNDQ0IiBkPSJNNTI4LjEyIDMwMS4zMTlsNDcuMjczLTIwOEM1NzguODA2IDc4LjMwMSA1NjcuMzkxIDY0IDU1MS45OSA2NEgxNTkuMjA4bC05LjE2Ni00NC44MUMxNDcuNzU4IDguMDIxIDEzNy45MyAwIDEyNi41MjkgMEgyNEMxMC43NDUgMCAwIDEwLjc0NSAwIDI0djE2YzAgMTMuMjU1IDEwLjc0NSAyNCAyNCAyNGg2OS44ODNsNzAuMjQ4IDM0My40MzVDMTQ3LjMyNSA0MTcuMSAxMzYgNDM1LjIyMiAxMzYgNDU2YzAgMzAuOTI4IDI1LjA3MiA1NiA1NiA1NnM1Ni0yNS4wNzIgNTYtNTZjMC0xNS42NzQtNi40NDctMjkuODM1LTE2LjgyNC00MGgyMDkuNjQ3QzQzMC40NDcgNDI2LjE2NSA0MjQgNDQwLjMyNiA0MjQgNDU2YzAgMzAuOTI4IDI1LjA3MiA1NiA1NiA1NnM1Ni0yNS4wNzIgNTYtNTZjMC0yMi4xNzItMTIuODg4LTQxLjMzMi0zMS41NzktNTAuNDA1bDUuNTE3LTI0LjI3NmMzLjQxMy0xNS4wMTgtOC4wMDItMjkuMzE5LTIzLjQwMy0yOS4zMTlIMjE4LjExN2wtNi41NDUtMzJoMjkzLjE0NWMxMS4yMDYgMCAyMC45Mi03Ljc1NCAyMy40MDMtMTguNjgxeiIvPg0KPC9zdmc+') no-repeat 0 0 / cover
 				content ''
 				transform translateY(-50%)
+			&::after
+				position absolute
+				top 0
+				right -15px
+				bottom 0
+				width 1px
+				background-color #ddd
+				content ''
 		&-summ
 			color $colorGray
 			font-weight 500
@@ -227,12 +230,12 @@ img
 	&__nav
 		display flex
 		justify-content space-between
-		margin 25px 0 15px
 		&-item
 			position relative
 			font-weight 500
 			font-size 1.2rem
 			text-decoration none
+			margin-bottom 20px
 			&:first-child
 				padding-left 20px
 				&::after
@@ -244,19 +247,46 @@ img
 					background url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4NCgk8cGF0aCBmaWxsPSIjNDQ0IiBkPSJNMTI4IDExNlY3NmMwLTguODM3IDcuMTYzLTE2IDE2LTE2aDM1MmM4LjgzNyAwIDE2IDcuMTYzIDE2IDE2djQwYzAgOC44MzctNy4xNjMgMTYtMTYgMTZIMTQ0Yy04LjgzNyAwLTE2LTcuMTYzLTE2LTE2em0xNiAxNzZoMzUyYzguODM3IDAgMTYtNy4xNjMgMTYtMTZ2LTQwYzAtOC44MzctNy4xNjMtMTYtMTYtMTZIMTQ0Yy04LjgzNyAwLTE2IDcuMTYzLTE2IDE2djQwYzAgOC44MzcgNy4xNjMgMTYgMTYgMTZ6bTAgMTYwaDM1MmM4LjgzNyAwIDE2LTcuMTYzIDE2LTE2di00MGMwLTguODM3LTcuMTYzLTE2LTE2LTE2SDE0NGMtOC44MzcgMC0xNiA3LjE2My0xNiAxNnY0MGMwIDguODM3IDcuMTYzIDE2IDE2IDE2ek0xNiAxNDRoNjRjOC44MzcgMCAxNi03LjE2MyAxNi0xNlY2NGMwLTguODM3LTcuMTYzLTE2LTE2LTE2SDE2QzcuMTYzIDQ4IDAgNTUuMTYzIDAgNjR2NjRjMCA4LjgzNyA3LjE2MyAxNiAxNiAxNnptMCAxNjBoNjRjOC44MzcgMCAxNi03LjE2MyAxNi0xNnYtNjRjMC04LjgzNy03LjE2My0xNi0xNi0xNkgxNmMtOC44MzcgMC0xNiA3LjE2My0xNiAxNnY2NGMwIDguODM3IDcuMTYzIDE2IDE2IDE2em0wIDE2MGg2NGM4LjgzNyAwIDE2LTcuMTYzIDE2LTE2di02NGMwLTguODM3LTcuMTYzLTE2LTE2LTE2SDE2Yy04LjgzNyAwLTE2IDcuMTYzLTE2IDE2djY0YzAgOC44MzcgNy4xNjMgMTYgMTYgMTZ6Ii8+DQo8L3N2Zz4=') no-repeat 0 0 / cover
 					content ''
 					transform translateY(calc(-50% - 2px))
+			&--active::before
 			&::before
 				position absolute
-				bottom 0
+				bottom -20px
 				left 50%
 				width 0
-				height 1px
-				background-color currentColor
+				height 3px
+				background-color #81c81e
 				content ''
 				transform translateX(-50%)
 				transition all .2s
+			&--active
 			a:hover&
 				&::before
 					width 100%
+	&-search-result
+		&__title
+			color $colorDark
+			font-weight 500
+			margin-bottom 20px
+		&__nav
+			display flex
+			flex-wrap wrap
+			&-item
+				white-space nowrap
+				margin 0 12px 12px 0
+		&__latest
+			display flex
+			flex-direction column
+			margin-top 16px
+			&-title
+				color $colorDark
+				font-weight 500
+				margin-bottom 8px
+			&-item
+				align-self flex-start
+				text-decoration none
+				margin 12px 0
+				a:hover&
+					text-decoration underline
 .header-cabinet
 	flex-shrink 0
 	height 60px
@@ -301,32 +331,34 @@ img
 				color #fff
 				&::after
 					height 3px
-.easy-autocomplete-container
-	position absolute
-	z-index 9999
+.easy-autocomplete
 	width 100%
-	background-color #fff
-	border 1px solid #ddd
-	border-radius 0 0 2px 2px
-	margin-top -1px
-	box-shadow 0 2px 8px rgba($colorDark, .2)
-	ul
-		padding 0
-		margin 0
-		list-style none
-	a
-		display block
-		color $colorDark
-		font-weight 500
-		font-size 1.3rem
-		text-decoration none
+	&-container
+		position absolute
+		z-index 9999
+		width 100%
 		background-color #fff
-		padding 10px 22px
-		&:hover
-			background-color #eee
-	.selected
+		border 1px solid #ddd
+		border-radius 0 0 2px 2px
+		margin-top -1px
+		box-shadow 0 2px 8px rgba($colorDark, .2)
+		ul
+			padding 0
+			margin 0
+			list-style none
 		a
-			background-color #eee
+			display block
+			color $colorDark
+			font-weight 500
+			font-size 1.3rem
+			text-decoration none
+			background-color #fff
+			padding 10px 22px
+			&:hover
+				background-color #eee
+		.selected
+			a
+				background-color #eee
 /*  </header>  */
 
 /*  <footer>  */
@@ -360,9 +392,11 @@ img
 	&__general
 		width 260px
 	&__logo
+		font-weight 500
 		font-size 2.4rem
 		font-family logo
-		font-size-adjust .5
+		white-space nowrap
+		text-decoration none
 		a
 			color #ddd
 			text-decoration none
@@ -483,7 +517,7 @@ img
 	&__address
 		color $colorGray
 		a
-			text-decoration-style dotted
+			text-decoration-style dashed
 			margin-left 5px
 	&__tags
 		margin 15px 0 24px
@@ -508,7 +542,7 @@ img
 		width 278px
 		background-color #fff
 		border-radius 2px
-		box-shadow 0 5px 10px rgba($colorDark, .1)
+		box-shadow 0 1px 2px rgba($colorDark, .1)
 	&-filter
 		&__result
 			color $colorDark
@@ -577,7 +611,7 @@ img
 					&::before
 						display none
 			&-item
-				margin-bottom 25px
+				margin-bottom 16px
 				span
 					color $colorLight
 				&--hidden
@@ -645,6 +679,8 @@ img
 			border-bottom 1px solid #eee
 			padding 15px 0 25px
 			margin 0 20px
+			&:last-child
+				border-bottom 0
 			&--hidden
 				display none
 			&--collapsed
@@ -687,6 +723,7 @@ img
 			position relative
 			width 100%
 			color $colorLight
+			font-weight 500
 			text-decoration none
 			margin-top 8px
 			&::after
@@ -720,7 +757,7 @@ img
 		border-radius 2px
 		padding 18px 28px
 		margin-bottom 14px
-		box-shadow 0 5px 10px rgba($colorDark, .1)
+		box-shadow 0 1px 2px rgba($colorDark, .1)
 	&__sort
 		.select
 			width 245px
@@ -754,7 +791,7 @@ img
 				background-color #fff
 				padding 20px
 				margin 14px 0
-				box-shadow 0 5px 10px rgba($colorDark, .1)
+				box-shadow 0 1px 2px rgba($colorDark, .1)
 				&__pic
 					flex-shrink 0
 					width 160px
@@ -765,6 +802,7 @@ img
 					margin 0 30px 0 15px
 				&__name
 					color $colorDark
+					font-weight 500
 					margin-bottom 20px
 					a
 						color @color
@@ -781,11 +819,16 @@ img
 						font-size 2.3rem
 						margin-right 10px
 					&-tip
-						text-decoration-style dotted
+						text-decoration-style dashed
+						margin-left 10px
+					.label
+						flex-shrink 0
 						margin-left 10px
 				&__stock
 					color #2cc81e
 					margin-bottom 25px
+					&--unavailable
+						color $colorLight
 				&__draft
 					display inline-flex
 					color $colorGray
@@ -930,10 +973,10 @@ img
 			border-radius 2px
 			padding 20px 30px 40px
 			margin-bottom 20px
-			box-shadow 0 5px 10px rgba($colorDark, .1)
+			box-shadow 0 1px 2px rgba($colorDark, .1)
 			transition all .2s
 			&:hover
-				box-shadow 0 6px 12px rgba($colorDark, .2)
+				box-shadow 0 2px 3px rgba($colorDark, .2)
 			&-pic
 				display flex
 				justify-content center
@@ -964,7 +1007,7 @@ img
 		border-radius 2px
 		padding 20px 28px
 		margin 20px 0
-		box-shadow 0 5px 10px rgba($colorDark, .1)
+		box-shadow 0 1px 2px rgba($colorDark, .1)
 		&-title
 			color $colorDark
 			font-weight 900
@@ -984,13 +1027,12 @@ img
 			border-radius 2px
 			padding 28px
 			margin-bottom 14px
-			box-shadow 0 5px 10px rgba($colorDark, .1)
+			box-shadow 0 1px 2px rgba($colorDark, .1)
 			&-pic
 				flex-shrink 0
 				align-self center
 				width 70px
 				height @width
-				border 1px solid #eee
 				img
 					object-fit cover
 					width 100%
@@ -1121,7 +1163,7 @@ img
 				font-size 3rem
 				margin-right 5px
 			&-tip
-				text-decoration-style dotted
+				text-decoration-style dashed
 				margin-left 5px
 		&__relevance
 			margin 10px 0 18px
@@ -1165,7 +1207,7 @@ img
 		border-radius 2px
 		padding 0 28px
 		margin 35px 0 55px
-		box-shadow 0 5px 10px rgba(#000, .1)
+		box-shadow 0 1px 2px rgba(#000, .1)
 		&-all
 			text-align center
 			padding 24px 0 28px
@@ -1208,7 +1250,7 @@ img
 				margin 0 5px 8px
 			&-tip
 				vertical-align middle
-				text-decoration-style dotted
+				text-decoration-style dashed
 				margin-left 5px
 			&-draft
 				display inline-block
@@ -1258,7 +1300,7 @@ img
 		border-radius 2px
 		padding 24px 28px 28px
 		margin 55px 0 42px
-		box-shadow 0 5px 10px rgba(#000, .1)
+		box-shadow 0 1px 2px rgba(#000, .1)
 		&-title
 			color $colorDark
 			font-weight 900
@@ -1271,7 +1313,7 @@ img
 		border-radius 2px
 		padding 24px 28px 28px
 		margin 42px 0 28px
-		box-shadow 0 5px 10px rgba(#000, .1)
+		box-shadow 0 1px 2px rgba(#000, .1)
 		&-title
 			color $colorDark
 			font-weight 900
@@ -1300,7 +1342,7 @@ img
 		border-radius 2px
 		padding 24px 28px 28px
 		margin 28px 0
-		box-shadow 0 5px 10px rgba(#000, .1)
+		box-shadow 0 1px 2px rgba(#000, .1)
 		&-title
 			color $colorDark
 			font-weight 900
@@ -1327,7 +1369,7 @@ img
 		border-radius 2px
 		padding 24px 28px 28px
 		margin-right 15px
-		box-shadow 0 5px 10px rgba($colorDark, .1)
+		box-shadow 0 1px 2px rgba($colorDark, .1)
 		&-title
 			color $colorDark
 			font-weight 900
@@ -1445,7 +1487,7 @@ img
 			background-color #fff
 			border-radius 2px
 			padding 20px
-			box-shadow 0 5px 10px rgba($colorDark, .1)
+			box-shadow 0 1px 2px rgba($colorDark, .1)
 		&-title
 			color $colorDark
 			font-weight 900
@@ -1482,7 +1524,7 @@ img
 		background-color #fff
 		border-radius 2px
 		padding 20px 28px
-		box-shadow 0 5px 10px rgba($colorDark, .1)
+		box-shadow 0 1px 2px rgba($colorDark, .1)
 	&__nav
 		border-bottom 1px solid #eee
 		padding-bottom 15px
@@ -1536,7 +1578,7 @@ img
 		border-radius 2px
 		padding 16px 28px 30px
 		margin-left 15px
-		box-shadow 0 5px 10px rgba($colorDark, .1)
+		box-shadow 0 1px 2px rgba($colorDark, .1)
 	&__system
 		display flex
 		justify-content space-between
@@ -1595,6 +1637,10 @@ img
 		&-table
 			width 100%
 			border-collapse collapse
+			a
+				text-decoration none
+				&:hover
+					text-decoration underline
 			th
 				color $colorDark
 				font-weight 500
@@ -1636,7 +1682,7 @@ img
 			background-color #fff
 			border-radius 2px
 			padding 20px
-			box-shadow 0 5px 10px rgba($colorDark, .1)
+			box-shadow 0 1px 2px rgba($colorDark, .1)
 	&-sidebar
 		&__nav
 			display flex
@@ -1658,11 +1704,10 @@ img
 				padding-top 5px
 				padding-bottom @padding-top
 				margin 5px 0
-				a:hover&
-					text-decoration underline
 				&--sub
 					padding-left 13px
 				&--active
+				a:hover&
 					position relative
 					color $colorDark
 					font-weight 500
@@ -1679,11 +1724,25 @@ img
 		background-color #fff
 		border-radius 2px
 		padding 25px 28px 28px
-		box-shadow 0 5px 10px rgba($colorDark, .1)
+		box-shadow 0 1px 2px rgba($colorDark, .1)
 	&__title
 		border-bottom 1px solid #eee
 		padding-bottom 16px
 		margin-bottom 25px
+		.is_stuck
+			z-index 100
+			padding-top 20px
+			padding-bottom 16px
+			&::before
+				position absolute
+				top 0
+				right -28px
+				bottom 0
+				left -28px
+				z-index -1
+				background-color #fff
+				box-shadow 0 3px 6px rgba($colorDark, .2)
+				content ''
 		&-main
 			color $colorDark
 			font-weight 900
@@ -2090,6 +2149,88 @@ img
 				margin 28px 0 20px
 /*  </cabinet>  */
 
+/*  <login-register>  */
+.auth
+	width 420px
+	background-color #fff
+	border-radius 2px
+	padding 0 30px 28px
+	margin 50px auto
+	box-shadow 0 1px 2px rgba($colorDark, .1)
+	&--bordered
+		border-top 3px solid #81c81e
+	.fancybox-slide &
+		border-top 0
+		padding 0 30px 28px
+	&__title
+		overflow hidden
+		color $colorDark
+		font-weight 900
+		font-size 2.3rem
+		white-space nowrap
+		text-overflow ellipsis
+		border-bottom 1px solid #f8f8f8
+		padding 20px 30px
+		margin 0 -30px
+	&__tabs
+		display flex
+		height 62px
+		background-color #fafafa
+		border-bottom 1px solid #eee
+		margin 0 -30px
+		&-item
+			display flex
+			justify-content center
+			align-items center
+			position relative
+			height 62px
+			color $colorGray
+			font-weight 900
+			font-size 1.7rem
+			padding 0 30px
+			cursor pointer
+			&--active
+				color $colorDark
+				background-color #fff
+				border-top 3px solid #81c81e
+				padding-bottom 3px
+				cursor default
+				&:last-child
+					border-right 1px solid #eee
+				&::after
+					position absolute
+					right 0
+					bottom -1px
+					left 0
+					height 1px
+					background-color #fff
+					content ''
+			&:last-child
+				border-left 1px solid #eee
+	&__container
+		display none
+		margin-top 25px
+		&--active
+			display block
+			animation fadeIn .5s
+	&__forgot
+		&-link
+			position absolute
+			top 50%
+			right 15px
+			color $colorLight
+			text-decoration none
+			transform translateY(-50%)
+			a:hover&
+				text-decoration underline
+	&__more
+		border-top 1px solid #f8f8f8
+		padding-top 20px
+		margin-top 28px
+		&-title
+			margin-bottom 20px
+/*  </login-register>  */
+
 /*  <modal-city>  */
 .modal-city
 	.fancybox-slide &
@@ -2145,16 +2286,37 @@ img
 	&__descr
 		line-height 2.1rem
 		margin 20px 0 5px
+		p
+			&:first-child
+				margin-top 0
+	&__set
+		display flex
+		align-items center
+		.input-text
+			width 100px
+			text-align center
+			margin-right 7px
+		&-remove
+			color $colorLight
+			text-decoration none
+			margin-left 20px
+			a:hover&
+				text-decoration underline
+		&-value
+			color #c81e2c
+			border-bottom 1px solid #f8f8f8
+			padding 25px 0
 	&__table
 		width 100%
 		color $colorDark
-		font-weight 500
 		td
 			border-bottom 1px dashed #eee
 			padding 12px
 			&:first-child
 				padding-left 0
 			&:last-child
+				color #c81e2c
+				text-align right
 				padding-right 0
 /*  </modal-discount>  */
 
@@ -2176,3 +2338,65 @@ img
 	&__main
 		margin 20px 0
 /*  </modal-order-rename>  */
+
+/*  <modal-order-send>  */
+.modal-order-send
+	max-width 420px
+	.fancybox-slide &
+		padding 0 30px 28px
+	&__title
+		color $colorDark
+		font-weight 900
+		font-size 2.3rem
+		border-bottom 1px solid #eee
+		padding 16px 30px
+		margin 0 -30px
+	&__descr
+		margin 20px 0
+/*  </modal-order-send>  */
+
+/*  <modal-estimate>  */
+.modal-estimate
+	max-width 750px
+	.fancybox-slide &
+		padding 0 30px 30px
+	&__title
+		color $colorDark
+		font-weight 900
+		font-size 2.3rem
+		border-bottom 1px solid #eee
+		padding 16px 30px
+		margin 0 -30px
+	&__descr
+		line-height 2.1rem
+		margin 15px 0
+	&__count
+		color $colorLight
+		margin 15px 0
+	&__current
+		margin-top 15px
+		&-code
+			color $colorDark
+			font-weight 500
+			font-size 1.7rem
+			margin-bottom 20px
+		&-item
+			position absolute
+			left -9999px
+			& + label
+				display block
+				color $colorGray
+				border 1px solid #ddd
+				border-radius 2px
+				margin-bottom 4px
+				padding 14px 16px
+				transition all .2s
+				cursor pointer
+			&:checked + label
+				background-color #d0eaab
+				border-color #a1d656
+				cursor default
+	&__btns
+		text-align center
+		margin-top 30px
+/*  </modal-estimate>  */

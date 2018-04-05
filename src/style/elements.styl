@@ -48,14 +48,19 @@
 			border-color @background-color
 		&:active
 			box-shadow inset 0 4px 8px rgba($colorDark, .4)
+	&--bordered
+		color #81c81e
+		border-color @color
+		&:hover
+			color #00a619
+			border-color @color
 	&--middle
 		height 38px
 		font-size 1.3rem
-		padding 0 22px
 	&--large
 		height 46px
 		font-size 1.5rem
-		padding 0 30px
+		padding 0 22px
 	&--fullwidth
 		width 100%
 	&--dialog
@@ -97,6 +102,26 @@
 		&:hover
 		&:focus
 			border-color @border-color
+	&--bordered
+		border-color #81c81e
+		&:hover
+		&:focus
+			border-color #00a619
+	&--email
+		background #fff url('../i/icons/icon-user-green.svg') no-repeat 14px center / 15px auto
+		padding-left 42px
+	&--password
+		background #fff url('../i/icons/icon-lock-green.svg') no-repeat 14px center / 13px auto
+		padding-left 42px
+	&--letter
+		background #fff url('../i/icons/icon-letter-green.svg') no-repeat 14px center / 15px auto
+		padding-left 42px
+	&--phone
+		background #fff url('../i/icons/icon-phone-green.svg') no-repeat 14px center / 12px auto
+		padding-left 42px
+	&--card
+		background #fff url('../i/icons/icon-card-green.svg') no-repeat 14px center / 15px auto
+		padding-left 42px
 	&:disabled
 		color $colorLight
 		background-color #eee
@@ -116,16 +141,6 @@
 	&--large
 		height 160px
 		min-height @height
-	&--success
-		border-color #00a619
-		&:hover
-		&:focus
-			border-color @border-color
-	&--error
-		border-color #c81e2c
-		&:hover
-		&:focus
-			border-color @border-color
 .js-input-dynamic-width
 	box-sizing content-box
 .select
@@ -169,14 +184,33 @@
 	display inline-flex
 	justify-content center
 	align-items center
+	overflow hidden
 	vertical-align middle
-	font-size 1.3rem
 	height 22px
+	font-size 1.3rem
+	white-space nowrap
 	border-radius 2px
 	padding 0 5px
 	&--red
 		color #fff
 		background-color #c81e2c
+		& ^[0]__text
+			color @background-color
+			border solid @background-color
+			border-width 1px 0
+	&--gray
+		color #fff
+		background-color $colorLight
+		& ^[0]__text
+			color @background-color
+			border solid @background-color
+			border-width 1px 0
+	&__text
+		height 100%
+		color #000
+		background-color #fff
+		padding 1px 6px
+		margin 0 -4px 0 5px
 /*  </labels>  */
 
 /*  <pagination>  */
@@ -201,7 +235,7 @@
 		font-size 1.3rem
 		padding 0 10px
 		margin-right 3px
-		&:Last-child
+		&:last-child
 			margin-right 0
 		^[0]--small &
 			min-width 32px
@@ -267,6 +301,12 @@
 			&::after
 				color $colorLight
 				background-color @background-color
+	&__title
+		color $colorDark
+		font-size 2.3rem
+		border-bottom 1px solid #f8f8f8
+		padding 20px 24px
+		margin 0 -24px
 	&__btns
 		text-align right
 		border-top 1px solid #eee
@@ -281,7 +321,39 @@
 	animation fadeIn .5s
 .fadeOut
 	animation fadeOut .5s
+.form
+	&__row
+		position relative
+		margin 16px 0
+		&:last-child
+			margin-bottom 0
+		&--big
+			margin 28px 0
 /*  </layout>  */
+
+/*  <text>  */
+h1
+h2
+h3
+	color $colorDark
+	font-weight 900
+h1
+	font-size 3rem
+h2
+	font-size 2.3rem
+h3
+	font-size 1.7rem
+.color-light
+	color $colorLight
+.color-gray
+	color $colorGray
+.color-dark
+	color $colorDark
+.color-red
+	color $colorRed
+.color-green
+	color $colorGreen
+/*  <text>  */
 
 /*  <animations>  */
 @keyframes fadeIn
@@ -378,3 +450,51 @@
 			background-color transparent
 			border 0
 /*  </tagsinput>  */
+
+/*  <notification>  */
+.notification
+	animation fadeIn .5s
+	position fixed
+	top 80px
+	right @top
+	&:empty
+		display none
+	&__item
+		position relative
+		width 360px
+		color #fff
+		font-weight normal
+		font-size 1.3rem
+		border-radius 2px
+		padding 10px 34px 10px 38px
+		margin-bottom 7px
+		&:last-child
+			margin-bottom 0
+		&--notice
+			background #70aad5 url('../i/icons/icon-notice.svg') no-repeat 14px center / 12px auto
+		&--error
+			background #d34b56 url('../i/icons/icon-error.svg') no-repeat 13px center / 14px auto
+		&--success
+			background #33b847 url('../i/icons/icon-success.svg') no-repeat 14px center / 12px auto
+		&-close
+			position absolute
+			top 50%
+			right 10px
+			width 16px
+			height @width
+			transform translateY(-50%)
+			&::before
+			&::after
+				position absolute
+				top 2px
+				left 50%
+				bottom @top
+				width 1px
+				background-color #fff
+				margin-left -1px
+				content ''
+			&::before
+				transform rotate(45deg)
+			&::after
+				transform rotate(-45deg)
+/*  </notification>  */

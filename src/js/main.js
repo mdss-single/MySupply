@@ -7,6 +7,20 @@
 	});
 
 	// header search autocomplete
+	$('.js-header-autocomplete').on('focus', function() {
+		$(this).closest('.header__search').toggleClass('header__search--focus');
+		$('.header__search-result').toggleClass('header__search-result--active');
+	});
+	$('.js-header-autocomplete').on('focusout', function() {
+		$(this).closest('.header__search').removeClass('header__search--focus');
+		$('.header__search-result').removeClass('header__search-result--active');
+	});
+	$(document).click(function(e) {
+		if (!$(e.target).closest('.header__search').length) {
+			$('.header__search').removeClass('header__search--focus');
+			$('.header__search-result').removeClass('header__search-result--active');
+		}
+	});
 	$('.js-header-autocomplete').easyAutocomplete({
 		/*
 		url: function(phrase) {
@@ -19,6 +33,9 @@
 			maxNumberOfElements: 10,
 			match: {
 				enabled: true
+			},
+			onShowListEvent: function() {
+				$('.header__search-result').removeClass('header__search-result--active');
 			}
 		},
 		template: {
@@ -146,6 +163,11 @@
 	$('.js-cabinet-sticky').stick_in_parent({
 		parent: '.cabinet',
 		offset_top: 15,
+	});
+
+	// sticky any element with header height
+	$('.js-sticky').stick_in_parent({
+		offset_top: 85,
 	});
 
 	// product offer map
@@ -325,6 +347,23 @@
 			height: '122px',
 			defaultText: thisDefault,
 			placeholderColor: '#444',
+		});
+	});
+
+	// auth tabs
+	if ($('.auth__tabs').length) {
+		$('.auth__tabs').on('click', 'div:not(.auth__tabs-item--active)', function() {
+			$(this).addClass('auth__tabs-item--active').siblings().removeClass('auth__tabs-item--active').closest('.auth').find('.auth__container').removeClass('auth__container--active').eq($(this).index()).addClass('auth__container--active');
+		});
+		var tabIndex = window.location.hash.replace('#auth-tab','')-1;
+		if (tabIndex != -1) $('.auth__tabs div').eq(tabIndex).click();
+	}
+
+	// notifications
+	$(document).on('click', '.js-notification-close', function(e) {
+		e.preventDefault();
+		$(this).closest('.notification__item').addClass('fadeOut').delay(500).queue(function(){
+			$(this).remove();
 		});
 	});
 

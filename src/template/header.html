@@ -11,33 +11,48 @@
 <body>
 	<header class="header">
 		<div class="container">
-			<div class="header__choose">
-				<div class="header__city">
-					<a href="#modalCity" class="js-modal">Дзержинский</a>
-					655 поставщиков
-				</div>
-				<a href="#" class="header__auth">Вход и регистрация</a>
-			</div>
-			<div class="header__system js-header-attach">
+			<div class="header__general js-header-attach">
 				<a href="#" class="header__logo">Моё Снабжение</a>
 				<div class="header__search">
 					<form action="">
 						<input type="text" name="" id="" class="header__search-input js-header-autocomplete" placeholder="Поиск строительных и промышленных товаров">
 						<button type="submit" class="header__search-btn"></button>
 					</form>
+					<div class="header__search-result">
+						<div class="header-search-result__title">Познакомьтесь с сервисом «Моё Снабжение» </div>
+						<div class="header-search-result__nav">
+							<a href="#modalEstimate" class="btn btn--green header-search-result__nav-item js-modal">Автопоиск товаров</a>
+							<a href="#" class="btn header-search-result__nav-item">Электрика</a>
+							<a href="#" class="btn header-search-result__nav-item">Сантехника</a>
+							<a href="#" class="btn header-search-result__nav-item">Телекоммуникационное оборудование</a>
+						</div>
+						<div class="header-search-result__latest">
+							<div class="header-search-result__latest-title">Недавно Вы искали:</div>
+							<a href="#" class="header-search-result__latest-item">Кабель ВВГ, до 10 тыс. руб.</a>
+							<a href="#" class="header-search-result__latest-item">Лампа ДРЛ</a>
+							<a href="#" class="header-search-result__latest-item">Лампа OSRAM, до 220 руб., в наличии</a>
+							<a href="#" class="header-search-result__latest-item">Маска сварщика</a>
+							<a href="#" class="header-search-result__latest-item">Дюбель-гвоздь, в Москве, в Ярославле, В наличии</a>
+						</div>
+					</div>
 				</div>
+				<a href="#modalCity" class="header__place js-modal"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M443.683 4.529L27.818 196.418C-18.702 217.889-3.39 288 47.933 288H224v175.993c0 51.727 70.161 66.526 91.582 20.115L507.38 68.225c18.905-40.961-23.752-82.133-63.697-63.696z"/></svg></a>
+				<a href="#" class="header__bookmarks"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M0 512V48C0 21.49 21.49 0 48 0h288c26.51 0 48 21.49 48 48v464L192 400 0 512z"/></svg> 12</a>
+				<a href="#auth" class="header__auth js-modal"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 0c88.366 0 160 71.634 160 160s-71.634 160-160 160S96 248.366 96 160 167.634 0 256 0zm183.283 333.821l-71.313-17.828c-74.923 53.89-165.738 41.864-223.94 0l-71.313 17.828C29.981 344.505 0 382.903 0 426.955V464c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48v-37.045c0-44.052-29.981-82.45-72.717-93.134z"/></svg></a>
 				<div class="header__cart">
-					<span class="header__cart-count">240</span>
 					<!-- для пустой корзины просто удаляем содержимое, пример <span class="header__cart-count"></span> -->
-					<div class="header__cart-summ">1 254 328,88 &#8381;</div>
-					<div class="header__cart-shipper">3 поставщика</div>
+					<span class="header__cart-count">240</span>
+					<div class="header__cart-main">
+						<div class="header__cart-summ">1 254 328,88 &#8381;</div>
+						<div class="header__cart-shipper">3 поставщика</div>
+					</div>
 					<a href="#" class="header__cart-link"></a>
 				</div>
 			</div>
 			<nav class="header__nav">
 				<a href="#" class="header__nav-item">Все разделы</a>
 				<a href="#" class="header__nav-item">Электрика</a>
-				<a href="#" class="header__nav-item">Сантехника и отопление</a>
+				<a href="#" class="header__nav-item header__nav-item--active">Сантехника и отопление</a>
 				<a href="#" class="header__nav-item">Метизы и крепёж</a>
 				<a href="#" class="header__nav-item">Вентиляция и промхолод</a>
 				<a href="#" class="header__nav-item">Строительные смеси</a>

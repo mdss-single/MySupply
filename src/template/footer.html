@@ -73,6 +73,16 @@
 	<div class="modal modal-discount" id="modalDiscount">
 		<div class="modal-discount__title">Скидки Элком-Электро, ООО Москва бальшой город таааа</div>
 		<div class="modal-discount__descr">
+			<p>Если у вас есть личная скидка у этого поставщика, укажите её и скидка будет применена ко всем предложениям поставщика на сайте без учета суммы заказа.</p>
+			<p>Если скидка по сумме заказа будет больше вашей личной скидки, то будет отображена скидка по суме заказа.</p>
+		</div>
+		<div class="modal-discount__set">
+			<input type="text" name="" id="" class="input-text input-text--bordered" value="-15%">
+			<button class="btn btn--middle btn--green">Применить</button>
+			<a href="#" class="modal-discount__set-remove">Удалить скидку</a>
+		</div>
+		<div class="modal-discount__set-value">Вы указали личную скидку -15%</div>
+		<div class="modal-discount__descr">
 			Скидки по суме заказа, которые предоставляет  поставщик:
 		</div>
 		<table class="modal-discount__table">
@@ -90,6 +100,102 @@
 			</tr>
 		</table>
 	</div>
+	<div class="modal auth" id="auth">
+		<div class="auth__tabs">
+			<div class="auth__tabs-item auth__tabs-item--active">Войти</div>
+			<div class="auth__tabs-item">Зарегистрироваться</div>
+		</div>
+		<div class="auth__container auth__container--active">
+			<div class="form__row">
+				<input type="email" name="" id="" class="input-text input-text--bordered input-text--large input-text--email" placeholder="E-mail">
+			</div>
+			<div class="form__row">
+				<input type="password" name="" id="" class="input-text input-text--bordered input-text--large input-text--password" placeholder="Пароль">
+				<a href="#" class="auth__forgot-link">Забыли пароль?</a>
+			</div>
+			<div class="form__row form__row--big">
+				<button class="btn btn--green btn--large btn--fullwidth">ВОЙТИ</button>
+			</div>
+			<div class="auth__more">
+				<div class="auth__more-title">Если у вас ещё нет аккаунта</div>
+				<button class="btn btn--bordered btn--large btn--fullwidth">Зарегистрироваться</button>
+			</div>
+		</div>
+		<div class="auth__container">
+			<div class="form__row">
+				<input type="email" name="" id="" class="input-text input-text--bordered input-text--large input-text--email" placeholder="ВВедите E-mail">
+			</div>
+			<div class="form__row">
+				<input type="password" name="" id="" class="input-text input-text--bordered input-text--large input-text--password" placeholder="ВВЕДИТЕ Пароль">
+			</div>
+			<div class="form__row">
+				<input type="password" name="" id="" class="input-text input-text--bordered input-text--large input-text--password" placeholder="Пароль ещё раз">
+			</div>
+			<div class="form__row">
+				<button class="btn btn--green btn--large btn--fullwidth">ЗАрегистрироваться</button>
+			</div>
+			<div class="auth__more">
+				<div class="auth__more-title">Если у вас уже есть аккаунт</div>
+				<button class="btn btn--bordered btn--large btn--fullwidth">ВОЙти</button>
+			</div>
+		</div>
+	</div>
+	<div class="modal modal-order-send" id="orderSend">
+		<div class="modal-order-send__title">Отправить заказ</div>
+		<div class="modal-order-send__descr">
+			Укажите контактные данные для поставщика, чтобы он мог вам ответить
+		</div>
+		<div class="modal-order-send__body">
+			<div class="form__row">
+				<input type="email" name="" id="" class="input-text input-text--bordered input-text--large input-text--letter" placeholder="рабочий E-mail">
+			</div>
+			<div class="form__row">
+				<input type="tel" name="" id="" class="input-text input-text--bordered input-text--large input-text--phone" placeholder="Рабочий телефон">
+			</div>
+			<div class="form__row">
+				<input type="text" name="" id="" class="input-text input-text--bordered input-text--large input-text--card" placeholder="КОМпания">
+			</div>
+			<div class="form__row">
+				<button class="btn btn--green btn--large btn--fullwidth">ОТПРАВИТЬ ЗАКАЗ</button>
+			</div>
+		</div>
+	</div>
+	<div class="modal modal-estimate" id="modalEstimate">
+		<div class="modal-estimate__title">Уточните Ваш заказ</div>
+		<div class="modal-estimate__descr">
+			В вашем заказе есть артикулы, которые соответствуют нескольким товарам, уточните какие именно товары вам нужны.
+		</div>
+		<div class="modal-estimate__count">Артикул 1 из 27</div>
+		<div class="modal-estimate__current">
+			<div class="modal-estimate__current-code">Артикул: 57010</div>
+			<div class="modal-estimate__current-list">
+				<input type="radio" name="a" id="me1" class="modal-estimate__current-item">
+				<label for="me1">Автоматический выключатель ИЕК</label>
+
+				<input type="radio" name="a" id="me2" class="modal-estimate__current-item">
+				<label for="me2">EIL580-SY06.5RN.00360.A Baumer - Инкрементальный энкодер 58 мм, выступающий вал 6 мм, 360 импульсов на оборот, питание 8-30VDC, выход HTL, 6 фаз, IP65, рабочая температура -40 +85 С, с кабелем 1 метр</label>
+			</div>
+		</div>
+		<div class="modal-estimate__btns">
+			<button class="btn btn--green btn--large">Следующий товар</button>
+		</div>
+	</div>
+	<!--
+	<div class="notification">
+		<div class="notification__item notification__item--notice">
+			<a href="#" class="notification__item-close js-notification-close"></a>
+			Заказ переименован
+		</div>
+		<div class="notification__item notification__item--error">
+			<a href="#" class="notification__item-close js-notification-close"></a>
+			Не удалось найти товар 57050
+		</div>
+		<div class="notification__item notification__item--success">
+			<a href="#" class="notification__item-close js-notification-close"></a>
+			Заказ успешно отправлен поставщику
+		</div>
+	</div>
+	-->
 	<script>window.jQuery || document.write('<script src="js/jquery.js"><\/script>')</script>
 	<script src="js/plugins.js"></script>
 	<script src="js/main.js"></script>

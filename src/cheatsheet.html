@@ -23,7 +23,7 @@
 					.elements td:nth-of-type(2) {
 						width:40%;
 					}
-				.markup h2 {
+				.markup > h2 {
 					font-weight:300;
 					font-size:2.6rem;
 					margin:20px 0 10px;
@@ -98,10 +98,19 @@
 					<li><a href="https://github.com/xoxco/jQuery-Tags-Input">jQuery Tags Input Plugin</a></li>
 				</ol>
 				<h2>Модальные окна</h2>
-				<p>Для вызова модальных окон подключен плагин <a href="http://fancyapps.com/fancybox/3/docs/">fancybox</a>. Для вызывающего элемента необходимо добавить класс <code>.js-modal</code>. Если это ссылка, то вызываемый адрес пишет в атрибуте href, если какой-то другой элемент, то прописывается атрибут <code>data-src="%target%"</code></p>
+				<p>Для вызова модальных окон подключен плагин <a href="http://fancyapps.com/fancybox/3/docs/">fancybox</a>. Для вызывающего элемента необходимо добавить класс <code>.js-modal</code>. Если это ссылка, то вызываемый адрес пишется в атрибуте href, если какой-то другой элемент, то прописывается атрибут <code>data-src="%target%"</code></p>
 				<ul>
 					<li><a href="#modalCity" class="js-modal">Выбор города</a></li>
 					<li><a href="#modalDiscount" class="js-modal">Модалка скидок</a></li>
+					<li><a href="#orderSend" class="js-modal">Отправить заказ</a></li>
+					<li><a href="#auth" class="js-modal">Вход и регистрация</a></li>
+					<li><a href="#modalEstimate" class="js-modal">Уточните Ваш заказ</a></li>
+				</ul>
+				<h2>Уведомления</h2>
+				<ul>
+					<li><a href="#" class="example-notification-notice">Показать голубое уведомление</a></li>
+					<li><a href="#" class="example-notification-error">Показать красное уведомление</a></li>
+					<li><a href="#" class="example-notification-success">Показать зеленое уведомление</a></li>
 				</ul>
 				<h2>Диалоговые окна</h2>
 				<p>Для вызывающего элемента необходимо добавить класс <code>.js-dialog</code> и атрибут <code>data-target</code> с указанием id вызываемого диалогового окна.</p>
@@ -115,6 +124,81 @@
 						</div>
 					</li>
 				</ul>
+				<h2>Регистрация и авторизация</h2>
+				<p>Регистрация и авторизация сделана на одной странице с разделением табами. Для загрузки конкретного таба необходимо прописать якорь <code>#auth-tab-№</code>, где № это номер таба (отсчет ведется с единицы). Т.е. для автоматического переключения на таб регистрации надо к ссылке добавить хеш <code>#auth-tab-2</code></p>
+				<h2>Текстовые элементы</h2>
+				<table class="elements">
+					<tr>
+						<td><code>h1</code></td>
+						<td>
+							<pre><code>&lt;h1>H1 - Заголовок&lt;/h1></code></pre>
+						</td>
+						<td><h1>H1 - Заголовок</h1></td>
+					</tr>
+					<tr>
+						<td><code>h2</code></td>
+						<td>
+							<pre><code>&lt;h2>H2 - Заголовок&lt;/h2></code></pre>
+						</td>
+						<td><h2>H2 - Заголовок</h2></td>
+					</tr>
+					<tr>
+						<td><code>h3</code></td>
+						<td>
+							<pre><code>&lt;h3>H3 - Заголовок&lt;/h3></code></pre>
+						</td>
+						<td><h3>H1 - Заголовок</h3></td>
+					</tr>
+					<tr>
+						<td><code>.color-light</code></td>
+						<td>
+							<pre><code>&lt;div class="color-light">Дополнительный текст&lt;/div></code></pre>
+						</td>
+						<td><div class="color-light">Дополнительный текст</div></td>
+					</tr>
+					<tr>
+						<td><code>.color-gray</code></td>
+						<td>
+							<pre><code>&lt;div class="color-gray">Дополнительный текст&lt;/div></code></pre>
+						</td>
+						<td><div class="color-gray">Дополнительный текст</div></td>
+					</tr>
+					<tr>
+						<td><code>.color-dark</code></td>
+						<td>
+							<pre><code>&lt;div class="color-dark">Дополнительный текст&lt;/div></code></pre>
+						</td>
+						<td><div class="color-dark">Дополнительный текст</div></td>
+					</tr>
+					<tr>
+						<td><code>.color-red</code></td>
+						<td>
+							<pre><code>&lt;div class="color-red">Дополнительный текст&lt;/div></code></pre>
+						</td>
+						<td><div class="color-red">Дополнительный текст</div></td>
+					</tr>
+					<tr>
+						<td><code>.color-green</code></td>
+						<td>
+							<pre><code>&lt;div class="color-green">Дополнительный текст&lt;/div></code></pre>
+						</td>
+						<td><div class="color-green">Дополнительный текст</div></td>
+					</tr>
+					<tr>
+						<td><code>small</code></td>
+						<td>
+							<pre><code>&lt;small>small text&lt;/small></code></pre>
+						</td>
+						<td><small>small text</small></td>
+					</tr>
+					<tr>
+						<td><code>big</code></td>
+						<td>
+							<pre><code>&lt;big>big text&lt;/big></code></pre>
+						</td>
+						<td><big>big text</big></td>
+					</tr>
+				</table>
 				<h2>Основные элементы</h2>
 				<table class="elements">
 					<tr>
@@ -129,6 +213,15 @@
 							</div>
 						</td>
 						<td><input type="text" name="" id="" class="input-text" placeholder="Input"></td>
+					</tr>
+					<tr>
+						<td><code>.input-text .input-text--bordered</code></td>
+						<td>
+							<div class="overflow">
+								<pre><code>&lt;input type="text" name="" id="" class="input-text input-text--bordered" placeholder="Green border input"></code></pre>
+							</div>
+						</td>
+						<td><input type="text" name="" id="" class="input-text input-text--bordered" placeholder="Green border input"></td>
 					</tr>
 					<tr>
 						<td><code>.input-text .input-text--error</code></td>
@@ -147,6 +240,51 @@
 							</div>
 						</td>
 						<td><input type="text" name="" id="" class="input-text input-text--success" placeholder="Success input"></td>
+					</tr>
+					<tr>
+						<td><code>.input-text .input-text--email</code></td>
+						<td>
+							<div class="overflow">
+								<pre><code>&lt;input type="email" name="" id="" class="input-text input-text--email" placeholder="Email input"></code></pre>
+							</div>
+						</td>
+						<td><input type="email" name="" id="" class="input-text input-text--email" placeholder="Email input"></td>
+					</tr>
+					<tr>
+						<td><code>.input-text .input-text--password</code></td>
+						<td>
+							<div class="overflow">
+								<pre><code>&lt;input type="password" name="" id="" class="input-text input-text--password" placeholder="password input"></code></pre>
+							</div>
+						</td>
+						<td><input type="email" name="" id="" class="input-text input-text--password" placeholder="Password input"></td>
+					</tr>
+					<tr>
+						<td><code>.input-text .input-text--letter</code></td>
+						<td>
+							<div class="overflow">
+								<pre><code>&lt;input type="email" name="" id="" class="input-text input-text--letter" placeholder="letter input"></code></pre>
+							</div>
+						</td>
+						<td><input type="email" name="" id="" class="input-text input-text--letter" placeholder="letter input"></td>
+					</tr>
+					<tr>
+						<td><code>.input-text .input-text--phone</code></td>
+						<td>
+							<div class="overflow">
+								<pre><code>&lt;input type="tel" name="" id="" class="input-text input-text--phone" placeholder="phone input"></code></pre>
+							</div>
+						</td>
+						<td><input type="tel" name="" id="" class="input-text input-text--phone" placeholder="phone input"></td>
+					</tr>
+					<tr>
+						<td><code>.input-text .input-text--card</code></td>
+						<td>
+							<div class="overflow">
+								<pre><code>&lt;input type="text" name="" id="" class="input-text input-text--card" placeholder="card input"></code></pre>
+							</div>
+						</td>
+						<td><input type="text" name="" id="" class="input-text input-text--card" placeholder="card input"></td>
 					</tr>
 					<tr>
 						<td><code>.input-text .input-text--large</code></td>
@@ -183,6 +321,15 @@
 							</div>
 						</td>
 						<td><textarea name="" id="" cols="30" rows="10" class="textarea textarea--success" placeholder="Some text"></textarea></td>
+					</tr>
+					<tr>
+						<td><code>.textarea .textarea--bordered</code></td>
+						<td>
+							<div class="overflow">
+								<pre><code>&lt;textarea name="" id="" cols="30" rows="10" class="textarea textarea--bordered" placeholder="Some text">&lt;/textarea></code></pre>
+							</div>
+						</td>
+						<td><textarea name="" id="" cols="30" rows="10" class="textarea textarea--bordered" placeholder="Some text"></textarea></td>
 					</tr>
 					<tr>
 						<td><code>.textarea .textarea--large</code></td>
@@ -262,6 +409,15 @@
 						<td><button class="btn btn--green">Green button</button></td>
 					</tr>
 					<tr>
+						<td><code>.btn .btn--bordered</code></td>
+						<td>
+							<div class="overflow">
+								<pre><code>&lt;button class="btn btn--bordered">Green border button&lt;/button></code></pre>
+							</div>
+						</td>
+						<td><button class="btn btn--bordered">Green border button</button></td>
+					</tr>
+					<tr>
 						<td><code>.btn .btn--fullwidth</code></td>
 						<td>
 							<div class="overflow">
@@ -335,3 +491,27 @@
 			</div>
 		</div>
 //= template/footer.html
+<script>
+	$(document).ready(function() {
+		$('.example-notification-notice').on('click', function(e) {
+			e.preventDefault();
+			checkNotificationContainer()
+			$('.notification').append('<div class="notification__item notification__item--notice"><a href="#" class="notification__item-close js-notification-close"></a>Заказ переименован</div>')
+		});
+		$('.example-notification-error').on('click', function(e) {
+			e.preventDefault();
+			checkNotificationContainer()
+			$('.notification').append('<div class="notification__item notification__item--error"><a href="#" class="notification__item-close js-notification-close"></a>Не удалось найти товар 57050</div>')
+		});
+		$('.example-notification-success').on('click', function(e) {
+			e.preventDefault();
+			checkNotificationContainer()
+			$('.notification').append('<div class="notification__item notification__item--success">Заказ успешно отправлен поставщику</div>')
+		});
+	});
+	function checkNotificationContainer() {
+		if (!$('.notification').length) {
+			$('body').append('<div class="notification"></div>');
+		}
+	}
+</script>
