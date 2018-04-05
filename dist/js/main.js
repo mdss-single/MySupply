@@ -7,15 +7,12 @@
 	});
 
 	// header search autocomplete
-	$('.js-header-autocomplete').on('focus', function() {
+	$('.js-header-autocomplete').on('focus', function(e) {
+		e.stopPropagation();
 		$(this).closest('.header__search').toggleClass('header__search--focus');
 		$('.header__search-result').toggleClass('header__search-result--active');
 	});
-	$('.js-header-autocomplete').on('focusout', function() {
-		$(this).closest('.header__search').removeClass('header__search--focus');
-		$('.header__search-result').removeClass('header__search-result--active');
-	});
-	$(document).click(function(e) {
+	$(document).on('click', function(e) {
 		if (!$(e.target).closest('.header__search').length) {
 			$('.header__search').removeClass('header__search--focus');
 			$('.header__search-result').removeClass('header__search-result--active');
