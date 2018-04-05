@@ -1361,8 +1361,30 @@ img
 /*  <cart>  */
 .cart
 	display flex
+	flex-wrap wrap
 	align-items flex-start
 	margin 20px 0 28px
+	&__tabs
+		display flex
+		width 100%
+		&-item
+			display flex
+			justify-content center
+			align-items center
+			height 46px
+			color $colorGray
+			text-decoration none
+			border solid #eee
+			border-width 0 1px 1px
+			padding 5px 28px 0
+			margin-left -1px
+			&--active
+				color $colorDark
+				font-weight 500
+				background-color #fff
+				border-top 3px solid #81c81e
+				border-bottom-color #fff
+				padding-top 3px
 	&__main
 		flex 1
 		background-color #fff
