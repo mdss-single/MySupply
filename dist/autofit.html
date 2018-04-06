@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Mysupply</title>
+	<link rel="stylesheet" href="css/plugins.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<header class="header">
+		<div class="container">
+			<div class="header__short">
+				<a href="#" class="header__logo">Моё Снабжение</a>
+				<a href="tel:+74956459530" class="header__phone">+7 495 645 95 30</a>
+			</div>
+		</div>
+	</header>
+	<main class="main">
+		<div class="container">
+			<div class="autofit">
+				<div class="autofit__title">Автоподбор товаров</div>
+				<div class="autofit__descr">
+					<p>Загрузите список артикулов товаров в формате .xls и мы подберём 3 варианта комплектации вашего заказа: самый дешёвый, ближайший и с минимальным кол-вом поставщиков.</p>
+					<p class="color-red">* Файл должен содержать артикулы производителей в первой колонке и необходимое кол-во во второй колонке, колонки должны быть без заголовков. <a href="#" class="color-red">Скачать пример файла для загрузки</a></p>
+				</div>
+				<div class="autofit__action">
+					<div class="autofit__action-main">
+						<input type="file" name="" id="autofitFile" class="input-file js-autofit-file">
+						<label for="autofitFile" class="btn btn--green btn--large">Загрузить файл</label>
+					</div>
+					<div class="autofit__action-final">
+						<span class="autofit__action-name"></span>
+						<button class="btn btn--green btn--large">Подобрать товары</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer class="footer footer--short">
+		<div class="container">
+			<div class="footer__copyright">
+				&copy; 2016-2018 ООО «Моё Снабжение»
+			</div>
+		</div>
+	</footer>
+	<script>window.jQuery || document.write('<script src="js/jquery.js"><\/script>')</script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

@@ -332,7 +332,7 @@
 	});
 
 	// input file
-	$('.js-input-file').change(function() {
+	$('.js-input-file').on('change', function() {
 		$('label[for="' + this.id + '"]').text($(this).val().replace(/^.*\\/, ""));
 	});
 
@@ -362,6 +362,13 @@
 		$(this).closest('.notification__item').addClass('fadeOut').delay(500).queue(function(){
 			$(this).remove();
 		});
+	});
+
+	// input file
+	$('.js-autofit-file').on('change', function() {
+		$(this).closest('.autofit__action-main').addClass('autofit__action-main--hidden');
+		$(this).closest('.autofit__action-main').next('.autofit__action-final').addClass('autofit__action-final--active');
+		$(this).closest('.autofit__action-main').next('.autofit__action-final').find('.autofit__action-name').text($(this).val().replace(/^.*\\/, ""));
 	});
 
 })(jQuery);

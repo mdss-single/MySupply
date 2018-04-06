@@ -2253,6 +2253,43 @@ img
 			margin-bottom 20px
 /*  </login-register>  */
 
+/*  <autofit>  */
+.autofit
+	background-color #fff
+	border-radius 2px
+	padding 0 28px 24px
+	margin 28px 280px 50px 0
+	box-shadow 0 1px 2px rgba($colorDark, .1)
+	&__title
+		font-weight 900
+		font-size 2.3rem
+		border-bottom 1px solid #eee
+		padding 20px 28px
+		margin 0 -28px 15px
+	&__descr
+		line-height 2.1rem
+		p
+			&:first-child
+				margin-top 0
+			&:last-child
+				margin-bottom 0
+	&__action
+		margin-top 25px
+		&-main
+			&--hidden
+				display none
+		&-final
+			display none
+			&--active
+				display block
+				animation fadeIn .5s
+		&-name
+			font-size 1.5rem
+			text-transform uppercase
+			padding 0 28px
+			margin-right 14px
+/*  </autofit>  */
+
 /*  <modal-city>  */
 .modal-city
 	.fancybox-slide &
