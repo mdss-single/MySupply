@@ -160,9 +160,9 @@
 		&::before
 			position absolute
 			top 1px
-			bottom 1px
 			left 1px
 			width 22px
+			height @width
 			background-color #fff
 			border-radius 50%
 			content ''
@@ -177,6 +177,30 @@
 	left -9999px
 	& + label
 		display inline-flex
+.toggler
+	display inline-flex
+	position relative
+	width 42px
+	height 24px
+	background-color rgba(#2cc81e, .6)
+	border-radius (@height / 2)
+	cursor pointer
+	transition all .2s
+	&::before
+		position absolute
+		top 1px
+		left 1px
+		bottom @top
+		width 22px
+		background-color #fff
+		border-radius 50%
+		content ''
+		transition all .2s
+	&--active
+		background-color #2cc81e
+		&::before
+			right 1px
+			left auto
 /*  </inputs>  */
 
 /*  <labels>  */

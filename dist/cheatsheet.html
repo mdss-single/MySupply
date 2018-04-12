@@ -536,6 +536,24 @@
 						<td><input type="checkbox" name="" id="" class="checkbox"></td>
 					</tr>
 					<tr>
+						<td><code>.toggler</code></td>
+						<td>
+							<div class="overflow">
+								<pre><code>&lt;div class="toggler">&lt;/div></code></pre>
+							</div>
+						</td>
+						<td><div class="toggler"></div></td>
+					</tr>
+					<tr>
+						<td><code>.toggler .toggler--active</code></td>
+						<td>
+							<div class="overflow">
+								<pre><code>&lt;div class="toggler toggler--active">&lt;/div></code></pre>
+							</div>
+						</td>
+						<td><div class="toggler toggler--active"></div></td>
+					</tr>
+					<tr>
 						<td><code>.radio</code></td>
 						<td>
 							<div class="overflow">
@@ -545,11 +563,32 @@
 						<td><input type="radio" name="" id="" class="radio"></td>
 					</tr>
 					<tr>
-						<td><code>.label .label--red</code></td>
+						<td><code>.label.label--red</code></td>
 						<td>
 							<pre><code>&lt;span class="label label--red">Red label&lt;/span></code></pre>
 						</td>
 						<td><span class="label label--red">Red label</span></td>
+					</tr>
+					<tr>
+						<td><code>.label.label--red > .label__text</code></td>
+						<td>
+							<pre><code>&lt;span class="label label--red">Red label&lt;span class="label__text">Inner text&lt;/span>&lt;/span></code></pre>
+						</td>
+						<td><span class="label label--red">Red label<span class="label__text">Inner text</span></span></td>
+					</tr>
+					<tr>
+						<td><code>.label.label--gray</code></td>
+						<td>
+							<pre><code>&lt;span class="label label--gray">Gray label&lt;/span></code></pre>
+						</td>
+						<td><span class="label label--gray">Gray label</span></td>
+					</tr>
+					<tr>
+						<td><code>.label.label--gray > .label__text</code></td>
+						<td>
+							<pre><code>&lt;span class="label label--gray">Gray label&lt;span class="label__text">Inner text&lt;/span>&lt;/span></code></pre>
+						</td>
+						<td><span class="label label--gray">Gray label<span class="label__text">Inner text</span></span></td>
 					</tr>
 				</table>
 			</div>
