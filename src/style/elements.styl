@@ -160,9 +160,9 @@
 		&::before
 			position absolute
 			top 1px
+			bottom @top
 			left 1px
 			width 22px
-			height @width
 			background-color #fff
 			border-radius 50%
 			content ''
@@ -170,7 +170,8 @@
 	&:checked + label
 		background-color #2cc81e
 		&::before
-			left calc(100% - 1px)
+			left 100%
+			margin-left -1px
 			transform translateX(-100%)
 .input-file
 	position absolute
@@ -390,6 +391,9 @@ h3
 		opacity 1
 	to
 		opacity 0
+@keyframes rotate
+	to
+		transform rotate(360deg)
 /*  </animations>  */
 
 /*  <dialog>  */

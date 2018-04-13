@@ -2126,6 +2126,14 @@ img
 					svg
 						path
 							fill $colorDark
+		&__btn-update
+			&::before
+				animation rotate 5s linear infinite
+				width 20px
+				height @width
+				background url('../i/icons/icon-load.svg') no-repeat 0 0 / cover
+				margin-right 10px
+				content ''
 		&__nav
 			overflow-y auto
 			max-height 450px
@@ -2148,6 +2156,21 @@ img
 				&--active
 					&::before
 						transform rotate(45deg)
+			&-icons
+				display flex
+				justify-content space-between
+				width 40px
+				margin 5px 0
+			&-edit
+				width 17px
+				height 15px
+				background url('../i/icons/icon-edit.svg') no-repeat 0 0 / cover
+				content ''
+			&-remove
+				width 13px
+				height 15px
+				background url('../i/icons/icon-remove.svg') no-repeat 0 0 / cover
+				content ''
 			&-item
 				//display none
 				padding-left 22px

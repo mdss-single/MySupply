@@ -277,11 +277,9 @@
 	transition:all .2s;
 }
 .jq-selectbox.opened .jq-selectbox__trigger-arrow {
-	top:calc(50% - 8px);
-	-webkit-transform:rotate(-135deg) translate(-50%, -50%);
-	-ms-transform:rotate(-135deg) translate(-50%, -50%);
-	-o-transform:rotate(-135deg) translate(-50%, -50%);
-	transform:rotate(-135deg) translate(-50%, -50%);
+	top:50%;
+	transform-origin:75% 50%;
+	transform:translate(-50%, -50%) rotate(-135deg);
 }
 .jq-selectbox.disabled .jq-selectbox__trigger-arrow {
 	border-top-color: #AAA;
