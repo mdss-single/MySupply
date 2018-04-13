@@ -182,6 +182,16 @@ img
 		display flex
 		align-items center
 		position relative
+		padding-left 35px
+		&::before
+			position absolute
+			top 50%
+			left 0
+			width 21px
+			height 18px
+			background url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NzYgNTEyIj4NCgk8cGF0aCBmaWxsPSIjNDQ0IiBkPSJNNTI4LjEyIDMwMS4zMTlsNDcuMjczLTIwOEM1NzguODA2IDc4LjMwMSA1NjcuMzkxIDY0IDU1MS45OSA2NEgxNTkuMjA4bC05LjE2Ni00NC44MUMxNDcuNzU4IDguMDIxIDEzNy45MyAwIDEyNi41MjkgMEgyNEMxMC43NDUgMCAwIDEwLjc0NSAwIDI0djE2YzAgMTMuMjU1IDEwLjc0NSAyNCAyNCAyNGg2OS44ODNsNzAuMjQ4IDM0My40MzVDMTQ3LjMyNSA0MTcuMSAxMzYgNDM1LjIyMiAxMzYgNDU2YzAgMzAuOTI4IDI1LjA3MiA1NiA1NiA1NnM1Ni0yNS4wNzIgNTYtNTZjMC0xNS42NzQtNi40NDctMjkuODM1LTE2LjgyNC00MGgyMDkuNjQ3QzQzMC40NDcgNDI2LjE2NSA0MjQgNDQwLjMyNiA0MjQgNDU2YzAgMzAuOTI4IDI1LjA3MiA1NiA1NiA1NnM1Ni0yNS4wNzIgNTYtNTZjMC0yMi4xNzItMTIuODg4LTQxLjMzMi0zMS41NzktNTAuNDA1bDUuNTE3LTI0LjI3NmMzLjQxMy0xNS4wMTgtOC4wMDItMjkuMzE5LTIzLjQwMy0yOS4zMTlIMjE4LjExN2wtNi41NDUtMzJoMjkzLjE0NWMxMS4yMDYgMCAyMC45Mi03Ljc1NCAyMy40MDMtMTguNjgxeiIvPg0KPC9zdmc+') no-repeat 0 0 / cover
+			content ''
+			transform translateY(-50%)
 		&-count
 			position relative
 			color #fff
@@ -190,22 +200,14 @@ img
 			background-color #4c95ca
 			border-radius (@line-height/2)
 			padding 0 10px
-			margin 0 30px 0 35px
+			margin-right 30px
 			&:empty
-				min-width 28px
+				width 28px
+				height @width
 				color $colorGray
 				background-color #ddd
 				&::before
 					content '0'
-			&::before
-				position absolute
-				top 50%
-				left -35px
-				width 21px
-				height 18px
-				background url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NzYgNTEyIj4NCgk8cGF0aCBmaWxsPSIjNDQ0IiBkPSJNNTI4LjEyIDMwMS4zMTlsNDcuMjczLTIwOEM1NzguODA2IDc4LjMwMSA1NjcuMzkxIDY0IDU1MS45OSA2NEgxNTkuMjA4bC05LjE2Ni00NC44MUMxNDcuNzU4IDguMDIxIDEzNy45MyAwIDEyNi41MjkgMEgyNEMxMC43NDUgMCAwIDEwLjc0NSAwIDI0djE2YzAgMTMuMjU1IDEwLjc0NSAyNCAyNCAyNGg2OS44ODNsNzAuMjQ4IDM0My40MzVDMTQ3LjMyNSA0MTcuMSAxMzYgNDM1LjIyMiAxMzYgNDU2YzAgMzAuOTI4IDI1LjA3MiA1NiA1NiA1NnM1Ni0yNS4wNzIgNTYtNTZjMC0xNS42NzQtNi40NDctMjkuODM1LTE2LjgyNC00MGgyMDkuNjQ3QzQzMC40NDcgNDI2LjE2NSA0MjQgNDQwLjMyNiA0MjQgNDU2YzAgMzAuOTI4IDI1LjA3MiA1NiA1NiA1NnM1Ni0yNS4wNzIgNTYtNTZjMC0yMi4xNzItMTIuODg4LTQxLjMzMi0zMS41NzktNTAuNDA1bDUuNTE3LTI0LjI3NmMzLjQxMy0xNS4wMTgtOC4wMDItMjkuMzE5LTIzLjQwMy0yOS4zMTlIMjE4LjExN2wtNi41NDUtMzJoMjkzLjE0NWMxMS4yMDYgMCAyMC45Mi03Ljc1NCAyMy40MDMtMTguNjgxeiIvPg0KPC9zdmc+') no-repeat 0 0 / cover
-				content ''
-				transform translateY(-50%)
 			&::after
 				position absolute
 				top 0
